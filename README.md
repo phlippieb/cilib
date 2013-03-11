@@ -18,6 +18,11 @@ process. The process might take a while, but feel free to aid us in our
 efforts by forking [cilib.github.com](https://github.com/cilib/cilib.github.com)
 and sending us a pull request.
 
+In the meantime, basic usage is:
+sbt assembly
+cd simulator/target
+java -jar <cilib-snapshot file name.jar> <simulation file name.xml>
+
 ## Download
 TODO
 
