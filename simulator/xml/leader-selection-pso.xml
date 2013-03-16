@@ -5,58 +5,587 @@
 <!ATTLIST measurements id ID #IMPLIED>
 ]>
 <simulator>
+
+    <!--
+        //\\ ||   //\\ //\\ ||\\ || |||| |||| \\// ////
+        //\\ ||   ||\\ |||| ||// ||  ||  |\\| |\/| \\\\
+        //\\ |||| \\// \\// ||\\ ||  ||  |||| |||| ////
+    -->
+
+
     <algorithms>
-        <algorithm id="bb-pso" class="pso.PSO">
+        
+        <algorithm id="guide1" class="pso.PSO">
             <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy"/>
             <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
                 <entityNumber value="20"/>
                 <entityType class="pso.particle.StandardParticle">
+                    <particleBehavior class="pso.particle.ParticleBehavior">
+                        <globalGuideProvider class="pso.guideprovider.NewGuideProvider_1"/>
+                    </particleBehavior>
                     <positionProvider class="pso.positionprovider.LinearPositionProvider"/>
-                    <velocityProvider class="pso.velocityprovider.BareBonesVelocityProvider">
-                        <exploitProbability class="controlparameter.ConstantControlParameter" parameter="0"/>
+                    <velocityProvider class="pso.velocityprovider.StandardVelocityProvider">
+                        <!-- velocity provider params-->
                     </velocityProvider>
                 </entityType>
             </initialisationStrategy>
             <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="1000"/>
         </algorithm>
 
-        <algorithm id="bb-pso-exploit" class="pso.PSO">
+        <algorithm id="guide2" class="pso.PSO">
             <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy"/>
             <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
                 <entityNumber value="20"/>
                 <entityType class="pso.particle.StandardParticle">
+                    <particleBehavior class="pso.particle.ParticleBehavior">
+                        <globalGuideProvider class="pso.guideprovider.NewGuideProvider2"/>
+                    </particleBehavior>
                     <positionProvider class="pso.positionprovider.LinearPositionProvider"/>
-                    <velocityProvider class="pso.velocityprovider.BareBonesVelocityProvider">
-                        <exploitProbability class="controlparameter.ConstantControlParameter" parameter="0.5"/>
+                    <velocityProvider class="pso.velocityprovider.StandardVelocityProvider">
+                        <!-- velocity provider params-->
                     </velocityProvider>
                 </entityType>
             </initialisationStrategy>
             <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="1000"/>
         </algorithm>
+
+        <algorithm id="guide3" class="pso.PSO">
+            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy"/>
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="20"/>
+                <entityType class="pso.particle.StandardParticle">
+                    <particleBehavior class="pso.particle.ParticleBehavior">
+                        <globalGuideProvider class="pso.guideprovider.NewGuideProvider3"/>
+                    </particleBehavior>
+                    <positionProvider class="pso.positionprovider.LinearPositionProvider"/>
+                    <velocityProvider class="pso.velocityprovider.StandardVelocityProvider">
+                        <!-- velocity provider params-->
+                    </velocityProvider>
+                </entityType>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="1000"/>
+        </algorithm>
+
+        <algorithm id="guide4" class="pso.PSO">
+            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy"/>
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="20"/>
+                <entityType class="pso.particle.StandardParticle">
+                    <particleBehavior class="pso.particle.ParticleBehavior">
+                        <globalGuideProvider class="pso.guideprovider.NewGuideProvider4"/>
+                    </particleBehavior>
+                    <positionProvider class="pso.positionprovider.LinearPositionProvider"/>
+                    <velocityProvider class="pso.velocityprovider.StandardVelocityProvider">
+                        <!-- velocity provider params-->
+                    </velocityProvider>
+                </entityType>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="1000"/>
+        </algorithm>
+
+        <algorithm id="guide5" class="pso.PSO">
+            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy"/>
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="20"/>
+                <entityType class="pso.particle.StandardParticle">
+                    <particleBehavior class="pso.particle.ParticleBehavior">
+                        <globalGuideProvider class="pso.guideprovider.NewGuideProvider5"/>
+                    </particleBehavior>
+                    <positionProvider class="pso.positionprovider.LinearPositionProvider"/>
+                    <velocityProvider class="pso.velocityprovider.StandardVelocityProvider">
+                        <!-- velocity provider params-->
+                    </velocityProvider>
+                </entityType>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="1000"/>
+        </algorithm>
+
     </algorithms>
 
+    
+
     <problems>
-        <problem id="spherical" class="problem.FunctionOptimisationProblem" domain="R(-5.12:5.12)^30">
-            <function class="functions.continuous.unconstrained.Spherical"/>
+        
+        <!--
+            ||\\ ||\\ //\\ ||\\ ||   //\\ \\// ////
+            ||// ||// |||| ||\\ ||   ||// |\/| \\\\
+            ||   ||\\ \\// ||// |||| \\// |||| ////
+        -->
+
+        <!-- unimodal benchmarks -->
+        <!-- shifted sphere -->
+        <problem id="shifted-sphere-30" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^30">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Spherical"/>
+                <horizontalShift class="controlparameter.ConstantControlParameter" parameter="20"/>
+            </function>
+        </problem>
+        <problem id="shifted-sphere-150" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^150">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Spherical"/>
+            </function>
+        </problem>
+        <problem id="shifted-sphere-500" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^500">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Spherical"/>
+            </function>
+        </problem>
+
+        <!-- shifted schwefel -->
+        <problem id="shifted-schwefel-30" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^30">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.SchwefelProblem1_2"/>
+            </function>
+        </problem>
+        <problem id="shifted-schwefel-150" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^150">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.SchwefelProblem1_2"/>
+            </function>
+        </problem>
+        <problem id="shifted-schwefel-500" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^500">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.SchwefelProblem1_2"/>
+            </function>
+        </problem>
+
+        <!-- shifted schwefel with noise -->
+        <problem id="noisy-schwefel-30" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^30">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.decorators.NoisyFunctionDecorator">
+                    <function class="functions.continuous.SchwefelProblem1_2"/>
+                </function>
+            </function>
+        </problem>
+        <problem id="noisy-schwefel-150" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^150">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.decorators.NoisyFunctionDecorator">
+                    <function class="functions.continuous.SchwefelProblem1_2"/>
+                </function>
+            </function>
+        </problem>
+        <problem id="noisy-schwefel-500" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^500">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.decorators.NoisyFunctionDecorator">
+                    <function class="functions.continuous.SchwefelProblem1_2"/>
+                </function>
+            </function>
+        </problem>
+
+
+        <!-- multimodal benchmarks -->
+        <!-- shifted rosenbrock -->
+        <problem id="shifted-rosenbrock-30" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^30">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Rosenbrock"/>
+            </function>
+        </problem>
+        <problem id="shifted-rosenbrock-150" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^150">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Rosenbrock"/>
+            </function>
+        </problem>
+        <problem id="shifted-rosenbrock-500" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^500">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Rosenbrock"/>
+            </function>
+        </problem>
+
+        <!-- shifted griewank-->
+        <problem id="shifted-griewank-30" class="problem.FunctionOptimisationProblem" domain="R(0:600)^30">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Griewank" />
+            </function>
+        </problem>
+        <problem id="shifted-griewank-150" class="problem.FunctionOptimisationProblem" domain="R(0:600)^150">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Griewank" />
+            </function>
+        </problem>
+        <problem id="shifted-griewank-500" class="problem.FunctionOptimisationProblem" domain="R(0:600)^500">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Griewank" />
+            </function>
+        </problem>
+
+        <!-- schwefel 2.13 -->
+        <problem id="schwefel-2_13-30" class="problem.FunctionOptimisationProblem" domain="R(-4:4)^30">
+            <function class="functions.continuous.unconstrained.SchwefelProblem2_13" />
+        </problem>
+        <problem id="schwefel-2_13-150" class="problem.FunctionOptimisationProblem" domain="R(-4:4)^30">
+            <function class="functions.continuous.unconstrained.SchwefelProblem2_13" />
+        </problem>
+        <problem id="schwefel-2_13-500" class="problem.FunctionOptimisationProblem" domain="R(-4:4)^30">
+            <function class="functions.continuous.unconstrained.SchwefelProblem2_13" />
         </problem>
     </problems>
+
+        
 
     <measurements id="fitness" class="simulator.MeasurementSuite" resolution="10">
         <addMeasurement class="measurement.single.Fitness"/>
     </measurements>
 
     <simulations>
-        <simulation samples="1">
-            <algorithm idref="bb-pso"/>
-            <problem idref="spherical"/>
+
+        <!--
+            //// || \\// |||| ||   //\\ |||| || //\\ ||\\ ////
+            \\\\ || |\/| |||| ||   //\\  ||  || |||| |||| \\\\
+            //// || |||| \\// |||| //\\  ||  || \\// |||| ////
+        -->
+
+        <!-- guide 1 -->
+        <!-- sphere -->
+        <simulation samples="5">
+            <algorithm idref="guide1"/>
+            <problem idref="shifted-sphere-30"/>
             <measurements idref="fitness" />
             <output format="TXT" file="data/bbpso-spherical.txt"/>
         </simulation>
-        <simulation samples="1">
-            <algorithm idref="bb-pso-exploit"/>
-            <problem idref="spherical"/>
+        <simulation samples="5">
+            <algorithm idref="guide1"/>
+            <problem idref="shifted-sphere-150"/>
             <measurements idref="fitness" />
-            <output format="TXT" file="data/bbpso-exploit-spherical.txt"/>
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
         </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide1"/>
+            <problem idref="shifted-sphere-500"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <!-- schweifel -->
+        <simulation samples="5">
+            <algorithm idref="guide1"/>
+            <problem idref="shifted-schwefel-30"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide1"/>
+            <problem idref="shifted-schwefel-150"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide1"/>
+            <problem idref="shifted-schwefel-500"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <!-- noisy schwefel -->
+        <simulation samples="5">
+            <algorithm idref="guide1"/>
+            <problem idref="noisy-schwefel-30"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide1"/>
+            <problem idref="noisy-schwefel-150"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide1"/>
+            <problem idref="noisy-schwefel-500"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <!-- rosenbrock -->
+        <simulation samples="5">
+            <algorithm idref="guide1"/>
+            <problem idref="shifted-rosenbrock-30"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide1"/>
+            <problem idref="shifted-rosenbrock-150"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide1"/>
+            <problem idref="shifted-rosenbrock-500"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <!--griewank -->
+        <simulation samples="5">
+            <algorithm idref="guide1"/>
+            <problem idref="shifted-griewank-30"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide1"/>
+            <problem idref="shifted-griewank-150"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide1"/>
+            <problem idref="shifted-griewank-500"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <!-- schwefel 2.13 -->
+        <simulation samples="5">
+            <algorithm idref="guide1"/>
+            <problem idref="schwefel-2_13-30"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide1"/>
+            <problem idref="schwefel-2_13-150"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide1"/>
+            <problem idref="schwefel-2_13-500"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+
+        <!-- guide 2 -->
+        <!-- sphere -->
+        <simulation samples="5">
+            <algorithm idref="guide2"/>
+            <problem idref="shifted-sphere-30"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide2"/>
+            <problem idref="shifted-sphere-150"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide2"/>
+            <problem idref="shifted-sphere-500"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <!-- schweifel -->
+        <simulation samples="5">
+            <algorithm idref="guide2"/>
+            <problem idref="shifted-schwefel-30"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide2"/>
+            <problem idref="shifted-schwefel-150"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide2"/>
+            <problem idref="shifted-schwefel-500"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <!-- rosenbrock -->
+        <simulation samples="5">
+            <algorithm idref="guide2"/>
+            <problem idref="shifted-rosenbrock-30"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide2"/>
+            <problem idref="shifted-rosenbrock-150"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide2"/>
+            <problem idref="shifted-rosenbrock-500"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+
+
+        <!-- guide 3 -->
+        <!-- sphere -->
+        <simulation samples="5">
+            <algorithm idref="guide3"/>
+            <problem idref="shifted-sphere-30"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide3"/>
+            <problem idref="shifted-sphere-150"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide3"/>
+            <problem idref="shifted-sphere-500"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <!-- schweifel -->
+        <simulation samples="5">
+            <algorithm idref="guide3"/>
+            <problem idref="shifted-schwefel-30"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide3"/>
+            <problem idref="shifted-schwefel-150"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide3"/>
+            <problem idref="shifted-schwefel-500"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <!-- rosenbrock -->
+        <simulation samples="5">
+            <algorithm idref="guide3"/>
+            <problem idref="shifted-rosenbrock-30"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide3"/>
+            <problem idref="shifted-rosenbrock-150"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide3"/>
+            <problem idref="shifted-rosenbrock-500"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+
+        <!-- guide 4 -->
+        <!-- sphere -->
+        <simulation samples="5">
+            <algorithm idref="guide4"/>
+            <problem idref="shifted-sphere-30"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide4"/>
+            <problem idref="shifted-sphere-150"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide4"/>
+            <problem idref="shifted-sphere-500"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <!-- schweifel -->
+        <simulation samples="5">
+            <algorithm idref="guide4"/>
+            <problem idref="shifted-schwefel-30"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide4"/>
+            <problem idref="shifted-schwefel-150"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide4"/>
+            <problem idref="shifted-schwefel-500"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <!-- rosenbrock -->
+        <simulation samples="5">
+            <algorithm idref="guide4"/>
+            <problem idref="shifted-rosenbrock-30"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide4"/>
+            <problem idref="shifted-rosenbrock-150"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide4"/>
+            <problem idref="shifted-rosenbrock-500"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+
+        <!-- guide 5 -->
+        <!-- sphere -->
+        <simulation samples="5">
+            <algorithm idref="guide5"/>
+            <problem idref="shifted-sphere-30"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide5"/>
+            <problem idref="shifted-sphere-150"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide5"/>
+            <problem idref="shifted-sphere-500"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <!-- schweifel -->
+        <simulation samples="5">
+            <algorithm idref="guide5"/>
+            <problem idref="shifted-schwefel-30"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide5"/>
+            <problem idref="shifted-schwefel-150"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide5"/>
+            <problem idref="shifted-schwefel-500"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <!-- rosenbrock -->
+        <simulation samples="5">
+            <algorithm idref="guide5"/>
+
+            <problem idref="shifted-rosenbrock-30"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide5"/>
+            <problem idref="shifted-rosenbrock-150"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+        <simulation samples="5">
+            <algorithm idref="guide5"/>
+            <problem idref="shifted-rosenbrock-500"/>
+            <measurements idref="fitness" />
+            <output format="TXT" file="data/bbpso-spherical.txt"/>
+        </simulation>
+
     </simulations>
 </simulator>
