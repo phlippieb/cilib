@@ -1,28 +1,197 @@
 <?xml version="1.0"?>
 <!DOCTYPE simulator [
-    <!ENTITY algorithms SYSTEM "assignment3-algorithms.xml">
-    <!ENTITY problems SYSTEM "assignment3-problems.xml">
-    <!ENTITY measurements SYSTEM "assignment3-measurements.xml">
-    <!ATTLIST algorithm id ID #IMPLIED>
-    <!ATTLIST problem id ID #IMPLIED>
-    <!ATTLIST measurements id ID #IMPLIED>
+<!ATTLIST algorithm id ID #IMPLIED>
+<!ATTLIST problem id ID #IMPLIED>
+<!ATTLIST measurements id ID #IMPLIED>
 ]>
 
 <simulator>
 
-    &algorithms;
-    &problems;
-    &measurements;
+	 <!--
+
+        //\\ ||   //\\ //\\ ||\\ || |||| |||| \\// ////
+        //\\ ||   ||\\ |||| ||// ||  ||  |\\| |\/| \\\\
+        //\\ |||| \\// \\// ||\\ ||  ||  |||| |||| ////
+
+    -->
+
+	<algorithms>
+
+        <!-- Rob's example: -->
+        <!-- 1. GA (arithmetic crossover + gaussian mutation) -->
+        <!--algorithm id="ga" class="ec.EC">
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000" />
+            <iterationStrategy class="ec.iterationstrategies.GeneticAlgorithmIterationStrategy">
+                <crossover class="entity.operators.CrossoverOperator">
+                    <selectionStrategy class="util.selection.recipes.TournamentSelector">
+                        <tournamentSize class="controlparameter.ConstantControlParameter" parameter="0.1" />
+                    </selectionStrategy>
+                    <crossoverStrategy class="entity.operators.crossover.real.ArithmeticCrossoverStrategy" />
+                    <crossoverProbability class="controlparameter.ConstantControlParameter" parameter="0.5" />
+                </crossover>
+                <mutationStrategy class="entity.operators.mutation.GaussianMutationStrategy">
+                    <mutationProbability class="controlparameter.ConstantControlParameter" parameter="0.1" />
+                </mutationStrategy>
+            </iterationStrategy>
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="50"/>
+                <entityType class="ec.Individual"/>
+            </initialisationStrategy>
+        </algorithm-->
+
+        <!--
+            genetic evolution
+        -->
+
+        <algorithm id="gen.1" class="ec.EC">
+            <iterationStrategy class="ec.iterationstrategies.GeneticAlgorithmIterationStrategy"/>
+            <!--setStrategyParameterInitialisation class="entity.initialisation.RandomInitialisationStrategy"/-->
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <enityNumber value="1"/>
+                <entityType class="ec.Individual"/>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm>
+
+        <!--
+            differential evolution
+        -->
+
+        <!--algorithm id="dif.1" class="ec.EC">
+            <iterationStrategy class="ec.iterationstrategies.DifferentialEvolutionIterationStrategy"/>
+            <setStrategyParameterInitialisation class="entity.initialisation.RandomInitialisationStrategy"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm-->
+
+        <!--
+            p s o
+        -->
+
+        <!--algorithm id="pso.1" class="pso.PSO">
+            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy"/>
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="1"/>
+                <entityType class="pso.particle.StandardParticle">
+                    <positionProvider class="pso.positionprovider.LinearPositionProvider"/>
+                    <velocityProvider class="pso.velocityprovider.StandardVelocityProvider"/>
+                </entityType>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm>
+
+        <algorithm id="pso.10" class="pso.PSO">
+            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy"/>
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="10"/>
+                <entityType class="pso.particle.StandardParticle">
+                    <positionProvider class="pso.positionprovider.LinearPositionProvider"/>
+                    <velocityProvider class="pso.velocityprovider.StandardVelocityProvider"/>
+                </entityType>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm>
+
+        <algorithm id="pso.100" class="pso.PSO">
+            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy"/>
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="100"/>
+                <entityType class="pso.particle.StandardParticle">
+                    <positionProvider class="pso.positionprovider.LinearPositionProvider"/>
+                    <velocityProvider class="pso.velocityprovider.StandardVelocityProvider"/>
+                </entityType>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm>
+
+        <algorithm id="pso.1000" class="pso.PSO">
+            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy"/>
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="1000"/>
+                <entityType class="pso.particle.StandardParticle">
+                    <positionProvider class="pso.positionprovider.LinearPositionProvider"/>
+                    <velocityProvider class="pso.velocityprovider.StandardVelocityProvider"/>
+                </entityType>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm>
+
+        <algorithm id="pso.10000" class="pso.PSO">
+            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy"/>
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="10000"/>
+                <entityType class="pso.particle.StandardParticle">
+                    <positionProvider class="pso.positionprovider.LinearPositionProvider"/>
+                    <velocityProvider class="pso.velocityprovider.StandardVelocityProvider"/>
+                </entityType>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm-->
+
+        <!--
+            evolutionary programming
+        -->
+
+        <!--algorithm id="evo.1" class="ec.EC">
+            <iterationStrategy class="ec.iterationstrategies.EvolutionaryProgrammingIterationStrategy"/>
+            <setStrategyParameterInitialisation class="entity.initialisation.RandomInitialisationStrategy"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm-->
+    </algorithms>
+
+    <!--
+
+            ||\\ ||\\ //\\ ||\\ ||   //\\ \\// ////
+            ||// ||// |||| ||\\ ||   ||// |\/| \\\\
+            ||   ||\\ \\// ||// |||| \\// |||| ////
+    
+    -->
+
+	<problems>
+        <problem id="f1.10" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^10">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Spherical"/>
+                <!--verticalShift class="controlparameter.ConstantControlParameter" parameter="-450"/-->
+                <horizontalShift class="controlparameter.ConstantControlParameter" parameter="20"/>
+            </function>
+        </problem>
+        <problem id="f1.50" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^50">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Spherical"/>
+                <!--verticalShift class="controlparameter.ConstantControlParameter" parameter="-450"/-->
+                <horizontalShift class="controlparameter.ConstantControlParameter" parameter="20"/>
+            </function>
+        </problem>
+        <problem id="f1.250" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^250">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Spherical"/>
+                <!--verticalShift class="controlparameter.ConstantControlParameter" parameter="-450"/-->
+                <horizontalShift class="controlparameter.ConstantControlParameter" parameter="20"/>
+            </function>
+        </problem>
+
+
+    </problems>
+
+    <!--
+            \\// //\\ //\\ /// |||| ||\\ //\\ \\// //\\ //\\ //// ////
+            |\/| ||// //\\ \\\ |||| ||// ||// |\/| ||// ||||  ||  \\\\
+            |||| \\// //\\ /// \\// ||\\ \\// |||| \\// ||||  ||  ////
+    -->
+
+    <measurements id="fitness" class="simulator.MeasurementSuite" resolution="10">
+        <addMeasurement class="measurement.single.Fitness"/>
+    </measurements>
+
+    <!--
+
+            //// || \\// |||| ||   //\\ |||| || //\\ ||\\ ////
+            \\\\ || |\/| |||| ||   //\\  ||  || |||| |||| \\\\
+            //// || |||| \\// |||| //\\  ||  || \\// |||| ////
+    
+    -->
+
 
     <simulations>
-        <simulation samples="30">
-            <algorithm     idref="ga"/>
-            <problem       idref="f1.10"/>
-            <measurements  idref="fitness"/>
-            <output        format="TXT"
-                           file="data/gen1-f1.10.txt"/>
-        </simulation>
-
         <simulation samples="30">
             <algorithm     idref="gen.1"/>
             <problem       idref="f1.10"/>
