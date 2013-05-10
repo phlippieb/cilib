@@ -1,0 +1,132 @@
+<simulator>
+    <algorithms>
+
+        <algorithm id="ga" class="ec.EC">
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000" />
+            <iterationStrategy class="ec.iterationstrategies.GeneticAlgorithmIterationStrategy">
+                <crossover class="entity.operators.CrossoverOperator">
+                    <selectionStrategy class="util.selection.recipes.TournamentSelector">
+                        <tournamentSize class="controlparameter.ConstantControlParameter" parameter="0.5" />
+                    </selectionStrategy>
+                    <crossoverStrategy class="entity.operators.crossover.real.ArithmeticCrossoverStrategy" />
+                    <crossoverProbability class="controlparameter.ConstantControlParameter" parameter="0.5" />
+                </crossover>
+                <mutationStrategy class="entity.operators.mutation.GaussianMutationStrategy">
+                    <mutationProbability class="controlparameter.ConstantControlParameter" parameter="0.1" />
+                </mutationStrategy>
+            </iterationStrategy>
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="4"/>
+                <entityType class="ec.Individual"/>
+            </initialisationStrategy>
+        </algorithm>
+
+        <!--
+            genetic evolution
+        -->
+
+        <algorithm id="gen.1" class="ec.EC">
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+            <iterationStrategy class="ec.iterationstrategies.GeneticAlgorithmIterationStrategy">
+                <crossover class="entity.operators.CrossoverOperator">
+                    <selectionStrategy class="util.selection.recipes.TournamentSelector">
+                        <tournamentSize class="controlparameter.ConstantControlParameter" parameter="0.1"/>
+                    </selectionStrategy>
+                    <crossoverStrategy class="entity.operators.crossover.real.ArithmeticCrossoverStrategy"/>
+                    <crossoverProbability class="controlparameter.ConstantControlParameter" parameter="0.5"/>
+                </crossover>
+                <mutationStrategy class="entity.operators.mutation.GaussianMutationStrategy">
+                    <mutationProbability class="controlparameter.ConstantControlParameter" parameter="0.1"/>
+                </mutationStrategy>
+            </iterationStrategy>
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="20"/>
+                <entityType class="ec.Individual"/>
+            </initialisationStrategy>
+        </algorithm>
+
+        <!--
+            differential evolution
+        -->
+
+        <!--algorithm id="dif.1" class="ec.EC">
+            <iterationStrategy class="ec.iterationstrategies.DifferentialEvolutionIterationStrategy"/>
+            <setStrategyParameterInitialisation class="entity.initialisation.RandomInitialisationStrategy"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm-->
+
+        <!--
+            p s o
+        -->
+
+        <!--algorithm id="pso.1" class="pso.PSO">
+            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy"/>
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="1"/>
+                <entityType class="pso.particle.StandardParticle">
+                    <positionProvider class="pso.positionprovider.LinearPositionProvider"/>
+                    <velocityProvider class="pso.velocityprovider.StandardVelocityProvider"/>
+                </entityType>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm>
+
+        <algorithm id="pso.10" class="pso.PSO">
+            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy"/>
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="10"/>
+                <entityType class="pso.particle.StandardParticle">
+                    <positionProvider class="pso.positionprovider.LinearPositionProvider"/>
+                    <velocityProvider class="pso.velocityprovider.StandardVelocityProvider"/>
+                </entityType>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm>
+
+        <algorithm id="pso.100" class="pso.PSO">
+            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy"/>
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="100"/>
+                <entityType class="pso.particle.StandardParticle">
+                    <positionProvider class="pso.positionprovider.LinearPositionProvider"/>
+                    <velocityProvider class="pso.velocityprovider.StandardVelocityProvider"/>
+                </entityType>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm>
+
+        <algorithm id="pso.1000" class="pso.PSO">
+            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy"/>
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="1000"/>
+                <entityType class="pso.particle.StandardParticle">
+                    <positionProvider class="pso.positionprovider.LinearPositionProvider"/>
+                    <velocityProvider class="pso.velocityprovider.StandardVelocityProvider"/>
+                </entityType>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm>
+
+        <algorithm id="pso.10000" class="pso.PSO">
+            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy"/>
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="10000"/>
+                <entityType class="pso.particle.StandardParticle">
+                    <positionProvider class="pso.positionprovider.LinearPositionProvider"/>
+                    <velocityProvider class="pso.velocityprovider.StandardVelocityProvider"/>
+                </entityType>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm-->
+
+        <!--
+            evolutionary programming
+        -->
+
+        <!--algorithm id="evo.1" class="ec.EC">
+            <iterationStrategy class="ec.iterationstrategies.EvolutionaryProgrammingIterationStrategy"/>
+            <setStrategyParameterInitialisation class="entity.initialisation.RandomInitialisationStrategy"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm-->
+    </algorithms>
+</simulator>

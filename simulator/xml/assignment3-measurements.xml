@@ -1,0 +1,5 @@
+<simulator>
+	<measurements id="fitness" class="simulator.MeasurementSuite" resolution="10">
+	    <addMeasurement class="measurement.single.Fitness"/>
+	</measurements>
+</simulator>
