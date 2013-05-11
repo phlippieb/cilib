@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<!DOCTYPE simulator [
+    <!ENTITY genetic-algorithms SYSTEM "assignment3-genetic-algorithms.xml">
+    <!ENTITY differential-algorithms SYSTEM "assignment3-differential-algorithms.xml">
+    <!ENTITY evolutionary-algorithms SYSTEM "assignment3-evolutionary-algorithms.xml">
+    <!ENTITY pso-algorithms SYSTEM "assignment3-pso-algorithms.xml">
+    <!ENTITY problems SYSTEM "assignment3-problems.xml">
+    <!ENTITY measurements SYSTEM "assignment3-measurements.xml">
+    <!ATTLIST algorithm id ID #IMPLIED>
+    <!ATTLIST problem id ID #IMPLIED>
+    <!ATTLIST measurements id ID #IMPLIED>
+]>
+
+<simulator>
+
+    &genetic-algorithms;
+    &differential-algorithms;
+    &evolutionary-algorithms;
+    &pso-algorithms;
+
+    &problems;
+
+    &measurements;
+
+    <simulations>
+        
+        <simulation>
+            <algorithm idref="pso.5.2000"/>
+            <problem idref="schwefel.5"/>
+            <measurements idref="fitness"/>
+            <output format="TXT" file="data/tmp1.txt"/>
+        </simulation>
+        <simulation>
+            <algorithm idref="dif.5.2000"/>
+            <problem idref="schwefel.5"/>
+            <measurements idref="fitness"/>
+            <output format="TXT" file="data/tmp1.txt"/>
+        </simulation>
+        <simulation>
+            <algorithm idref="gen.5.2000"/>
+            <problem idref="schwefel.5"/>
+            <measurements idref="fitness"/>
+            <output format="TXT" file="data/tmp1.txt"/>
+        </simulation>
+        <simulation>
+            <algorithm idref="evo.5.2000"/>
+            <problem idref="schwefel.5"/>
+            <measurements idref="fitness"/>
+            <output format="TXT" file="data/tmp1.txt"/>
+        </simulation>
+
+                <simulation>
+            <algorithm idref="pso.5.2000"/>
+            <problem idref="elliptic.5"/>
+            <measurements idref="fitness"/>
+            <output format="TXT" file="data/tmp1.txt"/>
+        </simulation>
+        <simulation>
+            <algorithm idref="dif.5.2000"/>
+            <problem idref="elliptic.5"/>
+            <measurements idref="fitness"/>
+            <output format="TXT" file="data/tmp1.txt"/>
+        </simulation>
+        <simulation>
+            <algorithm idref="gen.5.2000"/>
+            <problem idref="elliptic.5"/>
+            <measurements idref="fitness"/>
+            <output format="TXT" file="data/tmp1.txt"/>
+        </simulation>
+        <simulation>
+            <algorithm idref="evo.5.2000"/>
+            <problem idref="elliptic.5"/>
+            <measurements idref="fitness"/>
+            <output format="TXT" file="data/tmp1.txt"/>
+        </simulation>
+
+                <simulation>
+            <algorithm idref="pso.5.2000"/>
+            <problem idref="rastrigin.5"/>
+            <measurements idref="fitness"/>
+            <output format="TXT" file="data/tmp1.txt"/>
+        </simulation>
+        <simulation>
+            <algorithm idref="dif.5.2000"/>
+            <problem idref="rastrigin.5"/>
+            <measurements idref="fitness"/>
+            <output format="TXT" file="data/tmp1.txt"/>
+        </simulation>
+        <simulation>
+            <algorithm idref="gen.5.2000"/>
+            <problem idref="rastrigin.5"/>
+            <measurements idref="fitness"/>
+            <output format="TXT" file="data/tmp1.txt"/>
+        </simulation>
+        <simulation>
+            <algorithm idref="evo.5.2000"/>
+            <problem idref="rastrigin.5"/>
+            <measurements idref="fitness"/>
+            <output format="TXT" file="data/tmp1.txt"/>
+        </simulation>
+
+                <simulation>
+            <algorithm idref="pso.5.2000"/>
+            <problem idref="ackley.5"/>
+            <measurements idref="fitness"/>
+            <output format="TXT" file="data/tmp1.txt"/>
+        </simulation>
+        <simulation>
+            <algorithm idref="dif.5.2000"/>
+            <problem idref="ackley.5"/>
+            <measurements idref="fitness"/>
+            <output format="TXT" file="data/tmp1.txt"/>
+        </simulation>
+        <simulation>
+            <algorithm idref="gen.5.2000"/>
+            <problem idref="ackley.5"/>
+            <measurements idref="fitness"/>
+            <output format="TXT" file="data/tmp1.txt"/>
+        </simulation>
+        <simulation>
+            <algorithm idref="evo.5.2000"/>
+            <problem idref="ackley.5"/>
+            <measurements idref="fitness"/>
+            <output format="TXT" file="data/tmp1.txt"/>
+        </simulation>
+
+                <simulation>
+            <algorithm idref="pso.5.2000"/>
+            <problem idref="weierstrass.5"/>
+            <measurements idref="fitness"/>
+            <output format="TXT" file="data/tmp1.txt"/>
+        </simulation>
+        <simulation>
+            <algorithm idref="dif.5.2000"/>
+            <problem idref="weierstrass.5"/>
+            <measurements idref="fitness"/>
+            <output format="TXT" file="data/tmp1.txt"/>
+        </simulation>
+        <simulation>
+            <algorithm idref="gen.5.2000"/>
+            <problem idref="weierstrass.5"/>
+            <measurements idref="fitness"/>
+            <output format="TXT" file="data/tmp1.txt"/>
+        </simulation>
+        <simulation>
+            <algorithm idref="evo.5.2000"/>
+            <problem idref="weierstrass.5"/>
+            <measurements idref="fitness"/>
+            <output format="TXT" file="data/tmp1.txt"/>
+        </simulation>
+
+                <simulation>
+            <algorithm idref="pso.5.2000"/>
+            <problem idref="griewank.5"/>
+            <measurements idref="fitness"/>
+            <output format="TXT" file="data/tmp1.txt"/>
+        </simulation>
+        <simulation>
+            <algorithm idref="dif.5.2000"/>
+            <problem idref="griewank.5"/>
+            <measurements idref="fitness"/>
+            <output format="TXT" file="data/tmp1.txt"/>
+        </simulation>
+        <simulation>
+            <algorithm idref="gen.5.2000"/>
+            <problem idref="griewank.5"/>
+            <measurements idref="fitness"/>
+            <output format="TXT" file="data/tmp1.txt"/>
+        </simulation>
+        <simulation>
+            <algorithm idref="evo.5.2000"/>
+            <problem idref="griewank.5"/>
+            <measurements idref="fitness"/>
+            <output format="TXT" file="data/tmp1.txt"/>
+        </simulation>
+
+    </simulations>
+</simulator>

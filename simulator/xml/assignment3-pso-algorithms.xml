@@ -1,0 +1,245 @@
+<simulator>
+	<algorithms>
+		<!--
+		PSO
+		population: 5
+		iterations: 2000
+		-->
+		<algorithm id="pso.5.2000" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="5"/>
+                <entityType class="pso.particle.StandardParticle"/>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm>
+
+        <!--
+		PSO
+		population: 25
+		iterations: 2000
+		-->
+		<algorithm id="pso.25.2000" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="25"/>
+                <entityType class="pso.particle.StandardParticle"/>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm>
+
+        <!--
+		PSO
+		population: 100
+		iterations: 2000
+		-->
+		<algorithm id="pso.100.2000" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="100"/>
+                <entityType class="pso.particle.StandardParticle"/>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm>
+
+        <!--
+		PSO
+		population: 500
+		iterations: 2000
+		-->
+		<algorithm id="pso.500.2000" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="500"/>
+                <entityType class="pso.particle.StandardParticle"/>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm>
+
+        <!--
+		PSO
+		population: 1000
+		iterations: 2000
+		-->
+		<algorithm id="pso.1000.2000" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="1000"/>
+                <entityType class="pso.particle.StandardParticle"/>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm>
+
+        <!--
+		PSO
+		population: 3000
+		iterations: 2000
+		-->
+		<algorithm id="pso.3000.2000" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="3000"/>
+                <entityType class="pso.particle.StandardParticle"/>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm>
+
+
+
+
+        <!--
+		PSO
+		population: 5
+		iterations: 5000
+		-->
+		<algorithm id="pso.5.5000" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="5"/>
+                <entityType class="pso.particle.StandardParticle"/>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="5000"/>
+        </algorithm>
+
+        <!--
+		PSO
+		population: 25
+		iterations: 5000
+		-->
+		<algorithm id="pso.25.5000" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="25"/>
+                <entityType class="pso.particle.StandardParticle"/>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="5000"/>
+        </algorithm>
+
+        <!--
+		PSO
+		population: 100
+		iterations: 5000
+		-->
+		<algorithm id="pso.100.5000" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="100"/>
+                <entityType class="pso.particle.StandardParticle"/>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="5000"/>
+        </algorithm>
+
+        <!--
+		PSO
+		population: 500
+		iterations: 5000
+		-->
+		<algorithm id="pso.500.5000" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="500"/>
+                <entityType class="pso.particle.StandardParticle"/>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="5000"/>
+        </algorithm>
+
+        <!--
+		PSO
+		population: 1000
+		iterations: 5000
+		-->
+		<algorithm id="pso.1000.5000" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="1000"/>
+                <entityType class="pso.particle.StandardParticle"/>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="5000"/>
+        </algorithm>
+
+        <!--
+		PSO
+		population: 3000
+		iterations: 5000
+		-->
+		<algorithm id="pso.3000.5000" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="3000"/>
+                <entityType class="pso.particle.StandardParticle"/>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="5000"/>
+        </algorithm>
+
+
+
+
+
+        <!--
+		PSO
+		population: 5
+		iterations: 10000
+		-->
+		<algorithm id="pso.5.10000" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="5"/>
+                <entityType class="pso.particle.StandardParticle"/>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="10000"/>
+        </algorithm>
+
+        <!--
+		PSO
+		population: 25
+		iterations: 10000
+		-->
+		<algorithm id="pso.25.10000" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="25"/>
+                <entityType class="pso.particle.StandardParticle"/>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="10000"/>
+        </algorithm>
+
+        <!--
+		PSO
+		population: 100
+		iterations: 10000
+		-->
+		<algorithm id="pso.100.10000" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="100"/>
+                <entityType class="pso.particle.StandardParticle"/>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="10000"/>
+        </algorithm>
+
+        <!--
+		PSO
+		population: 500
+		iterations: 10000
+		-->
+		<algorithm id="pso.500.10000" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="500"/>
+                <entityType class="pso.particle.StandardParticle"/>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="10000"/>
+        </algorithm>
+
+        <!--
+		PSO
+		population: 1000
+		iterations: 10000
+		-->
+		<algorithm id="pso.1000.10000" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="1000"/>
+                <entityType class="pso.particle.StandardParticle"/>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="10000"/>
+        </algorithm>
+
+        <!--
+		PSO
+		population: 3000
+		iterations: 10000
+		-->
+		<algorithm id="pso.3000.10000" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="3000"/>
+                <entityType class="pso.particle.StandardParticle"/>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="10000"/>
+        </algorithm>
+        
+	</algorithms>
+</simulator>

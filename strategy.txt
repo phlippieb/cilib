@@ -1,0 +1,78 @@
+strategy
+========
+
+algorithms:
+	genetic
+		arithmetic crossover
+		gaussian mutation
+		own choice parameters and operators
+	differential
+		own choice
+	pso
+		own choice
+	evolutionary program
+		own choice
+	
+problems:
+	choose:
+	-------
+		Shifted Schwefel 1.2 with noise (uni-modal, non-sep)
+		Shifted Elliptic (uni-m (?), sep)
+		Shifted Rastrigin (multi-m, sep)
+		Shifted Ackly (multi-m, sep)
+		Rotated Griewank (multi-m, rotated)
+		Rotated Weierstrass (multi-m, rotated)	
+
+	choose from:
+	------------
+	uni-modal
+		Shifted Sphere
+		Shifted Schwefel 1.2
+		Shifted Schwefel 1.2 with noise
+		Shifted Schwefel 2.6 with global optimum on bounds
+		Shifted Rotated High Conditioned Elliptic
+	multi-modal
+		Shifted Rosenbrock
+		Shifted Rotated Griewank without bounds
+		Shifted Rotated Ackley with global optimum on bounds
+		Shifted Rastrigin
+		Shifted Rotated Rastrigin
+		Shifted Rotated Weierstrass
+		Schwefel 2.13
+		Rotation Peak
+	separable
+		Shifted Elliptic
+		Shifted Rastrigin
+		Shifted Ackley
+	non-separable
+		Shifted Schwefel 1.2
+		Shifted Rosenbrock
+	rotated
+		Shifted Rotated High Conditioned Elliptic
+		Shifted Rotated Griewank without bounds
+		Shifted Rotated Ackley with global optimum on bounds
+		Shifted Rotated Rastrigin
+		Shifted Rotated Weiestrass
+		Rotation Peak
+
+try different
+	population sizes
+		5
+		25
+		100
+		500
+		1000
+		3000
+	problem dimensions
+		5
+		50
+		500
+	number of iterations
+		2000
+		5000
+		10000
+
+find
+	if any, maximum population size after which performance deteriorates
+	if any, relationship between pop size, problem dimensions, and iterations
+	compare optimal pop sizes for different algorithms
