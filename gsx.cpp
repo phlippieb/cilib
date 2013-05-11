@@ -3,10 +3,10 @@
 using namespace std;
 
 void generateSimulationXML (string algorithm, int populationSize, int iterations, string problem, int dimensions) {
-	cout << "<simulation samples=\"30\">" << endl;
+	cout << "<simulation samples=\"10\">" << endl;
 	cout << "	<algorithm idref=\"" << algorithm << '.' << populationSize << '.' << iterations <<"\"/>" << endl;
 	cout << "	<problem idref=\"" << problem << '.' << dimensions << "\"/>" << endl;
-	cout << "	<measurement idref=\"fitness\"/>" << endl;
+	cout << "	<measurements idref=\"fitness\"/>" << endl;
 	cout << "	<output format=\"TXT\" file=\"" << algorithm << '.' << populationSize << '.' << iterations << '.' << problem << '.' << dimensions << "\"/>" << endl;
 	cout << "</simulation>" << endl;
 	cout << endl;
@@ -16,17 +16,17 @@ int main () {
 	int algorithmsSize = 4;
 	string algorithms [] = {"dif", "evo", "gen", "pso"};
 
-	int populationSizesSize = 6;
-	int populationSizes [] = {5, 25, 100, 500, 1000, 3000};
+	int populationSizesSize = 4;
+	int populationSizes [] = {5, 25, 100, 500};
 
-	int iterationValuesSize = 3;
-	int iterationValues [] = {2000, 5000, 10000};
+	int iterationValuesSize = 1;
+	int iterationValues [] = {2000};
 
-	int problemsSize = 6;
-	string problems [] = {"schwefel", "elliptic", "rastrigin",  "ackley", "griewank", "weierstrass"};
+	int problemsSize = 4;
+	string problems [] = {"schwefel", "elliptic", "rastrigin", "griewank"};
 
 	int dimensionValuesSize = 3;
-	int dimensionValues [] = {5, 50, 500};
+	int dimensionValues [] = {5, 25, 100};
 
 	for (int i = algorithmsSize; i > 0; i--) {
 		for (int j = populationSizesSize; j > 0; j--) {
