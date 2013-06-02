@@ -1,0 +1,106 @@
+<simulator>    
+    <algorithms>
+        <algorithm id="sade50rand" class="ec.EC">
+			<iterationStrategy class="ec.iterationstrategies.SaDEIterationStrategy">
+				<targetVectorSelectionStrategy class="util.selection.recipes.RandomSelector"/>
+			</iterationStrategy>
+			<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="50"/>
+                <entityType class="ec.SaDEIndividual">
+                	<trialVectorCreationStrategy class="entity.operators.creation.SaDECreationStrategy"/>
+                </entityType>
+            </initialisationStrategy>
+		    <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="50000"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition">
+                <measurement class="measurement.single.Fitness"/>
+                <predicate class="stoppingcondition.Minimum"/>
+                <target value="1"/>
+            </addStoppingCondition>
+        </algorithm>
+        <algorithm id="sade100rand" class="ec.EC">
+            <iterationStrategy class="ec.iterationstrategies.SaDEIterationStrategy">
+                <targetVectorSelectionStrategy class="util.selection.recipes.RandomSelector"/>
+            </iterationStrategy>
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="100"/>
+                <entityType class="ec.SaDEIndividual">
+                    <trialVectorCreationStrategy class="entity.operators.creation.SaDECreationStrategy"/>
+                </entityType>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="50000"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition">
+                <measurement class="measurement.single.Fitness"/>
+                <predicate class="stoppingcondition.Minimum"/>
+                <target value="1"/>
+            </addStoppingCondition>
+        </algorithm>
+        <algorithm id="sade200rand" class="ec.EC">
+            <iterationStrategy class="ec.iterationstrategies.SaDEIterationStrategy">
+                <targetVectorSelectionStrategy class="util.selection.recipes.RandomSelector"/>
+            </iterationStrategy>
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="200"/>
+                <entityType class="ec.SaDEIndividual">
+                    <trialVectorCreationStrategy class="entity.operators.creation.SaDECreationStrategy"/>
+                </entityType>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="50000"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition">
+                <measurement class="measurement.single.Fitness"/>
+                <predicate class="stoppingcondition.Minimum"/>
+                <target value="1"/>
+            </addStoppingCondition>
+        </algorithm>
+        <algorithm id="sade500rand" class="ec.EC">
+            <iterationStrategy class="ec.iterationstrategies.SaDEIterationStrategy">
+                <targetVectorSelectionStrategy class="util.selection.recipes.RandomSelector"/>
+            </iterationStrategy>
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="500"/>
+                <entityType class="ec.SaDEIndividual">
+                    <trialVectorCreationStrategy class="entity.operators.creation.SaDECreationStrategy"/>
+                </entityType>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="50000"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition">
+                <measurement class="measurement.single.Fitness"/>
+                <predicate class="stoppingcondition.Minimum"/>
+                <target value="1"/>
+            </addStoppingCondition>
+        </algorithm>
+        <algorithm id="sade1000rand" class="ec.EC">
+            <iterationStrategy class="ec.iterationstrategies.SaDEIterationStrategy">
+                <targetVectorSelectionStrategy class="util.selection.recipes.RandomSelector"/>
+            </iterationStrategy>
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="1000"/>
+                <entityType class="ec.SaDEIndividual">
+                    <trialVectorCreationStrategy class="entity.operators.creation.SaDECreationStrategy"/>
+                </entityType>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="50000"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition">
+                <measurement class="measurement.single.Fitness"/>
+                <predicate class="stoppingcondition.Minimum"/>
+                <target value="1"/>
+            </addStoppingCondition>
+        </algorithm>
+        <algorithm id="sade2000rand" class="ec.EC">
+            <iterationStrategy class="ec.iterationstrategies.SaDEIterationStrategy">
+                <targetVectorSelectionStrategy class="util.selection.recipes.RandomSelector"/>
+            </iterationStrategy>
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="2000"/>
+                <entityType class="ec.SaDEIndividual">
+                    <trialVectorCreationStrategy class="entity.operators.creation.SaDECreationStrategy"/>
+                </entityType>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="50000"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition">
+                <measurement class="measurement.single.Fitness"/>
+                <predicate class="stoppingcondition.Minimum"/>
+                <target value="1"/>
+            </addStoppingCondition>
+        </algorithm>
+    </algorithms>
+</simulator>

@@ -10,12 +10,12 @@ import net.sourceforge.cilib.functions.DiscreteFunction;
 import net.sourceforge.cilib.type.types.container.Vector;
 import net.sourceforge.cilib.type.types.Int;
 
-public class Soduko implements DiscreteFunction {
+public class Sudoku3 implements DiscreteFunction {
 
 	int [][] board = new int [9][9];
 	boolean [][] fixedPositions = new boolean [9][9];
 
-	public Soduko () {
+	public Sudoku3 () {
 		for (int i = 0; i < 9; i++) {
 			for (int j = 0; j < 9; j++) {
 				fixedPositions[i][j] = false;
@@ -72,19 +72,19 @@ public class Soduko implements DiscreteFunction {
 					}
 				}
 				if (!numberIsPresentInRow) {
-					//fitness++;
+					fitness++;
 					rowIsCorrect = false;
 				}
 				if (!numberIsPresentInCol) {
-					//fitness++;
+					fitness++;
 					colIsCorrect = false;
 				}
 			}
 			if (!rowIsCorrect) {
-				fitness++;
+				fitness+=9;
 			}
 			if (!colIsCorrect) {
-				fitness++;
+				fitness+=9;
 			}
 		}
 
@@ -105,17 +105,16 @@ public class Soduko implements DiscreteFunction {
 						}
 					}
 					if (!numberIsPresentInBlock) {
-						//fitness++;
+						fitness++;
 						blockIsCorrect = false;
 					}
 				}
 				if (!blockIsCorrect) {
-					fitness++;
+					fitness+=9;
 				}
 			}
 		}
 
-		//return scaleFitness(fitness);
 		return fitness;
 
 	}
@@ -132,13 +131,6 @@ public class Soduko implements DiscreteFunction {
 
 	public void setFixedValue (SodukoFixedValue val) {
 		this.setFixedValue (val.x, val.y, val.v);
-	}	
-
-	//scale the fitness so that improvements close to zero collisions are better than improvements at high collisions
-	//dont use this as it is literally pointless
-	int scaleFitness (int f) {
-		double fitness = f;
-		return (int)(Math.log(f+1)*3);
 	}
 }
 

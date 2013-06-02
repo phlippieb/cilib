@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE simulator [
+<!ENTITY puzzles SYSTEM "puzzles.xml">
+<!ENTITY algorithms SYSTEM "algorithms.xml">
+<!ENTITY SADE-tournament-algorithms SYSTEM "sade-tour.xml">
+<!ENTITY SADE-random-algorithms SYSTEM "sade-rand.xml">
 <!ATTLIST algorithm id ID #IMPLIED>
 <!ATTLIST problem id ID #IMPLIED>
 <!ATTLIST measurements id ID #IMPLIED>
@@ -7,41 +11,12 @@
 
 <simulator>		
 
-	<algorithms>
-	
+	&SADE-tournament-algorithms;
+    &SADE-random-algorithms;
 
-	        <algorithm id="a" class="pso.PSO">
-	            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy"/>
-	            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
-	                <entityNumber value="10"/>
-	                <entityType class="pso.particle.StandardParticle">
-	                    <particleBehavior class="pso.particle.ParticleBehavior">
-	                    </particleBehavior>
-	                    <positionProvider class="pso.positionprovider.LinearPositionProvider"/>
-	                    <velocityProvider class="pso.velocityprovider.StandardVelocityProvider">
-	                        <!-- velocity provider params-->
-	                    </velocityProvider>
-	                </entityType>
-	            </initialisationStrategy>
-	            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="100000"/>
-    	</algorithm>
-    
+    &puzzles;
 
-    </algorithms>
-
-
-    <problems>
-
-
-        <problem id="f" class="problem.FunctionOptimisationProblem" domain="R(0:10)^81">
-            <function class="functions.discrete.Soduko" />
-        </problem>
-
-
-    </problems>
-
-
-    <measurements id="fitness" class="simulator.MeasurementSuite" resolution="200">
+    <measurements id="fitness" class="simulator.MeasurementSuite" resolution="5">
     	<addMeasurement class="measurement.single.Fitness"/>
 	</measurements>
 
@@ -50,13 +25,80 @@
 	<simulations>
 
 
-        <simulation samples="1">
-            <algorithm     idref="a"/>
-            <problem       idref="f"/>
+        <!--simulation samples="4">
+            <algorithm     idref="sade50tour"/>
+            <problem       idref="p001p"/>
             <measurements  idref="fitness"/>
-            <output        format="TXT" file="data/test.txt"/>
-      	</simulation>
+            <output        format="TXT" file="data/sade50tour-p.txt"/>
+        </simulation>
+        <simulation samples="4">
+            <algorithm     idref="sade100tour"/>
+            <problem       idref="p001p"/>
+            <measurements  idref="fitness"/>
+            <output        format="TXT" file="data/sade100tour-p.txt"/>
+        </simulation>
+        <simulation samples="4">
+            <algorithm     idref="sade200tour"/>
+            <problem       idref="p001p"/>
+            <measurements  idref="fitness"/>
+            <output        format="TXT" file="data/sade200tour-p.txt"/>
+        </simulation>
+        <simulation samples="4">
+            <algorithm     idref="sade500tour"/>
+            <problem       idref="p001i"/>
+            <measurements  idref="fitness"/>
+            <output        format="TXT" file="data/sade500tour-p.txt"/>
+        </simulation>
+        <simulation samples="4">
+            <algorithm     idref="sade1000tour"/>
+            <problem       idref="p001i"/>
+            <measurements  idref="fitness"/>
+            <output        format="TXT" file="data/sade1000tour-p.txt"/>
+        </simulation>
+        <simulation samples="4">
+            <algorithm     idref="sade2000tour"/>
+            <problem       idref="p001i"/>
+            <measurements  idref="fitness"/>
+            <output        format="TXT" file="data/sade2000-p.txt"/>
+        </simulation-->
 
+        <simulation samples="4">
+            <algorithm     idref="sade50rand"/>
+            <problem       idref="p001p"/>
+            <measurements  idref="fitness"/>
+            <output        format="TXT" file="data/sade50rand-p.txt"/>
+        </simulation>
+        <simulation samples="4">
+            <algorithm     idref="sade100rand"/>
+            <problem       idref="p001p"/>
+            <measurements  idref="fitness"/>
+            <output        format="TXT" file="data/sade100rand-p.txt"/>
+        </simulation>
+        <simulation samples="4">
+            <algorithm     idref="sade200rand"/>
+            <problem       idref="p001p"/>
+            <measurements  idref="fitness"/>
+            <output        format="TXT" file="data/sade200rand-p.txt"/>
+        </simulation>
+        <simulation samples="4">
+            <algorithm     idref="sade500rand"/>
+            <problem       idref="p001i"/>
+            <measurements  idref="fitness"/>
+            <output        format="TXT" file="data/sade500rand-i.txt"/>
+        </simulation>
+        <simulation samples="4">
+            <algorithm     idref="sade1000rand"/>
+            <problem       idref="p001i"/>
+            <measurements  idref="fitness"/>
+            <output        format="TXT" file="data/sade1000rand-i.txt"/>
+        </simulation>
+        <simulation samples="4">
+            <algorithm     idref="sade2000rand"/>
+            <problem       idref="p001i"/>
+            <measurements  idref="fitness"/>
+            <output        format="TXT" file="data/sade2000rand-ir.txt"/>
+        </simulation>
+        
 
   </simulations>
 </simulator>

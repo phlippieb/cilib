@@ -110,6 +110,9 @@ public class SaDEIterationStrategy extends AbstractIterationStrategy<EC> {
             offspringEntity.calculateFitness();
 
             boolean acceptedOffspring = false;
+            /**
+            *   I think this part might be wrong. testing by inverting the > to <. (was >).
+            */
             if (offspringEntity.getFitness().compareTo(current.getFitness()) > 0) { // the trial vector is better than the parent
                 acceptedOffspring = true;
             }

@@ -10,12 +10,12 @@ import net.sourceforge.cilib.functions.DiscreteFunction;
 import net.sourceforge.cilib.type.types.container.Vector;
 import net.sourceforge.cilib.type.types.Int;
 
-public class Soduko implements DiscreteFunction {
+public class Sudoku1 implements DiscreteFunction {
 
 	int [][] board = new int [9][9];
 	boolean [][] fixedPositions = new boolean [9][9];
 
-	public Soduko () {
+	public Sudoku1 () {
 		for (int i = 0; i < 9; i++) {
 			for (int j = 0; j < 9; j++) {
 				fixedPositions[i][j] = false;
