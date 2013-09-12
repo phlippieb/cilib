@@ -1,119 +1,99 @@
 <simulator>
-	<algorithms>
+    <algorithms>
 
-		<algorithm id="sade50" class="ec.EC">
-			<iterationStrategy class="ec.iterationstrategies.SaDEIterationStrategy">
-				<targetVectorSelectionStrategy class="util.selection.recipes.TournamentSelector">
-					<tournamentSize class="controlparameter.ConstantControlParameter" parameter="0.1"/>
-				</targetVectorSelectionStrategy>
-			</iterationStrategy>
-			<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
-                <entityNumber value="50"/>
-                <entityType class="ec.SaDEIndividual">
-                	<trialVectorCreationStrategy class="entity.operators.creation.SaDECreationStrategy"/>
-                </entityType>
+        <!-- 
+            gbest pso
+        -->
+        <algorithm id="gbest.5" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="5"/>
+                <entityType class="pso.particle.StandardParticle"/>
             </initialisationStrategy>
-		    <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="100000"/>
-            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition">
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="10000"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="0">
                 <measurement class="measurement.single.Fitness"/>
-                <predicate class="stoppingcondition.Minimum"/>
-                <target value="1"/>
+                <predicate class="stoppingcondition.Maximum"/>
             </addStoppingCondition>
         </algorithm>
-        <algorithm id="sade100" class="ec.EC">
-            <iterationStrategy class="ec.iterationstrategies.SaDEIterationStrategy">
-                <targetVectorSelectionStrategy class="util.selection.recipes.TournamentSelector">
-                    <tournamentSize class="controlparameter.ConstantControlParameter" parameter="0.1"/>
-                </targetVectorSelectionStrategy>
-            </iterationStrategy>
+        <algorithm id="gbest.25" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="25"/>
+                <entityType class="pso.particle.StandardParticle"/>
+            </initialisationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="10000"/>
+        </algorithm>
+        <algorithm id="gbest.100" class="pso.PSO">
             <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
                 <entityNumber value="100"/>
-                <entityType class="ec.SaDEIndividual">
-                    <trialVectorCreationStrategy class="entity.operators.creation.SaDECreationStrategy"/>
-                </entityType>
+                <entityType class="pso.particle.StandardParticle"/>
             </initialisationStrategy>
-            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="100000"/>
-            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition">
-                <measurement class="measurement.single.Fitness"/>
-                <predicate class="stoppingcondition.Minimum"/>
-                <target value="1"/>
-            </addStoppingCondition>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="10000"/>
         </algorithm>
-        <algorithm id="sade200" class="ec.EC">
-            <iterationStrategy class="ec.iterationstrategies.SaDEIterationStrategy">
-                <targetVectorSelectionStrategy class="util.selection.recipes.TournamentSelector">
-                    <tournamentSize class="controlparameter.ConstantControlParameter" parameter="0.1"/>
-                </targetVectorSelectionStrategy>
-            </iterationStrategy>
+
+
+
+        <!--
+            lbest pso
+        -->
+        <algorithm id="lbest.5" class="pso.PSO">
             <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
-                <entityNumber value="200"/>
-                <entityType class="ec.SaDEIndividual">
-                    <trialVectorCreationStrategy class="entity.operators.creation.SaDECreationStrategy"/>
-                </entityType>
+                <entityNumber value="5"/>
+                <entityType class="pso.particle.StandardParticle"/>
             </initialisationStrategy>
-            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="100000"/>
-            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition">
-                <measurement class="measurement.single.Fitness"/>
-                <predicate class="stoppingcondition.Minimum"/>
-                <target value="1"/>
-            </addStoppingCondition>
+            <topology class="entity.topologies.LBestTopology"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="10000"/>
         </algorithm>
-        <algorithm id="sade500" class="ec.EC">
-            <iterationStrategy class="ec.iterationstrategies.SaDEIterationStrategy">
-                <targetVectorSelectionStrategy class="util.selection.recipes.TournamentSelector">
-                    <tournamentSize class="controlparameter.ConstantControlParameter" parameter="0.1"/>
-                </targetVectorSelectionStrategy>
-            </iterationStrategy>
+        <algorithm id="lbest.25" class="pso.PSO">
             <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
-                <entityNumber value="500"/>
-                <entityType class="ec.SaDEIndividual">
-                    <trialVectorCreationStrategy class="entity.operators.creation.SaDECreationStrategy"/>
-                </entityType>
+                <entityNumber value="25"/>
+                <entityType class="pso.particle.StandardParticle"/>
             </initialisationStrategy>
-            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="100000"/>
-            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition">
-                <measurement class="measurement.single.Fitness"/>
-                <predicate class="stoppingcondition.Minimum"/>
-                <target value="1"/>
-            </addStoppingCondition>
+            <topology class="entity.topologies.LBestTopology"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="10000"/>
         </algorithm>
-        <algorithm id="sade1000" class="ec.EC">
-            <iterationStrategy class="ec.iterationstrategies.SaDEIterationStrategy">
-                <targetVectorSelectionStrategy class="util.selection.recipes.TournamentSelector">
-                    <tournamentSize class="controlparameter.ConstantControlParameter" parameter="0.1"/>
-                </targetVectorSelectionStrategy>
-            </iterationStrategy>
+        <algorithm id="lbest.100" class="pso.PSO">
             <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
-                <entityNumber value="1000"/>
-                <entityType class="ec.SaDEIndividual">
-                    <trialVectorCreationStrategy class="entity.operators.creation.SaDECreationStrategy"/>
-                </entityType>
+                <entityNumber value="100"/>
+                <entityType class="pso.particle.StandardParticle"/>
             </initialisationStrategy>
-            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="100000"/>
-            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition">
-                <measurement class="measurement.single.Fitness"/>
-                <predicate class="stoppingcondition.Minimum"/>
-                <target value="1"/>
-            </addStoppingCondition>
+            <topology class="entity.topologies.LBestTopology"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="10000"/>
         </algorithm>
-        <algorithm id="sade2000" class="ec.EC">
-            <iterationStrategy class="ec.iterationstrategies.SaDEIterationStrategy">
-                <targetVectorSelectionStrategy class="util.selection.recipes.TournamentSelector">
-                    <tournamentSize class="controlparameter.ConstantControlParameter" parameter="0.1"/>
-                </targetVectorSelectionStrategy>
-            </iterationStrategy>
+
+
+
+        <!--
+            guaranteed convergence pso
+        -->
+        <algorithm id="gcpso.5" class="pso.PSO">
             <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
-                <entityNumber value="2000"/>
-                <entityType class="ec.SaDEIndividual">
-                    <trialVectorCreationStrategy class="entity.operators.creation.SaDECreationStrategy"/>
+                <entityNumber value="5"/>
+                <entityType class="pso.particle.StandardParticle">
+                    <velocityProvider class="pso.velocityprovider.GCVelocityProvider"/>
                 </entityType>
             </initialisationStrategy>
-            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="100000"/>
-            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition">
-                <measurement class="measurement.single.Fitness"/>
-                <predicate class="stoppingcondition.Minimum"/>
-                <target value="1"/>
-            </addStoppingCondition>
+            <topology class="entity.topologies.LBestTopology"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="10000"/>
         </algorithm>
-	</algorithms>
+        <algorithm id="gcpso.25" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="25"/>
+                <entityType class="pso.particle.StandardParticle">
+                    <velocityProvider class="pso.velocityprovider.GCVelocityProvider"/>
+                </entityType>
+            </initialisationStrategy>
+            <topology class="entity.topologies.LBestTopology"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="10000"/>
+        </algorithm>
+        <algorithm id="gcpso.100" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="100"/>
+                <entityType class="pso.particle.StandardParticle">
+                    <velocityProvider class="pso.velocityprovider.GCVelocityProvider"/>
+                </entityType>
+            </initialisationStrategy>
+            <topology class="entity.topologies.LBestTopology"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="10000"/>
+        </algorithm>
+    </algorithms>
 </simulator>

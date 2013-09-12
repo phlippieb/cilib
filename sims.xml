@@ -1,0 +1,588 @@
+<!-- simulations for every combination of these dimensions:
+		problems:
+			schwefel
+			elliptic
+			rastrigin
+			ackley
+			rosenbrock
+		problem dimesions:
+			30
+			100
+			500
+		algorithms:
+			gbest
+			lbest
+			gcpso
+		algorithm populations:
+			5
+			25
+			100
+-->
+
+<simulation samples="30">
+	<algorithm idref="gbest.5"/>
+	<problem idref="schwefel.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.5.schwefel.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.5"/>
+	<problem idref="schwefel.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.5.schwefel.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.5"/>
+	<problem idref="schwefel.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.5.schwefel.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.5"/>
+	<problem idref="elliptic.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.5.elliptic.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.5"/>
+	<problem idref="elliptic.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.5.elliptic.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.5"/>
+	<problem idref="elliptic.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.5.elliptic.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.5"/>
+	<problem idref="rastrigin.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.5.rastrigin.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.5"/>
+	<problem idref="rastrigin.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.5.rastrigin.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.5"/>
+	<problem idref="rastrigin.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.5.rastrigin.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="schwefel.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.schwefel.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="schwefel.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.schwefel.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="schwefel.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.schwefel.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="elliptic.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.elliptic.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="elliptic.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.elliptic.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="elliptic.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.elliptic.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="rastrigin.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.rastrigin.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="rastrigin.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.rastrigin.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="rastrigin.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.rastrigin.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.100"/>
+	<problem idref="schwefel.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.100.schwefel.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.100"/>
+	<problem idref="schwefel.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.100.schwefel.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.100"/>
+	<problem idref="schwefel.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.100.schwefel.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.100"/>
+	<problem idref="elliptic.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.100.elliptic.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.100"/>
+	<problem idref="elliptic.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.100.elliptic.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.100"/>
+	<problem idref="elliptic.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.100.elliptic.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.100"/>
+	<problem idref="rastrigin.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.100.rastrigin.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.100"/>
+	<problem idref="rastrigin.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.100.rastrigin.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.100"/>
+	<problem idref="rastrigin.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.100.rastrigin.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.5"/>
+	<problem idref="schwefel.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.5.schwefel.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.5"/>
+	<problem idref="schwefel.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.5.schwefel.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.5"/>
+	<problem idref="schwefel.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.5.schwefel.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.5"/>
+	<problem idref="elliptic.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.5.elliptic.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.5"/>
+	<problem idref="elliptic.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.5.elliptic.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.5"/>
+	<problem idref="elliptic.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.5.elliptic.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.5"/>
+	<problem idref="rastrigin.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.5.rastrigin.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.5"/>
+	<problem idref="rastrigin.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.5.rastrigin.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.5"/>
+	<problem idref="rastrigin.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.5.rastrigin.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="schwefel.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.schwefel.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="schwefel.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.schwefel.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="schwefel.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.schwefel.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="elliptic.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.elliptic.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="elliptic.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.elliptic.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="elliptic.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.elliptic.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="rastrigin.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.rastrigin.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="rastrigin.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.rastrigin.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="rastrigin.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.rastrigin.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.100"/>
+	<problem idref="schwefel.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.100.schwefel.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.100"/>
+	<problem idref="schwefel.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.100.schwefel.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.100"/>
+	<problem idref="schwefel.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.100.schwefel.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.100"/>
+	<problem idref="elliptic.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.100.elliptic.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.100"/>
+	<problem idref="elliptic.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.100.elliptic.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.100"/>
+	<problem idref="elliptic.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.100.elliptic.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.100"/>
+	<problem idref="rastrigin.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.100.rastrigin.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.100"/>
+	<problem idref="rastrigin.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.100.rastrigin.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.100"/>
+	<problem idref="rastrigin.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.100.rastrigin.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.5"/>
+	<problem idref="schwefel.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.5.schwefel.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.5"/>
+	<problem idref="schwefel.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.5.schwefel.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.5"/>
+	<problem idref="schwefel.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.5.schwefel.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.5"/>
+	<problem idref="elliptic.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.5.elliptic.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.5"/>
+	<problem idref="elliptic.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.5.elliptic.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.5"/>
+	<problem idref="elliptic.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.5.elliptic.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.5"/>
+	<problem idref="rastrigin.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.5.rastrigin.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.5"/>
+	<problem idref="rastrigin.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.5.rastrigin.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.5"/>
+	<problem idref="rastrigin.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.5.rastrigin.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.25"/>
+	<problem idref="schwefel.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.25.schwefel.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.25"/>
+	<problem idref="schwefel.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.25.schwefel.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.25"/>
+	<problem idref="schwefel.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.25.schwefel.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.25"/>
+	<problem idref="elliptic.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.25.elliptic.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.25"/>
+	<problem idref="elliptic.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.25.elliptic.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.25"/>
+	<problem idref="elliptic.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.25.elliptic.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.25"/>
+	<problem idref="rastrigin.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.25.rastrigin.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.25"/>
+	<problem idref="rastrigin.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.25.rastrigin.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.25"/>
+	<problem idref="rastrigin.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.25.rastrigin.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.100"/>
+	<problem idref="schwefel.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.100.schwefel.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.100"/>
+	<problem idref="schwefel.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.100.schwefel.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.100"/>
+	<problem idref="schwefel.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.100.schwefel.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.100"/>
+	<problem idref="elliptic.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.100.elliptic.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.100"/>
+	<problem idref="elliptic.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.100.elliptic.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.100"/>
+	<problem idref="elliptic.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.100.elliptic.500.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.100"/>
+	<problem idref="rastrigin.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.100.rastrigin.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.100"/>
+	<problem idref="rastrigin.100"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.100.rastrigin.100.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcpso.100"/>
+	<problem idref="rastrigin.500"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.100.rastrigin.500.txt"/>
+</simulation>
+

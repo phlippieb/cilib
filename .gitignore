@@ -10,3 +10,5 @@ build.xml
 .classpath
 .cache
 .project
+cilib.sublime-project
+cilib.sublime-workspace

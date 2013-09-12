@@ -1,0 +1,286 @@
+<simulator>
+    <problems>
+
+        <!--
+shifted schwefel 1.2 with noise
+5 dimensions
+uni-modal
+non-sep
+-->
+        <problem id="schwefel.30" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^30">
+            <function class="functions.continuous.decorators.NoisyFunctionDecorator">
+                <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                    <function class="functions.continuous.SchwefelProblem1_2"/>
+                    <horizontalShift class="controlparameter.ConstantControlParameter" parameter="20"/>
+                </function>
+            </function>
+        </problem>
+
+        <!--
+shifted schwefel 1.2 with noise
+25 dimensions
+uni-modal
+non-sep
+-->
+        <problem id="schwefel.100" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^100">
+            <function class="functions.continuous.decorators.NoisyFunctionDecorator">
+                <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                    <function class="functions.continuous.SchwefelProblem1_2"/>
+                    <horizontalShift class="controlparameter.ConstantControlParameter" parameter="20"/>
+                </function>
+            </function>
+        </problem>
+
+        <!--
+shifted schwefel 1.2 with noise
+100 dimensions
+uni-modal
+non-sep
+-->
+        <problem id="schwefel.500" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^500">
+            <function class="functions.continuous.decorators.NoisyFunctionDecorator">
+                <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                    <function class="functions.continuous.SchwefelProblem1_2"/>
+                    <horizontalShift class="controlparameter.ConstantControlParameter" parameter="20"/>
+                </function>
+            </function>
+        </problem>
+
+
+
+        <!--
+shifted elliptic
+5 dimensions
+uni-modal
+seperable
+-->
+        <problem id="elliptic.30" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^30">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Elliptic"/>
+                <horizontalShift class="controlparameter.ConstantControlParameter" parameter="20"/>
+            </function>
+        </problem>
+
+        <!--
+shifted elliptic
+25 dimensions
+uni-modal
+seperable
+-->
+        <problem id="elliptic.100" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^100">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Elliptic"/>
+                <horizontalShift class="controlparameter.ConstantControlParameter" parameter="20"/>
+            </function>
+        </problem>
+
+        <!--
+shifted elliptic
+100 dimensions
+uni-modal
+seperable
+-->
+        <problem id="elliptic.500" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^500">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Elliptic"/>
+                <horizontalShift class="controlparameter.ConstantControlParameter" parameter="20"/>
+            </function>
+        </problem>
+
+
+
+        <!--
+shifted rastrigin
+5 dimensions
+multi-modal
+separable
+-->
+        <problem id="rastrigin.30" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^30">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Rastrigin"/>
+                <horizontalShift class="controlparameter.ConstantControlParameter" parameter="20"/>
+            </function>
+        </problem>
+
+        <!--
+shifted rastrigin
+25 dimensions
+multi-modal
+separable
+-->
+        <problem id="rastrigin.100" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^100">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Rastrigin"/>
+                <horizontalShift class="controlparameter.ConstantControlParameter" parameter="20"/>
+            </function>
+        </problem>
+
+        <!--
+shifted rastrigin
+100 dimensions
+multi-modal
+separable
+-->
+        <problem id="rastrigin.500" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^500">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Rastrigin"/>
+                <horizontalShift class="controlparameter.ConstantControlParameter" parameter="20"/>
+            </function>
+        </problem>
+
+        
+
+        <!--
+shifted ackley
+5 dimensions
+multi-modal
+separable
+-->
+        <problem id="ackley.30" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^30">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Ackley"/>
+                <horizontalShift class="controlparameter.ConstantControlParameter" parameter="20"/>
+            </function>
+        </problem>
+
+        <!--
+shifted ackley
+25 dimensions
+multi-modal
+separable
+-->
+        <problem id="ackley.100" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^100">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Ackley"/>
+                <horizontalShift class="controlparameter.ConstantControlParameter" parameter="20"/>
+            </function>
+        </problem>
+
+        <!--
+shifted ackley
+100 dimensions
+multi-modal
+separable
+-->
+        <problem id="ackley.500" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^500">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Ackley"/>
+                <horizontalShift class="controlparameter.ConstantControlParameter" parameter="20"/>
+            </function>
+        </problem>
+
+
+
+        <!--
+rotated griewank
+5 dimensions
+multi-modal
+separable
+rotated
+-->
+        <problem id="griewank.30" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^30">
+            <function class="functions.continuous.decorators.RotatedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Ackley"/>
+                <matrixType value="orthonormal"/>
+            </function>
+        </problem>
+
+        <!--
+rotated griewank
+25 dimensions
+multi-modal
+separable
+rotated
+-->
+        <problem id="griewank.100" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^100">
+            <function class="functions.continuous.decorators.RotatedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Ackley"/>
+                <matrixType value="orthonormal"/>
+            </function>
+        </problem>
+
+        <!--
+rotated griewank
+100 dimensions
+multi-modal
+separable
+rotated
+-->
+        <problem id="griewank.500" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^500">
+            <function class="functions.continuous.decorators.RotatedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Ackley"/>
+                <matrixType value="orthonormal"/>
+            </function>
+        </problem>
+
+
+
+
+        <!--
+rotated weierstrass
+5 dimensions
+multi-modal
+separable
+rotated
+-->
+        <problem id="weierstrass.30" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^30">
+            <function class="functions.continuous.decorators.RotatedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Weierstrass"/>
+                <matrixType value="orthonormal"/>
+            </function>
+        </problem>
+
+        <!--
+rotated weierstrass
+25 dimensions
+multi-modal
+separable
+rotated
+-->
+        <problem id="weierstrass.100" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^100">
+            <function class="functions.continuous.decorators.RotatedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Weierstrass"/>
+                <matrixType value="orthonormal"/>
+            </function>
+        </problem>
+
+        <!--
+rotated weierstrass
+100 dimensions
+multi-modal
+separable
+rotated
+-->
+        <problem id="weierstrass.500" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^500">
+            <function class="functions.continuous.decorators.RotatedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Weierstrass"/>
+                <matrixType value="orthonormal"/>
+            </function>
+        </problem>
+
+
+        <!--
+shifted rosenbrock
+-->
+        <problem id="rosebrock.30" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^30">
+            <function class="function.contiuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Rosenbrock"/>
+                <horizontalShift class="controlparameter.ConstantControlParameter" parameter="20"/>
+            </function>
+        </problem>
+        <problem id="rosebrock.100" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^100">
+            <function class="function.contiuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Rosenbrock"/>
+                <horizontalShift class="controlparameter.ConstantControlParameter" parameter="20"/>
+            </function>
+        </problem>
+        <problem id="rosebrock.500" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^500">
+            <function class="function.contiuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Rosenbrock"/>
+                <horizontalShift class="controlparameter.ConstantControlParameter" parameter="20"/>
+            </function>
+        </problem>
+
+    </problems>
+</simulator>
+
