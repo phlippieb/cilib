@@ -21,6 +21,10 @@
                 <entityType class="pso.particle.StandardParticle"/>
             </initialisationStrategy>
             <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="10000"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="0">
+                <measurement class="measurement.single.Fitness"/>
+                <predicate class="stoppingcondition.Maximum"/>
+            </addStoppingCondition>
         </algorithm>
         <algorithm id="gbest.100" class="pso.PSO">
             <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
@@ -28,6 +32,10 @@
                 <entityType class="pso.particle.StandardParticle"/>
             </initialisationStrategy>
             <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="10000"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="0">
+                <measurement class="measurement.single.Fitness"/>
+                <predicate class="stoppingcondition.Maximum"/>
+            </addStoppingCondition>
         </algorithm>
 
 
@@ -42,6 +50,10 @@
             </initialisationStrategy>
             <topology class="entity.topologies.LBestTopology"/>
             <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="10000"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="0">
+                <measurement class="measurement.single.Fitness"/>
+                <predicate class="stoppingcondition.Maximum"/>
+            </addStoppingCondition>
         </algorithm>
         <algorithm id="lbest.25" class="pso.PSO">
             <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
@@ -50,6 +62,10 @@
             </initialisationStrategy>
             <topology class="entity.topologies.LBestTopology"/>
             <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="10000"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="0">
+                <measurement class="measurement.single.Fitness"/>
+                <predicate class="stoppingcondition.Maximum"/>
+            </addStoppingCondition>
         </algorithm>
         <algorithm id="lbest.100" class="pso.PSO">
             <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
@@ -58,6 +74,10 @@
             </initialisationStrategy>
             <topology class="entity.topologies.LBestTopology"/>
             <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="10000"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="0">
+                <measurement class="measurement.single.Fitness"/>
+                <predicate class="stoppingcondition.Maximum"/>
+            </addStoppingCondition>
         </algorithm>
 
 
@@ -74,6 +94,10 @@
             </initialisationStrategy>
             <topology class="entity.topologies.LBestTopology"/>
             <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="10000"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="0">
+                <measurement class="measurement.single.Fitness"/>
+                <predicate class="stoppingcondition.Maximum"/>
+            </addStoppingCondition>
         </algorithm>
         <algorithm id="gcpso.25" class="pso.PSO">
             <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
@@ -84,6 +108,10 @@
             </initialisationStrategy>
             <topology class="entity.topologies.LBestTopology"/>
             <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="10000"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="0">
+                <measurement class="measurement.single.Fitness"/>
+                <predicate class="stoppingcondition.Maximum"/>
+            </addStoppingCondition>
         </algorithm>
         <algorithm id="gcpso.100" class="pso.PSO">
             <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
@@ -94,6 +122,10 @@
             </initialisationStrategy>
             <topology class="entity.topologies.LBestTopology"/>
             <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="10000"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="0">
+                <measurement class="measurement.single.Fitness"/>
+                <predicate class="stoppingcondition.Maximum"/>
+            </addStoppingCondition>
         </algorithm>
     </algorithms>
 </simulator>
