@@ -1,119 +1,159 @@
 <simulator>
-	<algorithms>
+    <algorithms>
 
-		<algorithm id="sade50" class="ec.EC">
-			<iterationStrategy class="ec.iterationstrategies.SaDEIterationStrategy">
-				<targetVectorSelectionStrategy class="util.selection.recipes.TournamentSelector">
-					<tournamentSize class="controlparameter.ConstantControlParameter" parameter="0.1"/>
-				</targetVectorSelectionStrategy>
-			</iterationStrategy>
-			<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
-                <entityNumber value="50"/>
-                <entityType class="ec.SaDEIndividual">
-                	<trialVectorCreationStrategy class="entity.operators.creation.SaDECreationStrategy"/>
+        <!-- 
+            gbest pso
+            defaults, with RandomBoundaryConstraint
+        -->
+        <algorithm id="gbest.25" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="25"/>
+                <entityType class="pso.particle.StandardParticle"/>
+            </initialisationStrategy>
+            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy">
+                <boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
+            </iterationStrategy>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm>
+
+
+
+        <!--
+            lbest pso
+            Defauts, with LBestTopology and RandomBoundaryConstraint
+        -->
+        <algorithm id="lbest.25" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="25"/>
+                <entityType class="pso.particle.StandardParticle"/>
+            </initialisationStrategy>
+            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy">
+                <boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
+            </iterationStrategy>
+            <topology class="entity.topologies.LBestTopology"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm>
+
+
+
+        <!--
+            guaranteed convergence pso
+            GCVelocityProvider, RandomBoundaryConstraint, LBestTopology
+        -->
+        <algorithm id="gcpso.25" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="25"/>
+                <entityType class="pso.particle.StandardParticle">
+                    <velocityProvider class="pso.velocityprovider.GCVelocityProvider"/>
                 </entityType>
             </initialisationStrategy>
-		    <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="100000"/>
-            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition">
-                <measurement class="measurement.single.Fitness"/>
-                <predicate class="stoppingcondition.Minimum"/>
-                <target value="1"/>
-            </addStoppingCondition>
+            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy">
+                <boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
+            </iterationStrategy>
+            <topology class="entity.topologies.LBestTopology"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
         </algorithm>
-        <algorithm id="sade100" class="ec.EC">
-            <iterationStrategy class="ec.iterationstrategies.SaDEIterationStrategy">
-                <targetVectorSelectionStrategy class="util.selection.recipes.TournamentSelector">
-                    <tournamentSize class="controlparameter.ConstantControlParameter" parameter="0.1"/>
-                </targetVectorSelectionStrategy>
+
+
+        <!--
+            Social PSO
+            StandardVelocityProvider w/ cognitive acceleration = 0, RandomBoundaryConstraint, VonNeumannTopology
+        -->
+        <algorithm id="spso.25" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="25"/>
+                <entityType class="pso.particle.StandardParticle">
+                    <velocityProvider class="pso.velocityprovider.StandardVelocityProvider">
+                        <cognitiveAcceleration class="controlparameter.ConstantControlParameter" parameter="0"/>
+                    </velocityProvider>
+                </entityType>
+            </initialisationStrategy>
+            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy">
+                <boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint"/>
+            </iterationStrategy>
+            <topology class="entity.topologies.VonNeumannTopology"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm>
+
+
+        <!--
+            Cognitive PSO
+            ClampingVelocityProvider with socialAcceleration = 0, RandomBoundaryConstraint, VonNeumannTopology
+            ToDo: remove clamping velocity provider
+        -->
+        <algorithm id="cpso.25" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="25"/>
+                <entityType class="pso.particle.StandardParticle">
+                    <velocityProvider class="pso.velocityprovider.ClampingVelocityProvider">
+                        <delegate class="pso.velocityprovider.StandardVelocityProvider">
+                            <socialAcceleration class="controlparameter.ConstantControlParameter" parameter="0"/>
+                            <cognitiveAcceleration class="controlparameter.ConstantControlParameter" parameter="1.5" />
+                            <inertiaWeight class="controlparameter.ConstantControlParameter" parameter="0.99" />
+                        </delegate>
+                        <vMax class="controlparameter.ConstantControlParameter" parameter="100"/>
+                    </velocityProvider>
+                    <velocityInitialisationStrategy class="entity.initialisation.RandomBoundedInitialisationStrategy">
+                        <lowerBound class="controlparameter.ConstantControlParameter" parameter="1.0"/>
+                        <upperBound class="controlparameter.ConstantControlParameter" parameter="100.0"/>
+                    </velocityInitialisationStrategy>
+                </entityType>
+            </initialisationStrategy>
+            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy">
+                <boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint"/>
+            </iterationStrategy>
+            <topology class="entity.topologies.VonNeumannTopology"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm>
+
+
+        <!--
+            BareBones PSO
+            BareBonesVelocityProvider with exploitProbability = 1,
+                meaning position update is always sampled from mean between pbest and nbest
+            RandomBoundaryConstraint
+        -->
+        <algorithm id="bb.25" class="pso.PSO">
+            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy">
+                <boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint"/>
             </iterationStrategy>
             <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
-                <entityNumber value="100"/>
-                <entityType class="ec.SaDEIndividual">
-                    <trialVectorCreationStrategy class="entity.operators.creation.SaDECreationStrategy"/>
+                <entityNumber value="25"/>
+                <entityType class="pso.particle.StandardParticle">
+                    <behaviour class="pso.behaviour.StandardParticleBehaviour">
+                        <positionProvider class="pso.positionprovider.LinearPositionProvider"/>
+                        <velocityProvider class="pso.velocityprovider.BareBonesVelocityProvider">
+                            <exploitProbability class="controlparameter.ConstantControlParameter" parameter="1"/>
+                        </velocityProvider>
+                    </behaviour>
                 </entityType>
             </initialisationStrategy>
-            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="100000"/>
-            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition">
-                <measurement class="measurement.single.Fitness"/>
-                <predicate class="stoppingcondition.Minimum"/>
-                <target value="1"/>
-            </addStoppingCondition>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="1000"/>
         </algorithm>
-        <algorithm id="sade200" class="ec.EC">
-            <iterationStrategy class="ec.iterationstrategies.SaDEIterationStrategy">
-                <targetVectorSelectionStrategy class="util.selection.recipes.TournamentSelector">
-                    <tournamentSize class="controlparameter.ConstantControlParameter" parameter="0.1"/>
-                </targetVectorSelectionStrategy>
-            </iterationStrategy>
+
+
+        <!--
+            BareBones Exploit PSO
+            BareBonesVelocityProvider with exploitProbability = 0.5,
+                meaning position update can also simply be set to pbest
+            RabndomBoundaryContstraint
+        -->
+        <algorithm id="bbe.25" class="pso.PSO">
+            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy"/>
             <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
-                <entityNumber value="200"/>
-                <entityType class="ec.SaDEIndividual">
-                    <trialVectorCreationStrategy class="entity.operators.creation.SaDECreationStrategy"/>
+                <entityNumber value="25"/>
+                <entityType class="pso.particle.StandardParticle">
+                    <behaviour class="pso.behaviour.StandardParticleBehaviour">
+                        <positionProvider class="pso.positionprovider.LinearPositionProvider"/>
+                        <velocityProvider class="pso.velocityprovider.BareBonesVelocityProvider">
+                            <exploitProbability class="controlparameter.ConstantControlParameter" parameter="0.5"/>
+                        </velocityProvider>
+                    </behaviour>
                 </entityType>
             </initialisationStrategy>
-            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="100000"/>
-            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition">
-                <measurement class="measurement.single.Fitness"/>
-                <predicate class="stoppingcondition.Minimum"/>
-                <target value="1"/>
-            </addStoppingCondition>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
         </algorithm>
-        <algorithm id="sade500" class="ec.EC">
-            <iterationStrategy class="ec.iterationstrategies.SaDEIterationStrategy">
-                <targetVectorSelectionStrategy class="util.selection.recipes.TournamentSelector">
-                    <tournamentSize class="controlparameter.ConstantControlParameter" parameter="0.1"/>
-                </targetVectorSelectionStrategy>
-            </iterationStrategy>
-            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
-                <entityNumber value="500"/>
-                <entityType class="ec.SaDEIndividual">
-                    <trialVectorCreationStrategy class="entity.operators.creation.SaDECreationStrategy"/>
-                </entityType>
-            </initialisationStrategy>
-            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="100000"/>
-            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition">
-                <measurement class="measurement.single.Fitness"/>
-                <predicate class="stoppingcondition.Minimum"/>
-                <target value="1"/>
-            </addStoppingCondition>
-        </algorithm>
-        <algorithm id="sade1000" class="ec.EC">
-            <iterationStrategy class="ec.iterationstrategies.SaDEIterationStrategy">
-                <targetVectorSelectionStrategy class="util.selection.recipes.TournamentSelector">
-                    <tournamentSize class="controlparameter.ConstantControlParameter" parameter="0.1"/>
-                </targetVectorSelectionStrategy>
-            </iterationStrategy>
-            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
-                <entityNumber value="1000"/>
-                <entityType class="ec.SaDEIndividual">
-                    <trialVectorCreationStrategy class="entity.operators.creation.SaDECreationStrategy"/>
-                </entityType>
-            </initialisationStrategy>
-            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="100000"/>
-            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition">
-                <measurement class="measurement.single.Fitness"/>
-                <predicate class="stoppingcondition.Minimum"/>
-                <target value="1"/>
-            </addStoppingCondition>
-        </algorithm>
-        <algorithm id="sade2000" class="ec.EC">
-            <iterationStrategy class="ec.iterationstrategies.SaDEIterationStrategy">
-                <targetVectorSelectionStrategy class="util.selection.recipes.TournamentSelector">
-                    <tournamentSize class="controlparameter.ConstantControlParameter" parameter="0.1"/>
-                </targetVectorSelectionStrategy>
-            </iterationStrategy>
-            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
-                <entityNumber value="2000"/>
-                <entityType class="ec.SaDEIndividual">
-                    <trialVectorCreationStrategy class="entity.operators.creation.SaDECreationStrategy"/>
-                </entityType>
-            </initialisationStrategy>
-            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="100000"/>
-            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition">
-                <measurement class="measurement.single.Fitness"/>
-                <predicate class="stoppingcondition.Minimum"/>
-                <target value="1"/>
-            </addStoppingCondition>
-        </algorithm>
-	</algorithms>
+
+
+    </algorithms>
 </simulator>

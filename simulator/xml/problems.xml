@@ -1,0 +1,82 @@
+<simulator>
+    <problems>
+
+
+		<!--
+			shifted rotated ackley
+		-->
+        <problem id="ackley.25" class="problem.FunctionOptimisationProblem" domain="R(-32:32)^25">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.decorators.RotatedFunctionDecorator">
+                    <function class="functions.continuous.unconstrained.Ackley"/>
+                    <matrixType value="linear_transformation"/>
+                    <condition value="100"/>
+                </function>
+                <horizontalShift class="controlparameter.ConstantControlParameter" parameter="-32"/>
+            </function>
+        </problem>
+
+
+
+        <!--
+        	shifted rotated elliptic
+        -->
+        <problem id="elliptic.25" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^25">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.decorators.RotatedFunctionDecorator">
+                    <function class="functions.continuous.unconstrained.Elliptic"/>
+                    <matrixType value="orthonormal"/>
+                </function>
+                <horizontalShift class="controlparameter.ConstantControlParameter" parameter="20"/>
+            </function>
+        </problem>
+
+
+
+        <!--
+        	shifted rotated rastrigin
+        -->
+        <problem id="rastrigin.25" class="problem.FunctionOptimisationProblem" domain="R(-5:5)^25">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.decorators.RotatedFunctionDecorator">
+                    <function class="functions.continuous.unconstrained.Rastrigin"/>
+                    <matrixType value="linear_transformation"/>
+                    <condition value="2"/>
+                </function>
+                <horizontalShift class="controlparameter.ConstantControlParameter" parameter="1"/>
+                <!--verticalShift class="controlparameter.ConstantControlParameter" parameter="-330"/-->
+            </function>
+        </problem>
+
+
+
+        <!--
+        	shifted rosenbrock
+        -->
+        <problem id="rosenbrock.25" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^25">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.unconstrained.Rosenbrock"/>
+                <!--verticalShift class="controlparameter.ConstantControlParameter" parameter="390"/-->
+                <horizontalShift class="controlparameter.ConstantControlParameter" parameter="20"/>
+            </function>
+        </problem>
+
+
+
+        <!--
+        	shifted schwefel with noise
+        -->
+        <problem id="schwefel.25" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^25">
+            <function class="functions.continuous.decorators.ShiftedFunctionDecorator">
+                <function class="functions.continuous.decorators.NoisyFunctionDecorator">
+                    <function class="functions.continuous.SchwefelProblem1_2"/>
+                </function>
+                <horizontalShift class="controlparameter.ConstantControlParameter" parameter="20"/>
+                <!--verticalShift class="controlparameter.ConstantControlParameter" parameter="-450"/-->
+            </function>
+        </problem>
+
+        
+
+    </problems>
+</simulator>
