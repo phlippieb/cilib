@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-void printSimulation( int, string, int, string, int);
+void printSimulation( int, string, int, string, int, int);
 
 int main() {
 
@@ -37,6 +37,9 @@ int main() {
 	algorithms.push_back("gbest");
 	algorithms.push_back("lbest");
 	algorithms.push_back("gcpso");
+	algorithms.push_back("cpso");
+	algorithms.push_back("spso");
+	algorithms.push_back("cpso");
 
 	
 	// algorithm populations
@@ -72,17 +75,17 @@ int main() {
 	}
 	cout 	<< "-->" << endl << endl;
 				
-			
+	int simulationNumber = 0;		
 	for ( i=0; i<problems.size(); i++ ) {
 		for ( j=0; j<problemDimensions.size(); j++ ) {
 			for ( k=0; k<algorithms.size(); k++ ) {
 				for ( l=0; l<algorithmPopulations.size(); l++ ) {
 					
 					printSimulation (	samples,
-								algorithms[i],
-								algorithmPopulations[j],
-								problems[k],
-								problemDimensions[l]
+								algorithms[k],
+								algorithmPopulations[l],
+								problems[i],
+								problemDimensions[j]
 							);	
 
 				}
@@ -106,8 +109,10 @@ void printSimulation(	int samples,
 			string algorithm,
 			int algorithmPopulation,
 			string problem,
-			int problemDimensions)
+			int problemDimensions,
+			int simulationNumber)
 {
+	cout	<< "<!-- sim number " << simulationNumber << " -- " << algorithm << '.' << algorithmPopulation << '.' << problem << '.' << problemDimensions << "  -->" << endl;
 	cout 	<< "<simulation samples=\"" << samples << "\">" << endl
 		<< '\t' << "<algorithm idref=\"" << algorithm << '.' << algorithmPopulation << "\"/>" << endl
 		<< '\t' << "<problem idref=\"" << problem << '.' << problemDimensions << "\"/>" << endl

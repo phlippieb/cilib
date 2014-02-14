@@ -12,3 +12,6 @@ build.xml
 .project
 cilib.sublime-project
 cilib.sublime-workspace
+.Rproj.user
+orange/
+rdata/
