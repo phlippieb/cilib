@@ -27,26 +27,22 @@ int main() {
 
 	// problem dimensions
 	vector<int> problemDimensions;
-	problemDimensions.push_back(30);
-	problemDimensions.push_back(100);
-	problemDimensions.push_back(500);
+	problemDimensions.push_back(25);
 
 
 	// algorithms
 	vector<string> algorithms;
-	algorithms.push_back("gbest");
-	algorithms.push_back("lbest");
-	algorithms.push_back("gcpso");
-	algorithms.push_back("cpso");
-	algorithms.push_back("spso");
-	algorithms.push_back("cpso");
+	//algorithms.push_back("gbest");
+	//algorithms.push_back("lbest");
+	//algorithms.push_back("gcpso");
+	//algorithms.push_back("spso");
+	algorithms.push_back("bb");
+	algorithms.push_back("bbe");
 
 	
 	// algorithm populations
 	vector<int> algorithmPopulations;
-	algorithmPopulations.push_back(5);
 	algorithmPopulations.push_back(25);
-	algorithmPopulations.push_back(100);
 
 
 	//
@@ -75,7 +71,7 @@ int main() {
 	}
 	cout 	<< "-->" << endl << endl;
 				
-	int simulationNumber = 0;		
+	int simulationNumber = 1;		
 	for ( i=0; i<problems.size(); i++ ) {
 		for ( j=0; j<problemDimensions.size(); j++ ) {
 			for ( k=0; k<algorithms.size(); k++ ) {
@@ -85,7 +81,8 @@ int main() {
 								algorithms[k],
 								algorithmPopulations[l],
 								problems[i],
-								problemDimensions[j]
+								problemDimensions[j],
+								simulationNumber++
 							);	
 
 				}
@@ -112,7 +109,7 @@ void printSimulation(	int samples,
 			int problemDimensions,
 			int simulationNumber)
 {
-	cout	<< "<!-- sim number " << simulationNumber << " -- " << algorithm << '.' << algorithmPopulation << '.' << problem << '.' << problemDimensions << "  -->" << endl;
+	cout	<< "<!-- sim number " << simulationNumber << " - " << algorithm << '.' << algorithmPopulation << '.' << problem << '.' << problemDimensions << "  -->" << endl;
 	cout 	<< "<simulation samples=\"" << samples << "\">" << endl
 		<< '\t' << "<algorithm idref=\"" << algorithm << '.' << algorithmPopulation << "\"/>" << endl
 		<< '\t' << "<problem idref=\"" << problem << '.' << problemDimensions << "\"/>" << endl
