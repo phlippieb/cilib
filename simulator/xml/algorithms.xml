@@ -109,7 +109,7 @@
 
         <!--
             BareBones PSO
-            BareBonesVelocityProvider with exploitProbability = 1,
+            BareBonesVelocityProvider with exploitProbability = 0,
                 meaning position update is always sampled from mean between pbest and nbest
             RandomBoundaryConstraint
         -->
@@ -120,12 +120,10 @@
             <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
                 <entityNumber value="25"/>
                 <entityType class="pso.particle.StandardParticle">
-                    <behaviour class="pso.behaviour.StandardParticleBehaviour">
-                        <positionProvider class="pso.positionprovider.LinearPositionProvider"/>
-                        <velocityProvider class="pso.velocityprovider.BareBonesVelocityProvider">
-                            <exploitProbability class="controlparameter.ConstantControlParameter" parameter="1"/>
-                        </velocityProvider>
-                    </behaviour>
+                    <positionProvider class="pso.positionprovider.LinearPositionProvider"/>
+                    <velocityProvider class="pso.velocityprovider.BareBonesVelocityProvider">
+                        <exploitProbability class="controlparameter.ConstantControlParameter" parameter="0"/>
+                    </velocityProvider>
                 </entityType>
             </initialisationStrategy>
             <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="1000"/>
@@ -139,16 +137,16 @@
             RabndomBoundaryContstraint
         -->
         <algorithm id="bbe.25" class="pso.PSO">
-            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy"/>
+            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy" >
+                <boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint"/>
+            </iterationStrategy>
             <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
                 <entityNumber value="25"/>
                 <entityType class="pso.particle.StandardParticle">
-                    <behaviour class="pso.behaviour.StandardParticleBehaviour">
-                        <positionProvider class="pso.positionprovider.LinearPositionProvider"/>
-                        <velocityProvider class="pso.velocityprovider.BareBonesVelocityProvider">
-                            <exploitProbability class="controlparameter.ConstantControlParameter" parameter="0.5"/>
-                        </velocityProvider>
-                    </behaviour>
+                    <positionProvider class="pso.positionprovider.LinearPositionProvider"/>
+                    <velocityProvider class="pso.velocityprovider.BareBonesVelocityProvider">
+                        <exploitProbability class="controlparameter.ConstantControlParameter" parameter="0.5"/>
+                    </velocityProvider>
                 </entityType>
             </initialisationStrategy>
             <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>

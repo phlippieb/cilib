@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE simulator [
 <!ENTITY algorithms SYSTEM "algorithms.xml">
-<!ENTITY problems SYSTEM "problems2.xml">
+<!ENTITY problems SYSTEM "problems.xml">
 <!ATTLIST algorithm id ID #IMPLIED>
 <!ATTLIST problem id ID #IMPLIED>
 <!ATTLIST measurements id ID #IMPLIED>
@@ -28,338 +28,191 @@
 
 
     <simulations>
+
     	<!-- simulations for every combination of these dimensions:
 		algorithms:
-			lbest
-			gbest
-			spso
-			cpso
-			gcpso
+			bbe
 		population sizes:
-			5
 			25
-			100
 		functions:
+			ackley
+			rastrigin
+			rosenbrock
+			schwefel1_2
 			elliptic
+			alpine
+			beale
+			eggholder
+			goldsteinprice
+			griewank
+			levy
+			michalewicz
+			quadric
+			quartic
+			salomon
+			schwefel2_22
+			schwefel2_26
+			sixhump
+			spherical
+			step
+			weierstrass
+			zakharov
 		dimensions:
-			5
 			25
-			50
 -->
 
 <simulation samples="30">
-	<algorithm idref="lbest.5"/>
-	<problem idref="elliptic.5"/>
+	<algorithm idref="bbe.25"/>
+	<problem idref="ackley.25"/>
 	<measurements idref="both"/>
-	<output format="TXT" file="data/lbest.5.elliptic.5.txt"/>
+	<output format="TXT" file="data/bbe.25.ackley.25.txt"/>
 </simulation>
 
 <simulation samples="30">
-	<algorithm idref="lbest.5"/>
+	<algorithm idref="bbe.25"/>
+	<problem idref="rastrigin.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bbe.25.rastrigin.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bbe.25"/>
+	<problem idref="rosenbrock.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bbe.25.rosenbrock.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bbe.25"/>
+	<problem idref="schwefel1_2.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bbe.25.schwefel1_2.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bbe.25"/>
 	<problem idref="elliptic.25"/>
 	<measurements idref="both"/>
-	<output format="TXT" file="data/lbest.5.elliptic.25.txt"/>
+	<output format="TXT" file="data/bbe.25.elliptic.25.txt"/>
 </simulation>
 
 <simulation samples="30">
-	<algorithm idref="lbest.5"/>
-	<problem idref="elliptic.50"/>
+	<algorithm idref="bbe.25"/>
+	<problem idref="alpine.25"/>
 	<measurements idref="both"/>
-	<output format="TXT" file="data/lbest.5.elliptic.50.txt"/>
+	<output format="TXT" file="data/bbe.25.alpine.25.txt"/>
 </simulation>
 
 <simulation samples="30">
-	<algorithm idref="lbest.25"/>
-	<problem idref="elliptic.5"/>
+	<algorithm idref="bbe.25"/>
+	<problem idref="beale.25"/>
 	<measurements idref="both"/>
-	<output format="TXT" file="data/lbest.25.elliptic.5.txt"/>
+	<output format="TXT" file="data/bbe.25.beale.25.txt"/>
 </simulation>
 
 <simulation samples="30">
-	<algorithm idref="lbest.25"/>
-	<problem idref="elliptic.25"/>
+	<algorithm idref="bbe.25"/>
+	<problem idref="eggholder.25"/>
 	<measurements idref="both"/>
-	<output format="TXT" file="data/lbest.25.elliptic.25.txt"/>
+	<output format="TXT" file="data/bbe.25.eggholder.25.txt"/>
 </simulation>
 
 <simulation samples="30">
-	<algorithm idref="lbest.25"/>
-	<problem idref="elliptic.50"/>
+	<algorithm idref="bbe.25"/>
+	<problem idref="goldsteinprice.25"/>
 	<measurements idref="both"/>
-	<output format="TXT" file="data/lbest.25.elliptic.50.txt"/>
+	<output format="TXT" file="data/bbe.25.goldsteinprice.25.txt"/>
 </simulation>
 
 <simulation samples="30">
-	<algorithm idref="lbest.100"/>
-	<problem idref="elliptic.5"/>
+	<algorithm idref="bbe.25"/>
+	<problem idref="griewank.25"/>
 	<measurements idref="both"/>
-	<output format="TXT" file="data/lbest.100.elliptic.5.txt"/>
+	<output format="TXT" file="data/bbe.25.griewank.25.txt"/>
 </simulation>
 
 <simulation samples="30">
-	<algorithm idref="lbest.100"/>
-	<problem idref="elliptic.25"/>
+	<algorithm idref="bbe.25"/>
+	<problem idref="levy.25"/>
 	<measurements idref="both"/>
-	<output format="TXT" file="data/lbest.100.elliptic.25.txt"/>
+	<output format="TXT" file="data/bbe.25.levy.25.txt"/>
 </simulation>
 
 <simulation samples="30">
-	<algorithm idref="lbest.100"/>
-	<problem idref="elliptic.50"/>
+	<algorithm idref="bbe.25"/>
+	<problem idref="michalewicz.25"/>
 	<measurements idref="both"/>
-	<output format="TXT" file="data/lbest.100.elliptic.50.txt"/>
+	<output format="TXT" file="data/bbe.25.michalewicz.25.txt"/>
 </simulation>
 
 <simulation samples="30">
-	<algorithm idref="gbest.5"/>
-	<problem idref="elliptic.5"/>
+	<algorithm idref="bbe.25"/>
+	<problem idref="quadric.25"/>
 	<measurements idref="both"/>
-	<output format="TXT" file="data/gbest.5.elliptic.5.txt"/>
+	<output format="TXT" file="data/bbe.25.quadric.25.txt"/>
 </simulation>
 
 <simulation samples="30">
-	<algorithm idref="gbest.5"/>
-	<problem idref="elliptic.25"/>
+	<algorithm idref="bbe.25"/>
+	<problem idref="quartic.25"/>
 	<measurements idref="both"/>
-	<output format="TXT" file="data/gbest.5.elliptic.25.txt"/>
+	<output format="TXT" file="data/bbe.25.quartic.25.txt"/>
 </simulation>
 
 <simulation samples="30">
-	<algorithm idref="gbest.5"/>
-	<problem idref="elliptic.50"/>
+	<algorithm idref="bbe.25"/>
+	<problem idref="salomon.25"/>
 	<measurements idref="both"/>
-	<output format="TXT" file="data/gbest.5.elliptic.50.txt"/>
+	<output format="TXT" file="data/bbe.25.salomon.25.txt"/>
 </simulation>
 
 <simulation samples="30">
-	<algorithm idref="gbest.25"/>
-	<problem idref="elliptic.5"/>
+	<algorithm idref="bbe.25"/>
+	<problem idref="schwefel2_22.25"/>
 	<measurements idref="both"/>
-	<output format="TXT" file="data/gbest.25.elliptic.5.txt"/>
+	<output format="TXT" file="data/bbe.25.schwefel2_22.25.txt"/>
 </simulation>
 
 <simulation samples="30">
-	<algorithm idref="gbest.25"/>
-	<problem idref="elliptic.25"/>
+	<algorithm idref="bbe.25"/>
+	<problem idref="schwefel2_26.25"/>
 	<measurements idref="both"/>
-	<output format="TXT" file="data/gbest.25.elliptic.25.txt"/>
+	<output format="TXT" file="data/bbe.25.schwefel2_26.25.txt"/>
 </simulation>
 
 <simulation samples="30">
-	<algorithm idref="gbest.25"/>
-	<problem idref="elliptic.50"/>
+	<algorithm idref="bbe.25"/>
+	<problem idref="sixhump.25"/>
 	<measurements idref="both"/>
-	<output format="TXT" file="data/gbest.25.elliptic.50.txt"/>
+	<output format="TXT" file="data/bbe.25.sixhump.25.txt"/>
 </simulation>
 
 <simulation samples="30">
-	<algorithm idref="gbest.100"/>
-	<problem idref="elliptic.5"/>
+	<algorithm idref="bbe.25"/>
+	<problem idref="spherical.25"/>
 	<measurements idref="both"/>
-	<output format="TXT" file="data/gbest.100.elliptic.5.txt"/>
+	<output format="TXT" file="data/bbe.25.spherical.25.txt"/>
 </simulation>
 
 <simulation samples="30">
-	<algorithm idref="gbest.100"/>
-	<problem idref="elliptic.25"/>
+	<algorithm idref="bbe.25"/>
+	<problem idref="step.25"/>
 	<measurements idref="both"/>
-	<output format="TXT" file="data/gbest.100.elliptic.25.txt"/>
+	<output format="TXT" file="data/bbe.25.step.25.txt"/>
 </simulation>
 
 <simulation samples="30">
-	<algorithm idref="gbest.100"/>
-	<problem idref="elliptic.50"/>
+	<algorithm idref="bbe.25"/>
+	<problem idref="weierstrass.25"/>
 	<measurements idref="both"/>
-	<output format="TXT" file="data/gbest.100.elliptic.50.txt"/>
+	<output format="TXT" file="data/bbe.25.weierstrass.25.txt"/>
 </simulation>
 
 <simulation samples="30">
-	<algorithm idref="spso.5"/>
-	<problem idref="elliptic.5"/>
+	<algorithm idref="bbe.25"/>
+	<problem idref="zakharov.25"/>
 	<measurements idref="both"/>
-	<output format="TXT" file="data/spso.5.elliptic.5.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="spso.5"/>
-	<problem idref="elliptic.25"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/spso.5.elliptic.25.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="spso.5"/>
-	<problem idref="elliptic.50"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/spso.5.elliptic.50.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="spso.25"/>
-	<problem idref="elliptic.5"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/spso.25.elliptic.5.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="spso.25"/>
-	<problem idref="elliptic.25"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/spso.25.elliptic.25.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="spso.25"/>
-	<problem idref="elliptic.50"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/spso.25.elliptic.50.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="spso.100"/>
-	<problem idref="elliptic.5"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/spso.100.elliptic.5.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="spso.100"/>
-	<problem idref="elliptic.25"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/spso.100.elliptic.25.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="spso.100"/>
-	<problem idref="elliptic.50"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/spso.100.elliptic.50.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="cpso.5"/>
-	<problem idref="elliptic.5"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/cpso.5.elliptic.5.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="cpso.5"/>
-	<problem idref="elliptic.25"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/cpso.5.elliptic.25.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="cpso.5"/>
-	<problem idref="elliptic.50"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/cpso.5.elliptic.50.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="cpso.25"/>
-	<problem idref="elliptic.5"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/cpso.25.elliptic.5.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="cpso.25"/>
-	<problem idref="elliptic.25"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/cpso.25.elliptic.25.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="cpso.25"/>
-	<problem idref="elliptic.50"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/cpso.25.elliptic.50.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="cpso.100"/>
-	<problem idref="elliptic.5"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/cpso.100.elliptic.5.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="cpso.100"/>
-	<problem idref="elliptic.25"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/cpso.100.elliptic.25.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="cpso.100"/>
-	<problem idref="elliptic.50"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/cpso.100.elliptic.50.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="gcpso.5"/>
-	<problem idref="elliptic.5"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/gcpso.5.elliptic.5.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="gcpso.5"/>
-	<problem idref="elliptic.25"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/gcpso.5.elliptic.25.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="gcpso.5"/>
-	<problem idref="elliptic.50"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/gcpso.5.elliptic.50.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="gcpso.25"/>
-	<problem idref="elliptic.5"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/gcpso.25.elliptic.5.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="gcpso.25"/>
-	<problem idref="elliptic.25"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/gcpso.25.elliptic.25.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="gcpso.25"/>
-	<problem idref="elliptic.50"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/gcpso.25.elliptic.50.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="gcpso.100"/>
-	<problem idref="elliptic.5"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/gcpso.100.elliptic.5.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="gcpso.100"/>
-	<problem idref="elliptic.25"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/gcpso.100.elliptic.25.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="gcpso.100"/>
-	<problem idref="elliptic.50"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/gcpso.100.elliptic.50.txt"/>
+	<output format="TXT" file="data/bbe.25.zakharov.25.txt"/>
 </simulation>
 
 
