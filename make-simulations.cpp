@@ -18,11 +18,13 @@ int main() {
 
 	// problems
 	vector<string> problems;
-	problems.push_back("schwefel");
-	problems.push_back("elliptic");
-	problems.push_back("rastrigin");
-	problems.push_back("ackley");
-	problems.push_back("rosenbrock");
+	//problems.push_back("schwefel");
+	//problems.push_back("elliptic");
+	//problems.push_back("rastrigin");
+	//problems.push_back("ackley");
+	//problems.push_back("rosenbrock");
+	//problems.push_back("alpine");
+	problems.push_back("beale");
 
 
 	// problem dimensions
@@ -32,10 +34,10 @@ int main() {
 
 	// algorithms
 	vector<string> algorithms;
-	//algorithms.push_back("gbest");
-	//algorithms.push_back("lbest");
-	//algorithms.push_back("gcpso");
-	//algorithms.push_back("spso");
+	algorithms.push_back("gbest");
+	algorithms.push_back("lbest");
+	algorithms.push_back("gcpso");
+	algorithms.push_back("spso");
 	algorithms.push_back("bb");
 	algorithms.push_back("bbe");
 

@@ -19,6 +19,24 @@
 
 
         <!--
+            alpine
+        -->
+        <problem id="alpine.25" class="problem.FunctionOptimisationProblem" domain="R(-10:10)^25">
+            <function class="functions.continuous.unconstrained.Alpine" />
+        </problem>
+
+
+
+        <!--
+            beale
+        -->
+        <problem id="beale.25" class="problem.FunctionOptimisationProblem" domain="R(-4.5:4.5)^2">
+            <function class="functions.continuous.unconstrained.Beale" />
+        </problem>
+
+
+
+        <!--
         	shifted rotated elliptic
         -->
         <problem id="elliptic.25" class="problem.FunctionOptimisationProblem" domain="R(-100:100)^25">

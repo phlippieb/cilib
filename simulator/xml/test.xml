@@ -28,100 +28,69 @@
 
 
     <simulations>
-    <!-- simulations for every combination of these dimensions:
+
+    	<!-- simulations for every combination of these dimensions:
 		problems:
-			schwefel
-			elliptic
-			rastrigin
-			ackley
-			rosenbrock
+			beale
 		problem dimesions:
 			25
 		algorithms:
+			gbest
+			lbest
+			gcpso
+			spso
 			bb
 			bbe
 		algorithm populations:
 			25
 -->
 
-<!-- sim number 1 - bb.25.schwefel.25  -->
+<!-- sim number 1 - gbest.25.beale.25  -->
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="beale.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.beale.25.txt"/>
+</simulation>
+
+<!-- sim number 2 - lbest.25.beale.25  -->
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="beale.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.beale.25.txt"/>
+</simulation>
+
+<!-- sim number 3 - gcpso.25.beale.25  -->
+<simulation samples="30">
+	<algorithm idref="gcpso.25"/>
+	<problem idref="beale.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcpso.25.beale.25.txt"/>
+</simulation>
+
+<!-- sim number 4 - spso.25.beale.25  -->
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="beale.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.beale.25.txt"/>
+</simulation>
+
+<!-- sim number 5 - bb.25.beale.25  -->
 <simulation samples="30">
 	<algorithm idref="bb.25"/>
-	<problem idref="schwefel.25"/>
+	<problem idref="beale.25"/>
 	<measurements idref="both"/>
-	<output format="TXT" file="data/bb.25.schwefel.25.txt"/>
+	<output format="TXT" file="data/bb.25.beale.25.txt"/>
 </simulation>
 
-<!-- sim number 2 - bbe.25.schwefel.25  -->
+<!-- sim number 6 - bbe.25.beale.25  -->
 <simulation samples="30">
 	<algorithm idref="bbe.25"/>
-	<problem idref="schwefel.25"/>
+	<problem idref="beale.25"/>
 	<measurements idref="both"/>
-	<output format="TXT" file="data/bbe.25.schwefel.25.txt"/>
-</simulation>
-
-<!-- sim number 3 - bb.25.elliptic.25  -->
-<simulation samples="30">
-	<algorithm idref="bb.25"/>
-	<problem idref="elliptic.25"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/bb.25.elliptic.25.txt"/>
-</simulation>
-
-<!-- sim number 4 - bbe.25.elliptic.25  -->
-<simulation samples="30">
-	<algorithm idref="bbe.25"/>
-	<problem idref="elliptic.25"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/bbe.25.elliptic.25.txt"/>
-</simulation>
-
-<!-- sim number 5 - bb.25.rastrigin.25  -->
-<simulation samples="30">
-	<algorithm idref="bb.25"/>
-	<problem idref="rastrigin.25"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/bb.25.rastrigin.25.txt"/>
-</simulation>
-
-<!-- sim number 6 - bbe.25.rastrigin.25  -->
-<simulation samples="30">
-	<algorithm idref="bbe.25"/>
-	<problem idref="rastrigin.25"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/bbe.25.rastrigin.25.txt"/>
-</simulation>
-
-<!-- sim number 7 - bb.25.ackley.25  -->
-<simulation samples="30">
-	<algorithm idref="bb.25"/>
-	<problem idref="ackley.25"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/bb.25.ackley.25.txt"/>
-</simulation>
-
-<!-- sim number 8 - bbe.25.ackley.25  -->
-<simulation samples="30">
-	<algorithm idref="bbe.25"/>
-	<problem idref="ackley.25"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/bbe.25.ackley.25.txt"/>
-</simulation>
-
-<!-- sim number 9 - bb.25.rosenbrock.25  -->
-<simulation samples="30">
-	<algorithm idref="bb.25"/>
-	<problem idref="rosenbrock.25"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/bb.25.rosenbrock.25.txt"/>
-</simulation>
-
-<!-- sim number 10 - bbe.25.rosenbrock.25  -->
-<simulation samples="30">
-	<algorithm idref="bbe.25"/>
-	<problem idref="rosenbrock.25"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/bbe.25.rosenbrock.25.txt"/>
+	<output format="TXT" file="data/bbe.25.beale.25.txt"/>
 </simulation>
 
 
