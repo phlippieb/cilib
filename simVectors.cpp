@@ -32,12 +32,15 @@ vector <int>	dimensions;
 
 // control algorithm names here
 
-//algorithms.push_back("lbest");
-//algorithms.push_back("gbest");
-//algorithms.push_back("spso");
+algorithms.push_back("lbest");
+algorithms.push_back("gbest");
+algorithms.push_back("vn");
+algorithms.push_back("spso");
 //algorithms.push_back("cpso");
-//algorithms.push_back("gcpso");
-//algorithms.push_back("bb");
+algorithms.push_back("gcstar");
+algorithms.push_back("gcring");
+algorithms.push_back("gcvn");
+algorithms.push_back("bb");
 algorithms.push_back("bbe");
 
 
@@ -58,7 +61,7 @@ functions.push_back("rosenbrock");
 functions.push_back("schwefel1_2");
 functions.push_back("elliptic");
 functions.push_back("alpine");
-functions.push_back("beale");
+//functions.push_back("beale");
 functions.push_back("eggholder");
 functions.push_back("goldsteinprice");
 functions.push_back("griewank");
@@ -72,7 +75,7 @@ functions.push_back("schwefel2_26");
 functions.push_back("sixhump");
 functions.push_back("spherical");
 functions.push_back("step");
-functions.push_back("weierstrass");
+//functions.push_back("weierstrass");
 functions.push_back("zakharov");
 
 

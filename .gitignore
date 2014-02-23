@@ -1,5 +1,5 @@
 data
-databackup
+databackup*
 target
 simulator.sh
 simulator.bat
@@ -13,3 +13,4 @@ build.xml
 .project
 *.sublime-project
 *.sublime-workspace
+

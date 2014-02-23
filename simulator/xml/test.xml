@@ -31,6 +31,14 @@
 
     	<!-- simulations for every combination of these dimensions:
 		algorithms:
+			lbest
+			gbest
+			vn
+			spso
+			gcstar
+			gcring
+			gcvn
+			bb
 			bbe
 		population sizes:
 			25
@@ -41,7 +49,6 @@
 			schwefel1_2
 			elliptic
 			alpine
-			beale
 			eggholder
 			goldsteinprice
 			griewank
@@ -55,11 +62,1130 @@
 			sixhump
 			spherical
 			step
-			weierstrass
 			zakharov
 		dimensions:
 			25
 -->
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="ackley.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.ackley.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="rastrigin.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.rastrigin.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="rosenbrock.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.rosenbrock.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="schwefel1_2.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.schwefel1_2.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="elliptic.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.elliptic.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="alpine.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.alpine.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="eggholder.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.eggholder.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="goldsteinprice.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.goldsteinprice.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="griewank.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.griewank.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="levy.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.levy.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="michalewicz.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.michalewicz.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="quadric.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.quadric.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="quartic.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.quartic.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="salomon.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.salomon.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="schwefel2_22.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.schwefel2_22.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="schwefel2_26.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.schwefel2_26.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="sixhump.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.sixhump.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="spherical.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.spherical.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="step.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.step.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="zakharov.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.zakharov.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="ackley.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.ackley.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="rastrigin.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.rastrigin.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="rosenbrock.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.rosenbrock.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="schwefel1_2.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.schwefel1_2.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="elliptic.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.elliptic.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="alpine.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.alpine.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="eggholder.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.eggholder.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="goldsteinprice.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.goldsteinprice.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="griewank.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.griewank.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="levy.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.levy.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="michalewicz.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.michalewicz.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="quadric.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.quadric.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="quartic.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.quartic.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="salomon.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.salomon.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="schwefel2_22.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.schwefel2_22.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="schwefel2_26.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.schwefel2_26.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="sixhump.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.sixhump.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="spherical.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.spherical.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="step.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.step.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="zakharov.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.zakharov.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="ackley.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.ackley.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="rastrigin.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.rastrigin.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="rosenbrock.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.rosenbrock.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="schwefel1_2.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.schwefel1_2.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="elliptic.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.elliptic.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="alpine.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.alpine.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="eggholder.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.eggholder.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="goldsteinprice.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.goldsteinprice.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="griewank.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.griewank.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="levy.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.levy.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="michalewicz.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.michalewicz.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="quadric.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.quadric.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="quartic.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.quartic.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="salomon.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.salomon.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="schwefel2_22.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.schwefel2_22.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="schwefel2_26.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.schwefel2_26.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="sixhump.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.sixhump.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="spherical.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.spherical.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="step.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.step.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="zakharov.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.zakharov.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="ackley.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.ackley.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="rastrigin.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.rastrigin.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="rosenbrock.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.rosenbrock.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="schwefel1_2.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.schwefel1_2.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="elliptic.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.elliptic.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="alpine.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.alpine.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="eggholder.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.eggholder.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="goldsteinprice.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.goldsteinprice.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="griewank.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.griewank.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="levy.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.levy.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="michalewicz.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.michalewicz.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="quadric.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.quadric.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="quartic.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.quartic.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="salomon.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.salomon.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="schwefel2_22.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.schwefel2_22.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="schwefel2_26.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.schwefel2_26.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="sixhump.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.sixhump.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="spherical.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.spherical.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="step.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.step.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="zakharov.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.zakharov.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="ackley.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.ackley.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="rastrigin.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.rastrigin.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="rosenbrock.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.rosenbrock.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="schwefel1_2.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.schwefel1_2.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="elliptic.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.elliptic.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="alpine.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.alpine.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="eggholder.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.eggholder.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="goldsteinprice.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.goldsteinprice.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="griewank.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.griewank.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="levy.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.levy.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="michalewicz.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.michalewicz.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="quadric.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.quadric.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="quartic.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.quartic.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="salomon.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.salomon.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="schwefel2_22.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.schwefel2_22.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="schwefel2_26.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.schwefel2_26.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="sixhump.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.sixhump.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="spherical.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.spherical.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="step.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.step.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="zakharov.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.zakharov.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="ackley.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.ackley.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="rastrigin.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.rastrigin.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="rosenbrock.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.rosenbrock.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="schwefel1_2.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.schwefel1_2.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="elliptic.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.elliptic.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="alpine.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.alpine.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="eggholder.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.eggholder.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="goldsteinprice.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.goldsteinprice.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="griewank.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.griewank.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="levy.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.levy.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="michalewicz.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.michalewicz.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="quadric.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.quadric.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="quartic.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.quartic.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="salomon.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.salomon.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="schwefel2_22.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.schwefel2_22.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="schwefel2_26.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.schwefel2_26.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="sixhump.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.sixhump.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="spherical.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.spherical.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="step.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.step.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="zakharov.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.zakharov.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="ackley.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.ackley.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="rastrigin.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.rastrigin.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="rosenbrock.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.rosenbrock.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="schwefel1_2.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.schwefel1_2.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="elliptic.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.elliptic.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="alpine.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.alpine.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="eggholder.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.eggholder.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="goldsteinprice.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.goldsteinprice.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="griewank.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.griewank.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="levy.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.levy.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="michalewicz.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.michalewicz.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="quadric.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.quadric.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="quartic.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.quartic.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="salomon.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.salomon.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="schwefel2_22.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.schwefel2_22.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="schwefel2_26.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.schwefel2_26.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="sixhump.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.sixhump.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="spherical.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.spherical.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="step.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.step.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="zakharov.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.zakharov.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="ackley.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.ackley.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="rastrigin.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.rastrigin.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="rosenbrock.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.rosenbrock.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="schwefel1_2.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.schwefel1_2.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="elliptic.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.elliptic.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="alpine.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.alpine.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="eggholder.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.eggholder.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="goldsteinprice.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.goldsteinprice.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="griewank.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.griewank.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="levy.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.levy.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="michalewicz.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.michalewicz.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="quadric.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.quadric.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="quartic.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.quartic.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="salomon.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.salomon.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="schwefel2_22.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.schwefel2_22.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="schwefel2_26.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.schwefel2_26.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="sixhump.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.sixhump.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="spherical.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.spherical.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="step.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.step.25.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="zakharov.25"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.zakharov.25.txt"/>
+</simulation>
 
 <simulation samples="30">
 	<algorithm idref="bbe.25"/>
@@ -101,13 +1227,6 @@
 	<problem idref="alpine.25"/>
 	<measurements idref="both"/>
 	<output format="TXT" file="data/bbe.25.alpine.25.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="bbe.25"/>
-	<problem idref="beale.25"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/bbe.25.beale.25.txt"/>
 </simulation>
 
 <simulation samples="30">
@@ -199,13 +1318,6 @@
 	<problem idref="step.25"/>
 	<measurements idref="both"/>
 	<output format="TXT" file="data/bbe.25.step.25.txt"/>
-</simulation>
-
-<simulation samples="30">
-	<algorithm idref="bbe.25"/>
-	<problem idref="weierstrass.25"/>
-	<measurements idref="both"/>
-	<output format="TXT" file="data/bbe.25.weierstrass.25.txt"/>
 </simulation>
 
 <simulation samples="30">

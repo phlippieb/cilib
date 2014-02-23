@@ -37,10 +37,28 @@
 
 
         <!--
-            guaranteed convergence pso
+            von neumann pso
+            Defauts, with LBestTopology and RandomBoundaryConstraint
+        -->
+        <algorithm id="vn.25" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="25"/>
+                <entityType class="pso.particle.StandardParticle"/>
+            </initialisationStrategy>
+            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy">
+                <boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
+            </iterationStrategy>
+            <topology class="entity.topologies.VonNeumannTopology"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm>
+
+
+
+        <!--
+            guaranteed convergence pso with star topology
             GCVelocityProvider, RandomBoundaryConstraint, LBestTopology
         -->
-        <algorithm id="gcpso.25" class="pso.PSO">
+        <algorithm id="gcstar.25" class="pso.PSO">
             <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
                 <entityNumber value="25"/>
                 <entityType class="pso.particle.StandardParticle">
@@ -51,6 +69,42 @@
                 <boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
             </iterationStrategy>
             <topology class="entity.topologies.LBestTopology"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm>
+
+        <!--
+            guaranteed convergence pso with ring topology
+            GCVelocityProvider, RandomBoundaryConstraint, GBestTopology
+        -->
+        <algorithm id="gcring.25" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="25"/>
+                <entityType class="pso.particle.StandardParticle">
+                    <velocityProvider class="pso.velocityprovider.GCVelocityProvider"/>
+                </entityType>
+            </initialisationStrategy>
+            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy">
+                <boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
+            </iterationStrategy>
+            <topology class="entity.topologies.GBestTopology"/>
+            <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+        </algorithm>
+
+        <!--
+            guaranteed convergence pso with von neumann topology
+            GCVelocityProvider, RandomBoundaryConstraint, VonNeumannBestTopology
+        -->
+        <algorithm id="gcvn.25" class="pso.PSO">
+            <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+                <entityNumber value="25"/>
+                <entityType class="pso.particle.StandardParticle">
+                    <velocityProvider class="pso.velocityprovider.GCVelocityProvider"/>
+                </entityType>
+            </initialisationStrategy>
+            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy">
+                <boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
+            </iterationStrategy>
+            <topology class="entity.topologies.VonNeumannTopology"/>
             <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
         </algorithm>
 
@@ -71,7 +125,7 @@
             <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy">
                 <boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint"/>
             </iterationStrategy>
-            <topology class="entity.topologies.VonNeumannTopology"/>
+            <topology class="entity.topologies.GBestTopology"/>
             <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
         </algorithm>
 
@@ -102,7 +156,7 @@
             <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy">
                 <boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint"/>
             </iterationStrategy>
-            <topology class="entity.topologies.VonNeumannTopology"/>
+            <!-- irrelevant --> <!--topology class="entity.topologies.VonNeumannTopology"/-->
             <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
         </algorithm>
 
