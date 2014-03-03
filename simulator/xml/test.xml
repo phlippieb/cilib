@@ -28,8 +28,7 @@
 
 
     <simulations>
-
-    	<!-- simulations for every combination of these dimensions:
+<!-- simulations for every combination of these dimensions:
 		algorithms:
 			lbest
 			gbest
@@ -1326,7 +1325,6 @@
 	<measurements idref="both"/>
 	<output format="TXT" file="data/bbe.25.zakharov.25.txt"/>
 </simulation>
-
 
 
     </simulations>

@@ -10,7 +10,7 @@
                 <entityNumber value="25"/>
                 <entityType class="pso.particle.StandardParticle"/>
             </initialisationStrategy>
-            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy">
+            <iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
                 <boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
             </iterationStrategy>
             <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
@@ -27,7 +27,7 @@
                 <entityNumber value="25"/>
                 <entityType class="pso.particle.StandardParticle"/>
             </initialisationStrategy>
-            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy">
+            <iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
                 <boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
             </iterationStrategy>
             <topology class="entity.topologies.LBestTopology"/>
@@ -45,7 +45,7 @@
                 <entityNumber value="25"/>
                 <entityType class="pso.particle.StandardParticle"/>
             </initialisationStrategy>
-            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy">
+            <iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
                 <boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
             </iterationStrategy>
             <topology class="entity.topologies.VonNeumannTopology"/>
@@ -58,14 +58,14 @@
             guaranteed convergence pso with star topology
             GCVelocityProvider, RandomBoundaryConstraint, LBestTopology
         -->
-        <algorithm id="gcstar.25" class="pso.PSO">
+        <algorithm id="gcring.25" class="pso.PSO">
             <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
                 <entityNumber value="25"/>
                 <entityType class="pso.particle.StandardParticle">
                     <velocityProvider class="pso.velocityprovider.GCVelocityProvider"/>
                 </entityType>
             </initialisationStrategy>
-            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy">
+            <iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
                 <boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
             </iterationStrategy>
             <topology class="entity.topologies.LBestTopology"/>
@@ -76,14 +76,14 @@
             guaranteed convergence pso with ring topology
             GCVelocityProvider, RandomBoundaryConstraint, GBestTopology
         -->
-        <algorithm id="gcring.25" class="pso.PSO">
+        <algorithm id="gcstar.25" class="pso.PSO">
             <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
                 <entityNumber value="25"/>
                 <entityType class="pso.particle.StandardParticle">
                     <velocityProvider class="pso.velocityprovider.GCVelocityProvider"/>
                 </entityType>
             </initialisationStrategy>
-            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy">
+            <iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
                 <boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
             </iterationStrategy>
             <topology class="entity.topologies.GBestTopology"/>
@@ -101,7 +101,7 @@
                     <velocityProvider class="pso.velocityprovider.GCVelocityProvider"/>
                 </entityType>
             </initialisationStrategy>
-            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy">
+            <iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
                 <boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
             </iterationStrategy>
             <topology class="entity.topologies.VonNeumannTopology"/>
@@ -122,7 +122,7 @@
                     </velocityProvider>
                 </entityType>
             </initialisationStrategy>
-            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy">
+            <iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
                 <boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint"/>
             </iterationStrategy>
             <topology class="entity.topologies.GBestTopology"/>
@@ -153,7 +153,7 @@
                     </velocityInitialisationStrategy>
                 </entityType>
             </initialisationStrategy>
-            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy">
+            <iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
                 <boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint"/>
             </iterationStrategy>
             <!-- irrelevant --> <!--topology class="entity.topologies.VonNeumannTopology"/-->
@@ -168,7 +168,7 @@
             RandomBoundaryConstraint
         -->
         <algorithm id="bb.25" class="pso.PSO">
-            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy">
+            <iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
                 <boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint"/>
             </iterationStrategy>
             <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
@@ -191,7 +191,7 @@
             RabndomBoundaryContstraint
         -->
         <algorithm id="bbe.25" class="pso.PSO">
-            <iterationStrategy class="pso.iterationstrategies.ASynchronousIterationStrategy" >
+            <iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy" >
                 <boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint"/>
             </iterationStrategy>
             <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
