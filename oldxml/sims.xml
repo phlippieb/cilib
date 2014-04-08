@@ -7,7 +7,7 @@
 <simulator>
 
 <algorithms>
-<algorithm id="gbest.20" class="pso.PSO">
+<algorithm id="gbest.0" class="pso.PSO">
 <initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
 	<entityNumber value="25"/>
 	<entityType class="pso.particle.StandardParticle"/>
@@ -38,21 +38,21 @@
 </measurements>
 
 <simulations>
-	<simulation samples="30">
+	<simulation samples="null">
 		<algorithm idref="gbest.20"/>
 		<problem idref="ackley.5"/>
 		<measurements idref="both"/>
 		<output format="TXT" file="data/gbest.20.ackley.5.txt"/>
 	</simulation>
 
-	<simulation samples="30">
+	<simulation samples="null">
 		<algorithm idref="gbest.20"/>
 		<problem idref="ackley.25"/>
 		<measurements idref="both"/>
 		<output format="TXT" file="data/gbest.20.ackley.25.txt"/>
 	</simulation>
 
-	<simulation samples="30">
+	<simulation samples="null">
 		<algorithm idref="gbest.20"/>
 		<problem idref="ackley.50"/>
 		<measurements idref="both"/>

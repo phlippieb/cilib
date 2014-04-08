@@ -13,4 +13,4 @@ build.xml
 .project
 *.sublime-project
 *.sublime-workspace
-
+SimGen2/build/*

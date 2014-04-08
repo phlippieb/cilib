@@ -2,8 +2,10 @@ package simgen;
 
 import java.util.ArrayList;
 import java.io.BufferedWriter;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.FileReader;
 import java.io.IOException;
 import simgen.function.*;
 import simgen.algorithm.*;
@@ -74,6 +76,9 @@ public class SimGen {
 		//
 		System.out.println("Getting simulation details...");
 		Simulation simulation = getSimulation();
+		//simulation = getSimulation();
+		simulation = getSimulationFromFiles("algorithms.txt", "populations.txt", "functions.txt", "dimensions.txt");
+
 
 		//
 		//
@@ -226,9 +231,8 @@ public class SimGen {
 		w.write("<algorithms>\n");
 		for (Algorithm a : s.algorithms) {
 			for (Integer p : s.populations) {
-				Algorithm alg = a.clone();
 				a.setPopulation(p);
-				w.write(alg.toString());
+				w.write(a.toString());
 			}
 		}
 		w.write("</algorithms>\n\n");
@@ -263,12 +267,12 @@ public class SimGen {
 					for (Integer d : s.dimensions) {
 						a.setPopulation(p);
 						f.setDimensions(d);
-						w.write("\t<simulation samples=\"" + s.getNumberOfSamples() + "\"/>\n");
+						w.write("\t<simulation samples=\"" + s.getNumberOfSamples() + "\">\n");
 						w.write("\t\t<algorithm idref=\"" + a.getId() + "\"/>\n");
 						w.write("\t\t<problem idref=\"" + f.getId() + "\"/>\n");
 						w.write("\t\t<measurements idref=\"both\"/>\n");
 						w.write("\t\t<output format=\"TXT\" file=\"data/");
-						w.write(a.getId() + "." + f.getId() + ".txt/>\n");
+						w.write(a.getId() + "." + f.getId() + ".txt\"/>\n");
 						w.write("\t</simulation>\n\n");
 					}
 				}
@@ -279,6 +283,153 @@ public class SimGen {
 
 	static void writeDocumentPostamble(BufferedWriter w) throws IOException {
 		w.write("</simulator>\n\n");
+	}
+
+
+
+	static Algorithm getAlgorithmFromName(String name) throws Exception {
+		return (Algorithm)Class.forName(name).getConstructor().newInstance();
+	}
+
+	static Function getFunctionFromName(String name) throws Exception {
+		return (Function)Class.forName(name).getConstructor().newInstance();
+	}
+
+	static Simulation getSimulationFromFiles(	String algorithmsFilesName,
+										String populationsFileName,
+										String functionsFileName,
+										String dimensionsFileName) {
+		Simulation simulator = new Simulation();
+
+		BufferedReader reader;
+		String line;
+
+		// 1: Read algorithms
+		try {
+			reader = new BufferedReader(new FileReader(algorithmsFilesName));
+			line = reader.readLine();
+			while (line != null) {
+				if (line.indexOf("#") != 0 && line.indexOf("//") != 0) {
+					// process this line
+					try {
+						simulator.addAlgorithm(getAlgorithmFromName("simgen.algorithm."+line));
+					} catch (Exception e) {
+						System.out.println("[!] Could not add algorithm from string name!");
+						System.out.println("[!] Name: " + line);
+						System.out.println("[!] You should probably abort now!");
+						try {
+							Thread.sleep(1500);
+						} catch (InterruptedException ie) {}
+					}
+				}
+				System.out.println("Added "+line);
+				line = reader.readLine();
+			}
+		}catch (IOException ioe) {
+			System.out.println("[!] Error reading file!");
+			System.out.println("[!] File name: " + algorithmsFilesName);
+			System.out.println("[!] You should probably abort now!");
+			try {
+				Thread.sleep(1500);
+			} catch (InterruptedException ie) {}
+			return null;
+		}
+
+		// 2: Read population sizes
+		try {
+			reader = new BufferedReader(new FileReader(populationsFileName));
+			line = reader.readLine();
+			while (line != null) {
+				if (line.indexOf("#") != 0 && line.indexOf("//") != 0) {
+					// process this line
+					try {
+						simulator.addPopulation(Integer.parseInt(line));
+					} catch (Exception e) {
+						System.out.println("[!] Could not parse population size from string!");
+						System.out.println("[!] Size: " + line);
+						System.out.println("[!] You should probably abort now!");
+						try {
+							Thread.sleep(1500);
+						} catch (InterruptedException ie) {}
+					}
+				}
+				System.out.println("Added "+line);
+				line = reader.readLine();
+			}
+		} catch (IOException ioe) {
+			System.out.println("[!] Error reading file!");
+			System.out.println("[!] File name: " + populationsFileName);
+			System.out.println("[!] You should probably abort now!");
+			try {
+				Thread.sleep(1500);
+			} catch (InterruptedException ie) {}
+			return null;
+		}
+
+		// 3: Read functions
+		try {
+			reader = new BufferedReader(new FileReader(functionsFileName));
+			line = reader.readLine();
+			while (line != null) {
+				if (line.indexOf("#") != 0 && line.indexOf("//") != 0) {
+					// process this line
+					try {
+						simulator.addFunction(getFunctionFromName("simgen.function."+line));
+					} catch (Exception e) {
+						System.out.println("[!] Could not add function from string name!");
+						System.out.println("[!] Name: " + line);
+						System.out.println("[!] You should probably abort now!");
+						try {
+							Thread.sleep(1500);
+						} catch (InterruptedException ie) {}
+					}
+				}
+				System.out.println("Added "+line);
+				line = reader.readLine();
+			}
+		} catch (IOException ioe) {
+			System.out.println("[!] Error reading file!");
+			System.out.println("[!] File name: " + functionsFileName);
+			System.out.println("[!] You should probably abort now!");
+			try {
+				Thread.sleep(1500);
+			} catch (InterruptedException ie) {}
+			return null;
+		}
+
+		// 4: Read dimensions
+		try {
+			reader = new BufferedReader(new FileReader(dimensionsFileName));
+			line = reader.readLine();
+			while (line != null) {
+				if (line.indexOf("#") != 0 && line.indexOf("//") != 0) {
+					// process this line
+					try {
+						simulator.addDimension(Integer.parseInt(line));
+					} catch (Exception e) {
+						System.out.println("[!] Could not parse dimensions from string!");
+						System.out.println("[!] Dimensions: " + line);
+						System.out.println("[!] You should probably abort now!");
+						try {
+							Thread.sleep(1500);
+						} catch (InterruptedException ie) {}
+					}
+				}
+				System.out.println("Added "+line);
+				line = reader.readLine();
+			}
+		} catch (IOException ioe) {
+			System.out.println("[!] Error reading file!");
+			System.out.println("[!] File name: " + dimensionsFileName);
+			System.out.println("[!] You should probably abort now!");
+			try {
+				Thread.sleep(1500);
+			} catch (InterruptedException ie) {}
+			return null;
+		}
+
+		simulator.setNumberOfSamples(30);
+		return simulator;
 	}
 
 }
