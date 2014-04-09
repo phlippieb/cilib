@@ -14,3 +14,4 @@ build.xml
 *.sublime-project
 *.sublime-workspace
 SimGen2/build/*
+rdata
