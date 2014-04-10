@@ -1,8 +1,8 @@
 package simgen.algorithm;
 
-public class Lbest extends Algorithm {
+public class VonNeumann extends Algorithm {
 	public String getName() {
-		return "lbest";
+		return "vn";
 	}
 
 	public String getDefinition() {
@@ -12,8 +12,8 @@ public class Lbest extends Algorithm {
                         "\t\t</initialisationStrategy>\n" +
                         "\t\t<iterationStrategy class=\"pso.iterationstrategies.SynchronousIterationStrategy\">\n" +
                         "\t\t\t<boundaryConstraint class=\"problem.boundaryconstraint.RandomBoundaryConstraint\" />\n" +
-                        "\t\t</iterationStrategy>\n" +
-                        "\t\t<topology class=\"entity.topologies.LBestTopology\"/>\n" +
+                        "\t\t\t</iterationStrategy>\n" +
+                        "\t\t<topology class=\"entity.topologies.VonNeumannTopology\"/>\n" +
                         "\t\t<addStoppingCondition class=\"stoppingcondition.MeasuredStoppingCondition\" target=\"2000\"/>\n";
 	}
 }

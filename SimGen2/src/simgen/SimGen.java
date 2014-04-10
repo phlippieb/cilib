@@ -19,40 +19,16 @@ public class SimGen {
 
 	//
 	//
-	// This is the part you should edit.
-	//
-	//
-	public static Simulation getSimulation() {
-		Simulation simulation = new Simulation();
-
-		// Samples:
-		simulation.setNumberOfSamples(30);
-
-		// Algorithms:
-		simulation.addAlgorithm(new Gbest());
-
-		// Populations:
-		simulation.addPopulation(20);
-
-		// Functions:
-		simulation.addFunction(new Ackley());
-
-		// Dimensions:
-		simulation.addDimension(5);
-		simulation.addDimension(10);
-
-		return simulation;
-	}
+	// To edit an experiment, edit the files
+	//  - algorithms.txt
+	//  - populations.txt
+	//	- functions.txt
+	//  - dimensions.txt
 	//
 	//
 	//
 	//
 	//
-
-
-	//
-	//
-	// TODO: read simulation data from file
 	//
 	//
 
@@ -72,20 +48,22 @@ public class SimGen {
 
 		//
 		//
-		// 0: Get simulation
+		// A: Get simulation details from file
 		//
 		System.out.println("Getting simulation details...");
-		Simulation simulation = getSimulation();
-		//simulation = getSimulation();
-		simulation = getSimulationFromFiles("algorithms.txt", "populations.txt", "functions.txt", "dimensions.txt");
+		Simulation simulation = getSimulationFromFiles("algorithms.txt", "populations.txt", "functions.txt", "dimensions.txt");
 
-
+		//
+		//
+		// B: Write simulations to file
+		//
+		System.out.println("Writing simulations file...");
 		//
 		//
 		//	1: Open output file and writer
 		//
 
-		System.out.println("Opening file...");
+		System.out.println("- Opening file...");
 		//TODO: test args logic
 		String filename;
 		if (args.length < 1)
@@ -120,7 +98,7 @@ public class SimGen {
 		// 2: Create document preamble
 		//
 
-		System.out.println("Writing start of document...");
+		System.out.println("- Writing start of document...");
 		try {
 			writeDocumentPreamble(writer);
 		} catch (IOException ioe) {
@@ -134,7 +112,7 @@ public class SimGen {
 		//
 		// 3: Create algorithm xml
 		//
-		System.out.println("Writing algorithms...");
+		System.out.println("- Writing algorithms...");
 		try {
 			writeAlgorithmXML(writer, simulation);
 		} catch (IOException ioe) {
@@ -144,7 +122,7 @@ public class SimGen {
 			return;		
 		}
 
-		System.out.println("Writing functions...");
+		System.out.println("- Writing functions...");
 		//
 		//
 		// 4: Create problem (function) xml
@@ -162,7 +140,7 @@ public class SimGen {
 		//
 		// 5: Create measurements xml
 		//
-		System.out.println("Writing measurements...");
+		System.out.println("- Writing measurements...");
 		try {
 			writeMeasurementsXML(writer);
 		} catch (IOException ioe) {
@@ -176,7 +154,7 @@ public class SimGen {
 		//
 		// 6: Create simulations xml
 		//
-		System.out.println("Writing simulations...");
+		System.out.println("- Writing simulations...");
 		try {
 			writeSimulationsXML(writer, simulation);
 		} catch (IOException ioe) {
@@ -190,7 +168,7 @@ public class SimGen {
 		//
 		// 7: Create document postamble (whatever)
 		//
-		System.out.println("Writing end of document...");
+		System.out.println("- Writing end of document...");
 		try {
 			writeDocumentPostamble(writer);
 		} catch (IOException ioe) {
@@ -204,7 +182,7 @@ public class SimGen {
 		//
 		// 8: Close file
 		//
-		System.out.println("Closing file....");
+		System.out.println("- Closing file....");
 		try {
 			writer.close();
 		} catch (IOException ioe) {
@@ -252,19 +230,19 @@ public class SimGen {
 
 	static void writeMeasurementsXML(BufferedWriter w) throws IOException {
 		w.write("<measurements id=\"both\" class=\"simulator.MeasurementSuite\" resolution=\"10\">\n");
-        w.write("<addMeasurement class=\"measurement.single.Fitness\"/>\n");
-        w.write("<addMeasurement class=\"measurement.single.diversity.AverageDiversityAroundAllEntities\"/>\n");
+        w.write("\t<addMeasurement class=\"measurement.single.Fitness\"/>\n");
+        w.write("\t<addMeasurement class=\"measurement.single.diversity.AverageDiversityAroundAllEntities\"/>\n");
     	w.write("</measurements>\n\n");
 	}
 
 	static void writeSimulationsXML(BufferedWriter w, Simulation s) throws IOException {
 		w.write("<simulations>\n");
-		Algorithm tmpA;
-		Function tmpF;
+		int simulationNumber = 1;
 		for (Algorithm a : s.algorithms) {
 			for (Integer p : s.populations) {
 				for (Function f : s.functions) {
 					for (Integer d : s.dimensions) {
+						w.write("\t<!-- simulation #" + simulationNumber++ + " -->\n");
 						a.setPopulation(p);
 						f.setDimensions(d);
 						w.write("\t<simulation samples=\"" + s.getNumberOfSamples() + "\">\n");
@@ -305,14 +283,16 @@ public class SimGen {
 		String line;
 
 		// 1: Read algorithms
+		System.out.println("- Getting algorithms...");
 		try {
 			reader = new BufferedReader(new FileReader(algorithmsFilesName));
 			line = reader.readLine();
 			while (line != null) {
-				if (line.indexOf("#") != 0 && line.indexOf("//") != 0) {
+				if (line.indexOf("#") != 0 && line.indexOf("//") != 0&& line.trim().length() > 0) {
 					// process this line
 					try {
 						simulator.addAlgorithm(getAlgorithmFromName("simgen.algorithm."+line));
+						System.out.println("  - Added "+line);
 					} catch (Exception e) {
 						System.out.println("[!] Could not add algorithm from string name!");
 						System.out.println("[!] Name: " + line);
@@ -322,7 +302,6 @@ public class SimGen {
 						} catch (InterruptedException ie) {}
 					}
 				}
-				System.out.println("Added "+line);
 				line = reader.readLine();
 			}
 		}catch (IOException ioe) {
@@ -336,14 +315,16 @@ public class SimGen {
 		}
 
 		// 2: Read population sizes
+		System.out.println("- Getting population sizes...");
 		try {
 			reader = new BufferedReader(new FileReader(populationsFileName));
 			line = reader.readLine();
 			while (line != null) {
-				if (line.indexOf("#") != 0 && line.indexOf("//") != 0) {
+				if (line.indexOf("#") != 0 && line.indexOf("//") != 0 && line.trim().length() > 0) {
 					// process this line
 					try {
 						simulator.addPopulation(Integer.parseInt(line));
+						System.out.println("  - Added "+line);
 					} catch (Exception e) {
 						System.out.println("[!] Could not parse population size from string!");
 						System.out.println("[!] Size: " + line);
@@ -353,7 +334,6 @@ public class SimGen {
 						} catch (InterruptedException ie) {}
 					}
 				}
-				System.out.println("Added "+line);
 				line = reader.readLine();
 			}
 		} catch (IOException ioe) {
@@ -367,14 +347,16 @@ public class SimGen {
 		}
 
 		// 3: Read functions
+		System.out.println("- Getting functions...");
 		try {
 			reader = new BufferedReader(new FileReader(functionsFileName));
 			line = reader.readLine();
 			while (line != null) {
-				if (line.indexOf("#") != 0 && line.indexOf("//") != 0) {
+				if (line.indexOf("#") != 0 && line.indexOf("//") != 0 && line.trim().length() > 0) {
 					// process this line
 					try {
 						simulator.addFunction(getFunctionFromName("simgen.function."+line));
+						System.out.println("  - Added "+line);
 					} catch (Exception e) {
 						System.out.println("[!] Could not add function from string name!");
 						System.out.println("[!] Name: " + line);
@@ -384,7 +366,6 @@ public class SimGen {
 						} catch (InterruptedException ie) {}
 					}
 				}
-				System.out.println("Added "+line);
 				line = reader.readLine();
 			}
 		} catch (IOException ioe) {
@@ -398,14 +379,16 @@ public class SimGen {
 		}
 
 		// 4: Read dimensions
+		System.out.println("- Getting function dimesnions...");
 		try {
 			reader = new BufferedReader(new FileReader(dimensionsFileName));
 			line = reader.readLine();
 			while (line != null) {
-				if (line.indexOf("#") != 0 && line.indexOf("//") != 0) {
+				if (line.indexOf("#") != 0 && line.indexOf("//") != 0 && line.trim().length() > 0) {
 					// process this line
 					try {
 						simulator.addDimension(Integer.parseInt(line));
+						System.out.println("  - Added "+line);
 					} catch (Exception e) {
 						System.out.println("[!] Could not parse dimensions from string!");
 						System.out.println("[!] Dimensions: " + line);
@@ -415,7 +398,6 @@ public class SimGen {
 						} catch (InterruptedException ie) {}
 					}
 				}
-				System.out.println("Added "+line);
 				line = reader.readLine();
 			}
 		} catch (IOException ioe) {

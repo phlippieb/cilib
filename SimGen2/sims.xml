@@ -7,56 +7,1732 @@
 <simulator>
 
 <algorithms>
-<algorithm id="gbest.20" class="pso.PSO">
-<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
-	<entityNumber value="25"/>
-	<entityType class="pso.particle.StandardParticle"/>
-</initialisationStrategy>
-<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
-	<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
-</iterationStrategy>
-<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
-
-</algorithm>
+	<algorithm id="gbest.10" class="pso.PSO">
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle"/>
+		</initialisationStrategy>
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
+		</iterationStrategy>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+	</algorithm>
+	<algorithm id="lbest.10" class="pso.PSO">
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle"/>
+		</initialisationStrategy>
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
+		</iterationStrategy>
+		<topology class="entity.topologies.LBestTopology"/>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+	</algorithm>
+	<algorithm id="vn.10" class="pso.PSO">
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle"/>
+		</initialisationStrategy>
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
+			</iterationStrategy>
+		<topology class="entity.topologies.VonNeumannTopology"/>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+	</algorithm>
+	<algorithm id="gbestgc.10" class="pso.PSO">
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle">
+			<velocityProvider class="pso.velocityprovider.GCVelocityProvider"/>
+			</entityType>
+		</initialisationStrategy>
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
+		</iterationStrategy>
+		<topology class="entity.topologies.GBestTopology"/>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+	</algorithm>
+	<algorithm id="lbestgc.10" class="pso.PSO">
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle">
+			<velocityProvider class="pso.velocityprovider.GCVelocityProvider"/>
+			</entityType>
+		</initialisationStrategy>
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
+		</iterationStrategy>
+		<topology class="entity.topologies.LBestTopology"/>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+	</algorithm>
+	<algorithm id="vngc.10" class="pso.PSO">
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle">
+			<velocityProvider class="pso.velocityprovider.GCVelocityProvider"/>
+			</entityType>
+		</initialisationStrategy>
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
+		</iterationStrategy>
+		<topology class="entity.topologies.VonNeumannTopology"/>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+	</algorithm>
+	<algorithm id="bb.10" class="pso.PSO">
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint"/>
+		</iterationStrategy>
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle">
+				<positionProvider class="pso.positionprovider.LinearPositionProvider"/>
+				<velocityProvider class="pso.velocityprovider.BareBonesVelocityProvider">
+					<exploitProbability class="controlparameter.ConstantControlParameter" parameter="0"/>
+				</velocityProvider>
+			</entityType>
+		</initialisationStrategy>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="1000"/>
+	</algorithm>
+	<algorithm id="bba.10" class="pso.PSO">
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint"/>
+		</iterationStrategy>
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle">
+				<positionProvider class="pso.positionprovider.LinearPositionProvider"/>
+				<velocityProvider class="pso.velocityprovider.BareBonesVelocityProvider">
+					<exploitProbability class="controlparameter.ConstantControlParameter" parameter="0.5"/>
+				</velocityProvider>
+			</entityType>
+		</initialisationStrategy>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="1000"/>
+	</algorithm>
+	<algorithm id="spso.10" class="pso.PSO">
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle">
+				<velocityProvider class="pso.velocityprovider.StandardVelocityProvider">
+					<cognitiveAcceleration class="controlparameter.ConstantControlParameter" parameter="0"/>
+				</velocityProvider>
+			</entityType>
+		</initialisationStrategy>
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint"/>
+		</iterationStrategy>
+		<topology class="entity.topologies.GBestTopology"/>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+	</algorithm>
+	<algorithm id="cpso.10" class="pso.PSO">
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle">
+				<velocityProvider class="pso.velocityprovider.ClampingVelocityProvider">
+					<delegate class="pso.velocityprovider.StandardVelocityProvider">
+						<socialAcceleration class="controlparameter.ConstantControlParameter" parameter="0"/>
+						<cognitiveAcceleration class="controlparameter.ConstantControlParameter" parameter="1.5" />
+						<inertiaWeight class="controlparameter.ConstantControlParameter" parameter="0.99" />
+					</delegate>
+					<vMax class="controlparameter.ConstantControlParameter" parameter="100"/>
+				</velocityProvider>
+				<velocityInitialisationStrategy class="entity.initialisation.RandomBoundedInitialisationStrategy">
+					<lowerBound class="controlparameter.ConstantControlParameter" parameter="1.0"/>
+					<upperBound class="controlparameter.ConstantControlParameter" parameter="100.0"/>
+				</velocityInitialisationStrategy>
+			</entityType>
+		</initialisationStrategy>
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint"/>
+		</iterationStrategy>
+		<!-- irrelevant --> <!--topology class="entity.topologies.VonNeumannTopology"/-->
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+	</algorithm>
 </algorithms>
 
 <problems>
-<problem id="ackley.5" class="problem.FunctionOptimisationProblem" domain="R(-32.0:32.0)^5">
-<function class="functions.continuous.unconstrained.Ackley"/>
-</problem>
-<problem id="ackley.25" class="problem.FunctionOptimisationProblem" domain="R(-32.0:32.0)^25">
-<function class="functions.continuous.unconstrained.Ackley"/>
-</problem>
-<problem id="ackley.50" class="problem.FunctionOptimisationProblem" domain="R(-32.0:32.0)^50">
-<function class="functions.continuous.unconstrained.Ackley"/>
-</problem>
+	<problem id="ackley.5" class="problem.FunctionOptimisationProblem" domain="R(-32.0:32.0)^5">
+		<function class="functions.continuous.unconstrained.Ackley"/>
+	</problem>
+	<problem id="alpine.5" class="problem.FunctionOptimisationProblem" domain="R(-10.0:10.0)^5">
+		<function class="functions.continuous.unconstrained.Alpine" />
+	</problem>
+	<problem id="eggholder.5" class="problem.FunctionOptimisationProblem" domain="R(-512.0:512.0)^5">
+		<function class="functions.continuous.unconstrained.EggHolder" />
+	</problem>
+	<problem id="elliptic.5" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^5">
+		<function class="functions.continuous.unconstrained.Elliptic" />
+	</problem>
+	<problem id="griewank.5" class="problem.FunctionOptimisationProblem" domain="R(-600.0:600.0)^5">
+		<function class="functions.continuous.unconstrained.Griewank" />
+	</problem>
+	<problem id="levy.5" class="problem.FunctionOptimisationProblem" domain="R(-10.0:10.0)^5">
+		<function class="functions.continuous.unconstrained.Levy" />
+	</problem>
+	<problem id="michalewicz.5" class="problem.FunctionOptimisationProblem" domain="R(0.0:3.141592653589793)^5">
+		<function class="functions.continuous.unconstrained.Michalewicz" />
+	</problem>
+	<problem id="quadric.5" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^5">
+		<function class="functions.continuous.unconstrained.Quadric" />
+	</problem>
+	<problem id="quartic.5" class="problem.FunctionOptimisationProblem" domain="R(-1.28:1.28)^5">
+		<function class="functions.continuous.unconstrained.Quartic" />
+	</problem>
+	<problem id="rastrigin.5" class="problem.FunctionOptimisationProblem" domain="R(-5.12:5.12)^5">
+		<function class="functions.continuous.unconstrained.Rastrigin"/>
+	</problem>
+	<problem id="rosenbrock.5" class="problem.FunctionOptimisationProblem" domain="R(-2.048:2.048)^5">
+		<function class="functions.continuous.unconstrained.Rosenbrock"/>
+	</problem>
+	<problem id="salomon.5" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^5">
+		<function class="functions.continuous.unconstrained.Salomon"/>
+	</problem>
+	<problem id="schwefel1_2.5" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^5">
+		<function class="functions.continuous.SchwefelProblem1_2"/>
+	</problem>
+	<problem id="schwefel2_22.5" class="problem.FunctionOptimisationProblem" domain="R(-10.0:10.0)^5">
+		<function class="functions.continuous.unconstrained.SchwefelProblem2_22"/>
+	</problem>
+	<problem id="schwefel2_26.5" class="problem.FunctionOptimisationProblem" domain="R(-500.0:500.0)^5">
+		<function class="functions.continuous.SchwefelProblem2_26"/>
+	</problem>
+	<problem id="spherical.5" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^5">
+		<function class="functions.continuous.unconstrained.Spherical"/>
+	</problem>
+	<problem id="step.5" class="problem.FunctionOptimisationProblem" domain="R(-25.0:25.0)^5">
+		<function class="functions.continuous.unconstrained.Step"/>
+	</problem>
+	<problem id="weierstrass.5" class="problem.FunctionOptimisationProblem" domain="R(-0.5:0.5)^5">
+		<function class="functions.continuous.unconstrained.Weierstrass"/>
+	</problem>
+	<problem id="zakharov.5" class="problem.FunctionOptimisationProblem" domain="R(-5.0:10.0)^5">
+		<function class="functions.continuous.unconstrained.Zakharov"/>
+	</problem>
 </problems>
 
 <measurements id="both" class="simulator.MeasurementSuite" resolution="10">
-<addMeasurement class="measurement.single.Fitness"/>
-<addMeasurement class="measurement.single.diversity.AverageDiversityAroundAllEntities"/>
+	<addMeasurement class="measurement.single.Fitness"/>
+	<addMeasurement class="measurement.single.diversity.AverageDiversityAroundAllEntities"/>
 </measurements>
 
 <simulations>
+	<!-- simulation #1 -->
 	<simulation samples="30">
-		<algorithm idref="gbest.20"/>
+		<algorithm idref="gbest.10"/>
 		<problem idref="ackley.5"/>
 		<measurements idref="both"/>
-		<output format="TXT" file="data/gbest.20.ackley.5.txt"/>
+		<output format="TXT" file="data/gbest.10.ackley.5.txt"/>
 	</simulation>
 
+	<!-- simulation #2 -->
 	<simulation samples="30">
-		<algorithm idref="gbest.20"/>
-		<problem idref="ackley.25"/>
+		<algorithm idref="gbest.10"/>
+		<problem idref="alpine.5"/>
 		<measurements idref="both"/>
-		<output format="TXT" file="data/gbest.20.ackley.25.txt"/>
+		<output format="TXT" file="data/gbest.10.alpine.5.txt"/>
 	</simulation>
 
+	<!-- simulation #3 -->
 	<simulation samples="30">
-		<algorithm idref="gbest.20"/>
-		<problem idref="ackley.50"/>
+		<algorithm idref="gbest.10"/>
+		<problem idref="eggholder.5"/>
 		<measurements idref="both"/>
-		<output format="TXT" file="data/gbest.20.ackley.50.txt"/>
+		<output format="TXT" file="data/gbest.10.eggholder.5.txt"/>
+	</simulation>
+
+	<!-- simulation #4 -->
+	<simulation samples="30">
+		<algorithm idref="gbest.10"/>
+		<problem idref="elliptic.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbest.10.elliptic.5.txt"/>
+	</simulation>
+
+	<!-- simulation #5 -->
+	<simulation samples="30">
+		<algorithm idref="gbest.10"/>
+		<problem idref="griewank.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbest.10.griewank.5.txt"/>
+	</simulation>
+
+	<!-- simulation #6 -->
+	<simulation samples="30">
+		<algorithm idref="gbest.10"/>
+		<problem idref="levy.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbest.10.levy.5.txt"/>
+	</simulation>
+
+	<!-- simulation #7 -->
+	<simulation samples="30">
+		<algorithm idref="gbest.10"/>
+		<problem idref="michalewicz.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbest.10.michalewicz.5.txt"/>
+	</simulation>
+
+	<!-- simulation #8 -->
+	<simulation samples="30">
+		<algorithm idref="gbest.10"/>
+		<problem idref="quadric.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbest.10.quadric.5.txt"/>
+	</simulation>
+
+	<!-- simulation #9 -->
+	<simulation samples="30">
+		<algorithm idref="gbest.10"/>
+		<problem idref="quartic.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbest.10.quartic.5.txt"/>
+	</simulation>
+
+	<!-- simulation #10 -->
+	<simulation samples="30">
+		<algorithm idref="gbest.10"/>
+		<problem idref="rastrigin.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbest.10.rastrigin.5.txt"/>
+	</simulation>
+
+	<!-- simulation #11 -->
+	<simulation samples="30">
+		<algorithm idref="gbest.10"/>
+		<problem idref="rosenbrock.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbest.10.rosenbrock.5.txt"/>
+	</simulation>
+
+	<!-- simulation #12 -->
+	<simulation samples="30">
+		<algorithm idref="gbest.10"/>
+		<problem idref="salomon.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbest.10.salomon.5.txt"/>
+	</simulation>
+
+	<!-- simulation #13 -->
+	<simulation samples="30">
+		<algorithm idref="gbest.10"/>
+		<problem idref="schwefel1_2.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbest.10.schwefel1_2.5.txt"/>
+	</simulation>
+
+	<!-- simulation #14 -->
+	<simulation samples="30">
+		<algorithm idref="gbest.10"/>
+		<problem idref="schwefel2_22.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbest.10.schwefel2_22.5.txt"/>
+	</simulation>
+
+	<!-- simulation #15 -->
+	<simulation samples="30">
+		<algorithm idref="gbest.10"/>
+		<problem idref="schwefel2_26.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbest.10.schwefel2_26.5.txt"/>
+	</simulation>
+
+	<!-- simulation #16 -->
+	<simulation samples="30">
+		<algorithm idref="gbest.10"/>
+		<problem idref="spherical.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbest.10.spherical.5.txt"/>
+	</simulation>
+
+	<!-- simulation #17 -->
+	<simulation samples="30">
+		<algorithm idref="gbest.10"/>
+		<problem idref="step.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbest.10.step.5.txt"/>
+	</simulation>
+
+	<!-- simulation #18 -->
+	<simulation samples="30">
+		<algorithm idref="gbest.10"/>
+		<problem idref="weierstrass.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbest.10.weierstrass.5.txt"/>
+	</simulation>
+
+	<!-- simulation #19 -->
+	<simulation samples="30">
+		<algorithm idref="gbest.10"/>
+		<problem idref="zakharov.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbest.10.zakharov.5.txt"/>
+	</simulation>
+
+	<!-- simulation #20 -->
+	<simulation samples="30">
+		<algorithm idref="lbest.10"/>
+		<problem idref="ackley.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbest.10.ackley.5.txt"/>
+	</simulation>
+
+	<!-- simulation #21 -->
+	<simulation samples="30">
+		<algorithm idref="lbest.10"/>
+		<problem idref="alpine.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbest.10.alpine.5.txt"/>
+	</simulation>
+
+	<!-- simulation #22 -->
+	<simulation samples="30">
+		<algorithm idref="lbest.10"/>
+		<problem idref="eggholder.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbest.10.eggholder.5.txt"/>
+	</simulation>
+
+	<!-- simulation #23 -->
+	<simulation samples="30">
+		<algorithm idref="lbest.10"/>
+		<problem idref="elliptic.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbest.10.elliptic.5.txt"/>
+	</simulation>
+
+	<!-- simulation #24 -->
+	<simulation samples="30">
+		<algorithm idref="lbest.10"/>
+		<problem idref="griewank.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbest.10.griewank.5.txt"/>
+	</simulation>
+
+	<!-- simulation #25 -->
+	<simulation samples="30">
+		<algorithm idref="lbest.10"/>
+		<problem idref="levy.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbest.10.levy.5.txt"/>
+	</simulation>
+
+	<!-- simulation #26 -->
+	<simulation samples="30">
+		<algorithm idref="lbest.10"/>
+		<problem idref="michalewicz.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbest.10.michalewicz.5.txt"/>
+	</simulation>
+
+	<!-- simulation #27 -->
+	<simulation samples="30">
+		<algorithm idref="lbest.10"/>
+		<problem idref="quadric.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbest.10.quadric.5.txt"/>
+	</simulation>
+
+	<!-- simulation #28 -->
+	<simulation samples="30">
+		<algorithm idref="lbest.10"/>
+		<problem idref="quartic.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbest.10.quartic.5.txt"/>
+	</simulation>
+
+	<!-- simulation #29 -->
+	<simulation samples="30">
+		<algorithm idref="lbest.10"/>
+		<problem idref="rastrigin.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbest.10.rastrigin.5.txt"/>
+	</simulation>
+
+	<!-- simulation #30 -->
+	<simulation samples="30">
+		<algorithm idref="lbest.10"/>
+		<problem idref="rosenbrock.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbest.10.rosenbrock.5.txt"/>
+	</simulation>
+
+	<!-- simulation #31 -->
+	<simulation samples="30">
+		<algorithm idref="lbest.10"/>
+		<problem idref="salomon.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbest.10.salomon.5.txt"/>
+	</simulation>
+
+	<!-- simulation #32 -->
+	<simulation samples="30">
+		<algorithm idref="lbest.10"/>
+		<problem idref="schwefel1_2.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbest.10.schwefel1_2.5.txt"/>
+	</simulation>
+
+	<!-- simulation #33 -->
+	<simulation samples="30">
+		<algorithm idref="lbest.10"/>
+		<problem idref="schwefel2_22.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbest.10.schwefel2_22.5.txt"/>
+	</simulation>
+
+	<!-- simulation #34 -->
+	<simulation samples="30">
+		<algorithm idref="lbest.10"/>
+		<problem idref="schwefel2_26.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbest.10.schwefel2_26.5.txt"/>
+	</simulation>
+
+	<!-- simulation #35 -->
+	<simulation samples="30">
+		<algorithm idref="lbest.10"/>
+		<problem idref="spherical.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbest.10.spherical.5.txt"/>
+	</simulation>
+
+	<!-- simulation #36 -->
+	<simulation samples="30">
+		<algorithm idref="lbest.10"/>
+		<problem idref="step.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbest.10.step.5.txt"/>
+	</simulation>
+
+	<!-- simulation #37 -->
+	<simulation samples="30">
+		<algorithm idref="lbest.10"/>
+		<problem idref="weierstrass.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbest.10.weierstrass.5.txt"/>
+	</simulation>
+
+	<!-- simulation #38 -->
+	<simulation samples="30">
+		<algorithm idref="lbest.10"/>
+		<problem idref="zakharov.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbest.10.zakharov.5.txt"/>
+	</simulation>
+
+	<!-- simulation #39 -->
+	<simulation samples="30">
+		<algorithm idref="vn.10"/>
+		<problem idref="ackley.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vn.10.ackley.5.txt"/>
+	</simulation>
+
+	<!-- simulation #40 -->
+	<simulation samples="30">
+		<algorithm idref="vn.10"/>
+		<problem idref="alpine.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vn.10.alpine.5.txt"/>
+	</simulation>
+
+	<!-- simulation #41 -->
+	<simulation samples="30">
+		<algorithm idref="vn.10"/>
+		<problem idref="eggholder.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vn.10.eggholder.5.txt"/>
+	</simulation>
+
+	<!-- simulation #42 -->
+	<simulation samples="30">
+		<algorithm idref="vn.10"/>
+		<problem idref="elliptic.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vn.10.elliptic.5.txt"/>
+	</simulation>
+
+	<!-- simulation #43 -->
+	<simulation samples="30">
+		<algorithm idref="vn.10"/>
+		<problem idref="griewank.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vn.10.griewank.5.txt"/>
+	</simulation>
+
+	<!-- simulation #44 -->
+	<simulation samples="30">
+		<algorithm idref="vn.10"/>
+		<problem idref="levy.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vn.10.levy.5.txt"/>
+	</simulation>
+
+	<!-- simulation #45 -->
+	<simulation samples="30">
+		<algorithm idref="vn.10"/>
+		<problem idref="michalewicz.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vn.10.michalewicz.5.txt"/>
+	</simulation>
+
+	<!-- simulation #46 -->
+	<simulation samples="30">
+		<algorithm idref="vn.10"/>
+		<problem idref="quadric.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vn.10.quadric.5.txt"/>
+	</simulation>
+
+	<!-- simulation #47 -->
+	<simulation samples="30">
+		<algorithm idref="vn.10"/>
+		<problem idref="quartic.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vn.10.quartic.5.txt"/>
+	</simulation>
+
+	<!-- simulation #48 -->
+	<simulation samples="30">
+		<algorithm idref="vn.10"/>
+		<problem idref="rastrigin.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vn.10.rastrigin.5.txt"/>
+	</simulation>
+
+	<!-- simulation #49 -->
+	<simulation samples="30">
+		<algorithm idref="vn.10"/>
+		<problem idref="rosenbrock.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vn.10.rosenbrock.5.txt"/>
+	</simulation>
+
+	<!-- simulation #50 -->
+	<simulation samples="30">
+		<algorithm idref="vn.10"/>
+		<problem idref="salomon.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vn.10.salomon.5.txt"/>
+	</simulation>
+
+	<!-- simulation #51 -->
+	<simulation samples="30">
+		<algorithm idref="vn.10"/>
+		<problem idref="schwefel1_2.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vn.10.schwefel1_2.5.txt"/>
+	</simulation>
+
+	<!-- simulation #52 -->
+	<simulation samples="30">
+		<algorithm idref="vn.10"/>
+		<problem idref="schwefel2_22.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vn.10.schwefel2_22.5.txt"/>
+	</simulation>
+
+	<!-- simulation #53 -->
+	<simulation samples="30">
+		<algorithm idref="vn.10"/>
+		<problem idref="schwefel2_26.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vn.10.schwefel2_26.5.txt"/>
+	</simulation>
+
+	<!-- simulation #54 -->
+	<simulation samples="30">
+		<algorithm idref="vn.10"/>
+		<problem idref="spherical.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vn.10.spherical.5.txt"/>
+	</simulation>
+
+	<!-- simulation #55 -->
+	<simulation samples="30">
+		<algorithm idref="vn.10"/>
+		<problem idref="step.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vn.10.step.5.txt"/>
+	</simulation>
+
+	<!-- simulation #56 -->
+	<simulation samples="30">
+		<algorithm idref="vn.10"/>
+		<problem idref="weierstrass.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vn.10.weierstrass.5.txt"/>
+	</simulation>
+
+	<!-- simulation #57 -->
+	<simulation samples="30">
+		<algorithm idref="vn.10"/>
+		<problem idref="zakharov.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vn.10.zakharov.5.txt"/>
+	</simulation>
+
+	<!-- simulation #58 -->
+	<simulation samples="30">
+		<algorithm idref="gbestgc.10"/>
+		<problem idref="ackley.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbestgc.10.ackley.5.txt"/>
+	</simulation>
+
+	<!-- simulation #59 -->
+	<simulation samples="30">
+		<algorithm idref="gbestgc.10"/>
+		<problem idref="alpine.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbestgc.10.alpine.5.txt"/>
+	</simulation>
+
+	<!-- simulation #60 -->
+	<simulation samples="30">
+		<algorithm idref="gbestgc.10"/>
+		<problem idref="eggholder.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbestgc.10.eggholder.5.txt"/>
+	</simulation>
+
+	<!-- simulation #61 -->
+	<simulation samples="30">
+		<algorithm idref="gbestgc.10"/>
+		<problem idref="elliptic.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbestgc.10.elliptic.5.txt"/>
+	</simulation>
+
+	<!-- simulation #62 -->
+	<simulation samples="30">
+		<algorithm idref="gbestgc.10"/>
+		<problem idref="griewank.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbestgc.10.griewank.5.txt"/>
+	</simulation>
+
+	<!-- simulation #63 -->
+	<simulation samples="30">
+		<algorithm idref="gbestgc.10"/>
+		<problem idref="levy.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbestgc.10.levy.5.txt"/>
+	</simulation>
+
+	<!-- simulation #64 -->
+	<simulation samples="30">
+		<algorithm idref="gbestgc.10"/>
+		<problem idref="michalewicz.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbestgc.10.michalewicz.5.txt"/>
+	</simulation>
+
+	<!-- simulation #65 -->
+	<simulation samples="30">
+		<algorithm idref="gbestgc.10"/>
+		<problem idref="quadric.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbestgc.10.quadric.5.txt"/>
+	</simulation>
+
+	<!-- simulation #66 -->
+	<simulation samples="30">
+		<algorithm idref="gbestgc.10"/>
+		<problem idref="quartic.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbestgc.10.quartic.5.txt"/>
+	</simulation>
+
+	<!-- simulation #67 -->
+	<simulation samples="30">
+		<algorithm idref="gbestgc.10"/>
+		<problem idref="rastrigin.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbestgc.10.rastrigin.5.txt"/>
+	</simulation>
+
+	<!-- simulation #68 -->
+	<simulation samples="30">
+		<algorithm idref="gbestgc.10"/>
+		<problem idref="rosenbrock.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbestgc.10.rosenbrock.5.txt"/>
+	</simulation>
+
+	<!-- simulation #69 -->
+	<simulation samples="30">
+		<algorithm idref="gbestgc.10"/>
+		<problem idref="salomon.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbestgc.10.salomon.5.txt"/>
+	</simulation>
+
+	<!-- simulation #70 -->
+	<simulation samples="30">
+		<algorithm idref="gbestgc.10"/>
+		<problem idref="schwefel1_2.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbestgc.10.schwefel1_2.5.txt"/>
+	</simulation>
+
+	<!-- simulation #71 -->
+	<simulation samples="30">
+		<algorithm idref="gbestgc.10"/>
+		<problem idref="schwefel2_22.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbestgc.10.schwefel2_22.5.txt"/>
+	</simulation>
+
+	<!-- simulation #72 -->
+	<simulation samples="30">
+		<algorithm idref="gbestgc.10"/>
+		<problem idref="schwefel2_26.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbestgc.10.schwefel2_26.5.txt"/>
+	</simulation>
+
+	<!-- simulation #73 -->
+	<simulation samples="30">
+		<algorithm idref="gbestgc.10"/>
+		<problem idref="spherical.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbestgc.10.spherical.5.txt"/>
+	</simulation>
+
+	<!-- simulation #74 -->
+	<simulation samples="30">
+		<algorithm idref="gbestgc.10"/>
+		<problem idref="step.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbestgc.10.step.5.txt"/>
+	</simulation>
+
+	<!-- simulation #75 -->
+	<simulation samples="30">
+		<algorithm idref="gbestgc.10"/>
+		<problem idref="weierstrass.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbestgc.10.weierstrass.5.txt"/>
+	</simulation>
+
+	<!-- simulation #76 -->
+	<simulation samples="30">
+		<algorithm idref="gbestgc.10"/>
+		<problem idref="zakharov.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/gbestgc.10.zakharov.5.txt"/>
+	</simulation>
+
+	<!-- simulation #77 -->
+	<simulation samples="30">
+		<algorithm idref="lbestgc.10"/>
+		<problem idref="ackley.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbestgc.10.ackley.5.txt"/>
+	</simulation>
+
+	<!-- simulation #78 -->
+	<simulation samples="30">
+		<algorithm idref="lbestgc.10"/>
+		<problem idref="alpine.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbestgc.10.alpine.5.txt"/>
+	</simulation>
+
+	<!-- simulation #79 -->
+	<simulation samples="30">
+		<algorithm idref="lbestgc.10"/>
+		<problem idref="eggholder.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbestgc.10.eggholder.5.txt"/>
+	</simulation>
+
+	<!-- simulation #80 -->
+	<simulation samples="30">
+		<algorithm idref="lbestgc.10"/>
+		<problem idref="elliptic.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbestgc.10.elliptic.5.txt"/>
+	</simulation>
+
+	<!-- simulation #81 -->
+	<simulation samples="30">
+		<algorithm idref="lbestgc.10"/>
+		<problem idref="griewank.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbestgc.10.griewank.5.txt"/>
+	</simulation>
+
+	<!-- simulation #82 -->
+	<simulation samples="30">
+		<algorithm idref="lbestgc.10"/>
+		<problem idref="levy.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbestgc.10.levy.5.txt"/>
+	</simulation>
+
+	<!-- simulation #83 -->
+	<simulation samples="30">
+		<algorithm idref="lbestgc.10"/>
+		<problem idref="michalewicz.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbestgc.10.michalewicz.5.txt"/>
+	</simulation>
+
+	<!-- simulation #84 -->
+	<simulation samples="30">
+		<algorithm idref="lbestgc.10"/>
+		<problem idref="quadric.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbestgc.10.quadric.5.txt"/>
+	</simulation>
+
+	<!-- simulation #85 -->
+	<simulation samples="30">
+		<algorithm idref="lbestgc.10"/>
+		<problem idref="quartic.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbestgc.10.quartic.5.txt"/>
+	</simulation>
+
+	<!-- simulation #86 -->
+	<simulation samples="30">
+		<algorithm idref="lbestgc.10"/>
+		<problem idref="rastrigin.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbestgc.10.rastrigin.5.txt"/>
+	</simulation>
+
+	<!-- simulation #87 -->
+	<simulation samples="30">
+		<algorithm idref="lbestgc.10"/>
+		<problem idref="rosenbrock.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbestgc.10.rosenbrock.5.txt"/>
+	</simulation>
+
+	<!-- simulation #88 -->
+	<simulation samples="30">
+		<algorithm idref="lbestgc.10"/>
+		<problem idref="salomon.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbestgc.10.salomon.5.txt"/>
+	</simulation>
+
+	<!-- simulation #89 -->
+	<simulation samples="30">
+		<algorithm idref="lbestgc.10"/>
+		<problem idref="schwefel1_2.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbestgc.10.schwefel1_2.5.txt"/>
+	</simulation>
+
+	<!-- simulation #90 -->
+	<simulation samples="30">
+		<algorithm idref="lbestgc.10"/>
+		<problem idref="schwefel2_22.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbestgc.10.schwefel2_22.5.txt"/>
+	</simulation>
+
+	<!-- simulation #91 -->
+	<simulation samples="30">
+		<algorithm idref="lbestgc.10"/>
+		<problem idref="schwefel2_26.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbestgc.10.schwefel2_26.5.txt"/>
+	</simulation>
+
+	<!-- simulation #92 -->
+	<simulation samples="30">
+		<algorithm idref="lbestgc.10"/>
+		<problem idref="spherical.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbestgc.10.spherical.5.txt"/>
+	</simulation>
+
+	<!-- simulation #93 -->
+	<simulation samples="30">
+		<algorithm idref="lbestgc.10"/>
+		<problem idref="step.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbestgc.10.step.5.txt"/>
+	</simulation>
+
+	<!-- simulation #94 -->
+	<simulation samples="30">
+		<algorithm idref="lbestgc.10"/>
+		<problem idref="weierstrass.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbestgc.10.weierstrass.5.txt"/>
+	</simulation>
+
+	<!-- simulation #95 -->
+	<simulation samples="30">
+		<algorithm idref="lbestgc.10"/>
+		<problem idref="zakharov.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/lbestgc.10.zakharov.5.txt"/>
+	</simulation>
+
+	<!-- simulation #96 -->
+	<simulation samples="30">
+		<algorithm idref="vngc.10"/>
+		<problem idref="ackley.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vngc.10.ackley.5.txt"/>
+	</simulation>
+
+	<!-- simulation #97 -->
+	<simulation samples="30">
+		<algorithm idref="vngc.10"/>
+		<problem idref="alpine.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vngc.10.alpine.5.txt"/>
+	</simulation>
+
+	<!-- simulation #98 -->
+	<simulation samples="30">
+		<algorithm idref="vngc.10"/>
+		<problem idref="eggholder.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vngc.10.eggholder.5.txt"/>
+	</simulation>
+
+	<!-- simulation #99 -->
+	<simulation samples="30">
+		<algorithm idref="vngc.10"/>
+		<problem idref="elliptic.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vngc.10.elliptic.5.txt"/>
+	</simulation>
+
+	<!-- simulation #100 -->
+	<simulation samples="30">
+		<algorithm idref="vngc.10"/>
+		<problem idref="griewank.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vngc.10.griewank.5.txt"/>
+	</simulation>
+
+	<!-- simulation #101 -->
+	<simulation samples="30">
+		<algorithm idref="vngc.10"/>
+		<problem idref="levy.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vngc.10.levy.5.txt"/>
+	</simulation>
+
+	<!-- simulation #102 -->
+	<simulation samples="30">
+		<algorithm idref="vngc.10"/>
+		<problem idref="michalewicz.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vngc.10.michalewicz.5.txt"/>
+	</simulation>
+
+	<!-- simulation #103 -->
+	<simulation samples="30">
+		<algorithm idref="vngc.10"/>
+		<problem idref="quadric.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vngc.10.quadric.5.txt"/>
+	</simulation>
+
+	<!-- simulation #104 -->
+	<simulation samples="30">
+		<algorithm idref="vngc.10"/>
+		<problem idref="quartic.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vngc.10.quartic.5.txt"/>
+	</simulation>
+
+	<!-- simulation #105 -->
+	<simulation samples="30">
+		<algorithm idref="vngc.10"/>
+		<problem idref="rastrigin.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vngc.10.rastrigin.5.txt"/>
+	</simulation>
+
+	<!-- simulation #106 -->
+	<simulation samples="30">
+		<algorithm idref="vngc.10"/>
+		<problem idref="rosenbrock.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vngc.10.rosenbrock.5.txt"/>
+	</simulation>
+
+	<!-- simulation #107 -->
+	<simulation samples="30">
+		<algorithm idref="vngc.10"/>
+		<problem idref="salomon.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vngc.10.salomon.5.txt"/>
+	</simulation>
+
+	<!-- simulation #108 -->
+	<simulation samples="30">
+		<algorithm idref="vngc.10"/>
+		<problem idref="schwefel1_2.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vngc.10.schwefel1_2.5.txt"/>
+	</simulation>
+
+	<!-- simulation #109 -->
+	<simulation samples="30">
+		<algorithm idref="vngc.10"/>
+		<problem idref="schwefel2_22.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vngc.10.schwefel2_22.5.txt"/>
+	</simulation>
+
+	<!-- simulation #110 -->
+	<simulation samples="30">
+		<algorithm idref="vngc.10"/>
+		<problem idref="schwefel2_26.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vngc.10.schwefel2_26.5.txt"/>
+	</simulation>
+
+	<!-- simulation #111 -->
+	<simulation samples="30">
+		<algorithm idref="vngc.10"/>
+		<problem idref="spherical.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vngc.10.spherical.5.txt"/>
+	</simulation>
+
+	<!-- simulation #112 -->
+	<simulation samples="30">
+		<algorithm idref="vngc.10"/>
+		<problem idref="step.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vngc.10.step.5.txt"/>
+	</simulation>
+
+	<!-- simulation #113 -->
+	<simulation samples="30">
+		<algorithm idref="vngc.10"/>
+		<problem idref="weierstrass.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vngc.10.weierstrass.5.txt"/>
+	</simulation>
+
+	<!-- simulation #114 -->
+	<simulation samples="30">
+		<algorithm idref="vngc.10"/>
+		<problem idref="zakharov.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/vngc.10.zakharov.5.txt"/>
+	</simulation>
+
+	<!-- simulation #115 -->
+	<simulation samples="30">
+		<algorithm idref="bb.10"/>
+		<problem idref="ackley.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bb.10.ackley.5.txt"/>
+	</simulation>
+
+	<!-- simulation #116 -->
+	<simulation samples="30">
+		<algorithm idref="bb.10"/>
+		<problem idref="alpine.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bb.10.alpine.5.txt"/>
+	</simulation>
+
+	<!-- simulation #117 -->
+	<simulation samples="30">
+		<algorithm idref="bb.10"/>
+		<problem idref="eggholder.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bb.10.eggholder.5.txt"/>
+	</simulation>
+
+	<!-- simulation #118 -->
+	<simulation samples="30">
+		<algorithm idref="bb.10"/>
+		<problem idref="elliptic.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bb.10.elliptic.5.txt"/>
+	</simulation>
+
+	<!-- simulation #119 -->
+	<simulation samples="30">
+		<algorithm idref="bb.10"/>
+		<problem idref="griewank.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bb.10.griewank.5.txt"/>
+	</simulation>
+
+	<!-- simulation #120 -->
+	<simulation samples="30">
+		<algorithm idref="bb.10"/>
+		<problem idref="levy.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bb.10.levy.5.txt"/>
+	</simulation>
+
+	<!-- simulation #121 -->
+	<simulation samples="30">
+		<algorithm idref="bb.10"/>
+		<problem idref="michalewicz.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bb.10.michalewicz.5.txt"/>
+	</simulation>
+
+	<!-- simulation #122 -->
+	<simulation samples="30">
+		<algorithm idref="bb.10"/>
+		<problem idref="quadric.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bb.10.quadric.5.txt"/>
+	</simulation>
+
+	<!-- simulation #123 -->
+	<simulation samples="30">
+		<algorithm idref="bb.10"/>
+		<problem idref="quartic.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bb.10.quartic.5.txt"/>
+	</simulation>
+
+	<!-- simulation #124 -->
+	<simulation samples="30">
+		<algorithm idref="bb.10"/>
+		<problem idref="rastrigin.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bb.10.rastrigin.5.txt"/>
+	</simulation>
+
+	<!-- simulation #125 -->
+	<simulation samples="30">
+		<algorithm idref="bb.10"/>
+		<problem idref="rosenbrock.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bb.10.rosenbrock.5.txt"/>
+	</simulation>
+
+	<!-- simulation #126 -->
+	<simulation samples="30">
+		<algorithm idref="bb.10"/>
+		<problem idref="salomon.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bb.10.salomon.5.txt"/>
+	</simulation>
+
+	<!-- simulation #127 -->
+	<simulation samples="30">
+		<algorithm idref="bb.10"/>
+		<problem idref="schwefel1_2.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bb.10.schwefel1_2.5.txt"/>
+	</simulation>
+
+	<!-- simulation #128 -->
+	<simulation samples="30">
+		<algorithm idref="bb.10"/>
+		<problem idref="schwefel2_22.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bb.10.schwefel2_22.5.txt"/>
+	</simulation>
+
+	<!-- simulation #129 -->
+	<simulation samples="30">
+		<algorithm idref="bb.10"/>
+		<problem idref="schwefel2_26.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bb.10.schwefel2_26.5.txt"/>
+	</simulation>
+
+	<!-- simulation #130 -->
+	<simulation samples="30">
+		<algorithm idref="bb.10"/>
+		<problem idref="spherical.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bb.10.spherical.5.txt"/>
+	</simulation>
+
+	<!-- simulation #131 -->
+	<simulation samples="30">
+		<algorithm idref="bb.10"/>
+		<problem idref="step.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bb.10.step.5.txt"/>
+	</simulation>
+
+	<!-- simulation #132 -->
+	<simulation samples="30">
+		<algorithm idref="bb.10"/>
+		<problem idref="weierstrass.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bb.10.weierstrass.5.txt"/>
+	</simulation>
+
+	<!-- simulation #133 -->
+	<simulation samples="30">
+		<algorithm idref="bb.10"/>
+		<problem idref="zakharov.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bb.10.zakharov.5.txt"/>
+	</simulation>
+
+	<!-- simulation #134 -->
+	<simulation samples="30">
+		<algorithm idref="bba.10"/>
+		<problem idref="ackley.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bba.10.ackley.5.txt"/>
+	</simulation>
+
+	<!-- simulation #135 -->
+	<simulation samples="30">
+		<algorithm idref="bba.10"/>
+		<problem idref="alpine.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bba.10.alpine.5.txt"/>
+	</simulation>
+
+	<!-- simulation #136 -->
+	<simulation samples="30">
+		<algorithm idref="bba.10"/>
+		<problem idref="eggholder.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bba.10.eggholder.5.txt"/>
+	</simulation>
+
+	<!-- simulation #137 -->
+	<simulation samples="30">
+		<algorithm idref="bba.10"/>
+		<problem idref="elliptic.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bba.10.elliptic.5.txt"/>
+	</simulation>
+
+	<!-- simulation #138 -->
+	<simulation samples="30">
+		<algorithm idref="bba.10"/>
+		<problem idref="griewank.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bba.10.griewank.5.txt"/>
+	</simulation>
+
+	<!-- simulation #139 -->
+	<simulation samples="30">
+		<algorithm idref="bba.10"/>
+		<problem idref="levy.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bba.10.levy.5.txt"/>
+	</simulation>
+
+	<!-- simulation #140 -->
+	<simulation samples="30">
+		<algorithm idref="bba.10"/>
+		<problem idref="michalewicz.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bba.10.michalewicz.5.txt"/>
+	</simulation>
+
+	<!-- simulation #141 -->
+	<simulation samples="30">
+		<algorithm idref="bba.10"/>
+		<problem idref="quadric.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bba.10.quadric.5.txt"/>
+	</simulation>
+
+	<!-- simulation #142 -->
+	<simulation samples="30">
+		<algorithm idref="bba.10"/>
+		<problem idref="quartic.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bba.10.quartic.5.txt"/>
+	</simulation>
+
+	<!-- simulation #143 -->
+	<simulation samples="30">
+		<algorithm idref="bba.10"/>
+		<problem idref="rastrigin.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bba.10.rastrigin.5.txt"/>
+	</simulation>
+
+	<!-- simulation #144 -->
+	<simulation samples="30">
+		<algorithm idref="bba.10"/>
+		<problem idref="rosenbrock.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bba.10.rosenbrock.5.txt"/>
+	</simulation>
+
+	<!-- simulation #145 -->
+	<simulation samples="30">
+		<algorithm idref="bba.10"/>
+		<problem idref="salomon.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bba.10.salomon.5.txt"/>
+	</simulation>
+
+	<!-- simulation #146 -->
+	<simulation samples="30">
+		<algorithm idref="bba.10"/>
+		<problem idref="schwefel1_2.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bba.10.schwefel1_2.5.txt"/>
+	</simulation>
+
+	<!-- simulation #147 -->
+	<simulation samples="30">
+		<algorithm idref="bba.10"/>
+		<problem idref="schwefel2_22.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bba.10.schwefel2_22.5.txt"/>
+	</simulation>
+
+	<!-- simulation #148 -->
+	<simulation samples="30">
+		<algorithm idref="bba.10"/>
+		<problem idref="schwefel2_26.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bba.10.schwefel2_26.5.txt"/>
+	</simulation>
+
+	<!-- simulation #149 -->
+	<simulation samples="30">
+		<algorithm idref="bba.10"/>
+		<problem idref="spherical.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bba.10.spherical.5.txt"/>
+	</simulation>
+
+	<!-- simulation #150 -->
+	<simulation samples="30">
+		<algorithm idref="bba.10"/>
+		<problem idref="step.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bba.10.step.5.txt"/>
+	</simulation>
+
+	<!-- simulation #151 -->
+	<simulation samples="30">
+		<algorithm idref="bba.10"/>
+		<problem idref="weierstrass.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bba.10.weierstrass.5.txt"/>
+	</simulation>
+
+	<!-- simulation #152 -->
+	<simulation samples="30">
+		<algorithm idref="bba.10"/>
+		<problem idref="zakharov.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/bba.10.zakharov.5.txt"/>
+	</simulation>
+
+	<!-- simulation #153 -->
+	<simulation samples="30">
+		<algorithm idref="spso.10"/>
+		<problem idref="ackley.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/spso.10.ackley.5.txt"/>
+	</simulation>
+
+	<!-- simulation #154 -->
+	<simulation samples="30">
+		<algorithm idref="spso.10"/>
+		<problem idref="alpine.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/spso.10.alpine.5.txt"/>
+	</simulation>
+
+	<!-- simulation #155 -->
+	<simulation samples="30">
+		<algorithm idref="spso.10"/>
+		<problem idref="eggholder.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/spso.10.eggholder.5.txt"/>
+	</simulation>
+
+	<!-- simulation #156 -->
+	<simulation samples="30">
+		<algorithm idref="spso.10"/>
+		<problem idref="elliptic.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/spso.10.elliptic.5.txt"/>
+	</simulation>
+
+	<!-- simulation #157 -->
+	<simulation samples="30">
+		<algorithm idref="spso.10"/>
+		<problem idref="griewank.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/spso.10.griewank.5.txt"/>
+	</simulation>
+
+	<!-- simulation #158 -->
+	<simulation samples="30">
+		<algorithm idref="spso.10"/>
+		<problem idref="levy.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/spso.10.levy.5.txt"/>
+	</simulation>
+
+	<!-- simulation #159 -->
+	<simulation samples="30">
+		<algorithm idref="spso.10"/>
+		<problem idref="michalewicz.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/spso.10.michalewicz.5.txt"/>
+	</simulation>
+
+	<!-- simulation #160 -->
+	<simulation samples="30">
+		<algorithm idref="spso.10"/>
+		<problem idref="quadric.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/spso.10.quadric.5.txt"/>
+	</simulation>
+
+	<!-- simulation #161 -->
+	<simulation samples="30">
+		<algorithm idref="spso.10"/>
+		<problem idref="quartic.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/spso.10.quartic.5.txt"/>
+	</simulation>
+
+	<!-- simulation #162 -->
+	<simulation samples="30">
+		<algorithm idref="spso.10"/>
+		<problem idref="rastrigin.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/spso.10.rastrigin.5.txt"/>
+	</simulation>
+
+	<!-- simulation #163 -->
+	<simulation samples="30">
+		<algorithm idref="spso.10"/>
+		<problem idref="rosenbrock.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/spso.10.rosenbrock.5.txt"/>
+	</simulation>
+
+	<!-- simulation #164 -->
+	<simulation samples="30">
+		<algorithm idref="spso.10"/>
+		<problem idref="salomon.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/spso.10.salomon.5.txt"/>
+	</simulation>
+
+	<!-- simulation #165 -->
+	<simulation samples="30">
+		<algorithm idref="spso.10"/>
+		<problem idref="schwefel1_2.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/spso.10.schwefel1_2.5.txt"/>
+	</simulation>
+
+	<!-- simulation #166 -->
+	<simulation samples="30">
+		<algorithm idref="spso.10"/>
+		<problem idref="schwefel2_22.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/spso.10.schwefel2_22.5.txt"/>
+	</simulation>
+
+	<!-- simulation #167 -->
+	<simulation samples="30">
+		<algorithm idref="spso.10"/>
+		<problem idref="schwefel2_26.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/spso.10.schwefel2_26.5.txt"/>
+	</simulation>
+
+	<!-- simulation #168 -->
+	<simulation samples="30">
+		<algorithm idref="spso.10"/>
+		<problem idref="spherical.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/spso.10.spherical.5.txt"/>
+	</simulation>
+
+	<!-- simulation #169 -->
+	<simulation samples="30">
+		<algorithm idref="spso.10"/>
+		<problem idref="step.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/spso.10.step.5.txt"/>
+	</simulation>
+
+	<!-- simulation #170 -->
+	<simulation samples="30">
+		<algorithm idref="spso.10"/>
+		<problem idref="weierstrass.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/spso.10.weierstrass.5.txt"/>
+	</simulation>
+
+	<!-- simulation #171 -->
+	<simulation samples="30">
+		<algorithm idref="spso.10"/>
+		<problem idref="zakharov.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/spso.10.zakharov.5.txt"/>
+	</simulation>
+
+	<!-- simulation #172 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="ackley.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.ackley.5.txt"/>
+	</simulation>
+
+	<!-- simulation #173 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="alpine.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.alpine.5.txt"/>
+	</simulation>
+
+	<!-- simulation #174 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="eggholder.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.eggholder.5.txt"/>
+	</simulation>
+
+	<!-- simulation #175 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="elliptic.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.elliptic.5.txt"/>
+	</simulation>
+
+	<!-- simulation #176 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="griewank.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.griewank.5.txt"/>
+	</simulation>
+
+	<!-- simulation #177 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="levy.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.levy.5.txt"/>
+	</simulation>
+
+	<!-- simulation #178 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="michalewicz.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.michalewicz.5.txt"/>
+	</simulation>
+
+	<!-- simulation #179 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="quadric.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.quadric.5.txt"/>
+	</simulation>
+
+	<!-- simulation #180 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="quartic.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.quartic.5.txt"/>
+	</simulation>
+
+	<!-- simulation #181 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="rastrigin.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.rastrigin.5.txt"/>
+	</simulation>
+
+	<!-- simulation #182 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="rosenbrock.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.rosenbrock.5.txt"/>
+	</simulation>
+
+	<!-- simulation #183 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="salomon.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.salomon.5.txt"/>
+	</simulation>
+
+	<!-- simulation #184 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="schwefel1_2.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.schwefel1_2.5.txt"/>
+	</simulation>
+
+	<!-- simulation #185 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="schwefel2_22.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.schwefel2_22.5.txt"/>
+	</simulation>
+
+	<!-- simulation #186 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="schwefel2_26.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.schwefel2_26.5.txt"/>
+	</simulation>
+
+	<!-- simulation #187 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="spherical.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.spherical.5.txt"/>
+	</simulation>
+
+	<!-- simulation #188 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="step.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.step.5.txt"/>
+	</simulation>
+
+	<!-- simulation #189 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="weierstrass.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.weierstrass.5.txt"/>
+	</simulation>
+
+	<!-- simulation #190 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="zakharov.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.zakharov.5.txt"/>
 	</simulation>
 
 </simulations>

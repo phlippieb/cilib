@@ -27,11 +27,11 @@ public abstract class Algorithm implements Cloneable {
 	public String toString() {
 		String result = "";
 
-		result += "<algorithm ";
+		result += "\t<algorithm ";
 		result += "id=\"" + getId() + "\" ";
 		result += "class=\"pso.PSO\">\n";
-		result += getDefinition() + "\n";
-		result += "</algorithm>\n";
+		result += getDefinition();
+		result += "\t</algorithm>\n";
 
 		return result;
 	}

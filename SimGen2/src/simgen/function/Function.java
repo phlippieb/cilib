@@ -44,7 +44,7 @@ public abstract class Function implements Cloneable {
 	@Override
 	public String toString() {
 		String result = "";
-		result += "<problem id=\"";
+		result += "\t<problem id=\"";
 		result += this.name;
 		result += ".";
 		result += this.dimensions;
@@ -55,10 +55,10 @@ public abstract class Function implements Cloneable {
 		result += this.domainMax;
 		result += ")^";
 		result += this.dimensions;
-		result += "\">\n";
+		result += "\">\n\t\t";
 		result += this.definition;
 		result += "\n";
-		result += "</problem>\n";
+		result += "\t</problem>\n";
 		return result;
 	}
 

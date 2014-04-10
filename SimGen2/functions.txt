@@ -1,1 +1,23 @@
+# this is a comment.
+# open lines are ignored.
+
 Ackley
+Alpine
+EggHolder
+Elliptic
+Griewank
+Levy
+Michalewicz
+Quadric
+Quartic
+Rastrigin
+Rosenbrock
+Salomon
+SchwefelProblem1_2
+SchwefelProblem2_22
+SchwefelProblem2_26
+#SixHumpCamelBack
+Spherical
+Step
+Weierstrass
+Zakharov
