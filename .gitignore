@@ -15,3 +15,5 @@ build.xml
 *.sublime-workspace
 SimGen2/build/*
 rdata
+SimGen2/build
+SimGen2/dist
