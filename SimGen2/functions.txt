@@ -1,5 +1,4 @@
-# this is a comment.
-# open lines are ignored.
+# comments (like this line) and blank lines are ignored.
 
 Ackley
 Alpine

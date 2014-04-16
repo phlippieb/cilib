@@ -7,56 +7,971 @@
 <simulator>
 
 <algorithms>
-<algorithm id="gbest.20" class="pso.PSO">
-<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
-	<entityNumber value="25"/>
-	<entityType class="pso.particle.StandardParticle"/>
-</initialisationStrategy>
-<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
-	<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
-</iterationStrategy>
-<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
-
-</algorithm>
+	<algorithm id="gbest.10" class="pso.PSO">
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle"/>
+		</initialisationStrategy>
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
+		</iterationStrategy>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+	</algorithm>
+	<algorithm id="lbest.10" class="pso.PSO">
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle"/>
+		</initialisationStrategy>
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
+		</iterationStrategy>
+		<topology class="entity.topologies.LBestTopology"/>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+	</algorithm>
+	<algorithm id="vn.10" class="pso.PSO">
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle"/>
+		</initialisationStrategy>
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
+			</iterationStrategy>
+		<topology class="entity.topologies.VonNeumannTopology"/>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+	</algorithm>
+	<algorithm id="gbestgc.10" class="pso.PSO">
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle">
+			<velocityProvider class="pso.velocityprovider.GCVelocityProvider"/>
+			</entityType>
+		</initialisationStrategy>
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
+		</iterationStrategy>
+		<topology class="entity.topologies.GBestTopology"/>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+	</algorithm>
+	<algorithm id="lbestgc.10" class="pso.PSO">
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle">
+			<velocityProvider class="pso.velocityprovider.GCVelocityProvider"/>
+			</entityType>
+		</initialisationStrategy>
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
+		</iterationStrategy>
+		<topology class="entity.topologies.LBestTopology"/>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+	</algorithm>
+	<algorithm id="vngc.10" class="pso.PSO">
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle">
+			<velocityProvider class="pso.velocityprovider.GCVelocityProvider"/>
+			</entityType>
+		</initialisationStrategy>
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
+		</iterationStrategy>
+		<topology class="entity.topologies.VonNeumannTopology"/>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+	</algorithm>
+	<algorithm id="bb.10" class="pso.PSO">
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint"/>
+		</iterationStrategy>
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle">
+				<positionProvider class="pso.positionprovider.LinearPositionProvider"/>
+				<velocityProvider class="pso.velocityprovider.BareBonesVelocityProvider">
+					<exploitProbability class="controlparameter.ConstantControlParameter" parameter="0"/>
+				</velocityProvider>
+			</entityType>
+		</initialisationStrategy>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="1000"/>
+	</algorithm>
+	<algorithm id="bba.10" class="pso.PSO">
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint"/>
+		</iterationStrategy>
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle">
+				<positionProvider class="pso.positionprovider.LinearPositionProvider"/>
+				<velocityProvider class="pso.velocityprovider.BareBonesVelocityProvider">
+					<exploitProbability class="controlparameter.ConstantControlParameter" parameter="0.5"/>
+				</velocityProvider>
+			</entityType>
+		</initialisationStrategy>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="1000"/>
+	</algorithm>
+	<algorithm id="spso.10" class="pso.PSO">
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle">
+				<velocityProvider class="pso.velocityprovider.StandardVelocityProvider">
+					<cognitiveAcceleration class="controlparameter.ConstantControlParameter" parameter="0"/>
+				</velocityProvider>
+			</entityType>
+		</initialisationStrategy>
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint"/>
+		</iterationStrategy>
+		<topology class="entity.topologies.GBestTopology"/>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+	</algorithm>
+	<algorithm id="cpso.10" class="pso.PSO">
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle">
+				<velocityProvider class="pso.velocityprovider.ClampingVelocityProvider">
+					<delegate class="pso.velocityprovider.StandardVelocityProvider">
+						<socialAcceleration class="controlparameter.ConstantControlParameter" parameter="0"/>
+						<cognitiveAcceleration class="controlparameter.ConstantControlParameter" parameter="1.5" />
+						<inertiaWeight class="controlparameter.ConstantControlParameter" parameter="0.99" />
+					</delegate>
+					<vMax class="controlparameter.ConstantControlParameter" parameter="100"/>
+				</velocityProvider>
+				<velocityInitialisationStrategy class="entity.initialisation.RandomBoundedInitialisationStrategy">
+					<lowerBound class="controlparameter.ConstantControlParameter" parameter="1.0"/>
+					<upperBound class="controlparameter.ConstantControlParameter" parameter="100.0"/>
+				</velocityInitialisationStrategy>
+			</entityType>
+		</initialisationStrategy>
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint"/>
+		</iterationStrategy>
+		<!-- irrelevant --> <!--topology class="entity.topologies.VonNeumannTopology"/-->
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+	</algorithm>
 </algorithms>
 
 <problems>
-<problem id="ackley.5" class="problem.FunctionOptimisationProblem" domain="R(-32.0:32.0)^5">
-<function class="functions.continuous.unconstrained.Ackley"/>
-</problem>
-<problem id="ackley.25" class="problem.FunctionOptimisationProblem" domain="R(-32.0:32.0)^25">
-<function class="functions.continuous.unconstrained.Ackley"/>
-</problem>
-<problem id="ackley.50" class="problem.FunctionOptimisationProblem" domain="R(-32.0:32.0)^50">
-<function class="functions.continuous.unconstrained.Ackley"/>
-</problem>
+	<problem id="ackley.3" class="problem.FunctionOptimisationProblem" domain="R(-32.0:32.0)^3">
+		<function class="functions.continuous.unconstrained.Ackley"/>
+	</problem>
+	<problem id="ackley.5" class="problem.FunctionOptimisationProblem" domain="R(-32.0:32.0)^5">
+		<function class="functions.continuous.unconstrained.Ackley"/>
+	</problem>
+	<problem id="ackley.10" class="problem.FunctionOptimisationProblem" domain="R(-32.0:32.0)^10">
+		<function class="functions.continuous.unconstrained.Ackley"/>
+	</problem>
+	<problem id="ackley.25" class="problem.FunctionOptimisationProblem" domain="R(-32.0:32.0)^25">
+		<function class="functions.continuous.unconstrained.Ackley"/>
+	</problem>
+	<problem id="ackley.50" class="problem.FunctionOptimisationProblem" domain="R(-32.0:32.0)^50">
+		<function class="functions.continuous.unconstrained.Ackley"/>
+	</problem>
+	<problem id="alpine.3" class="problem.FunctionOptimisationProblem" domain="R(-10.0:10.0)^3">
+		<function class="functions.continuous.unconstrained.Alpine" />
+	</problem>
+	<problem id="alpine.5" class="problem.FunctionOptimisationProblem" domain="R(-10.0:10.0)^5">
+		<function class="functions.continuous.unconstrained.Alpine" />
+	</problem>
+	<problem id="alpine.10" class="problem.FunctionOptimisationProblem" domain="R(-10.0:10.0)^10">
+		<function class="functions.continuous.unconstrained.Alpine" />
+	</problem>
+	<problem id="alpine.25" class="problem.FunctionOptimisationProblem" domain="R(-10.0:10.0)^25">
+		<function class="functions.continuous.unconstrained.Alpine" />
+	</problem>
+	<problem id="alpine.50" class="problem.FunctionOptimisationProblem" domain="R(-10.0:10.0)^50">
+		<function class="functions.continuous.unconstrained.Alpine" />
+	</problem>
+	<problem id="eggholder.3" class="problem.FunctionOptimisationProblem" domain="R(-512.0:512.0)^3">
+		<function class="functions.continuous.unconstrained.EggHolder" />
+	</problem>
+	<problem id="eggholder.5" class="problem.FunctionOptimisationProblem" domain="R(-512.0:512.0)^5">
+		<function class="functions.continuous.unconstrained.EggHolder" />
+	</problem>
+	<problem id="eggholder.10" class="problem.FunctionOptimisationProblem" domain="R(-512.0:512.0)^10">
+		<function class="functions.continuous.unconstrained.EggHolder" />
+	</problem>
+	<problem id="eggholder.25" class="problem.FunctionOptimisationProblem" domain="R(-512.0:512.0)^25">
+		<function class="functions.continuous.unconstrained.EggHolder" />
+	</problem>
+	<problem id="eggholder.50" class="problem.FunctionOptimisationProblem" domain="R(-512.0:512.0)^50">
+		<function class="functions.continuous.unconstrained.EggHolder" />
+	</problem>
+	<problem id="elliptic.3" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^3">
+		<function class="functions.continuous.unconstrained.Elliptic" />
+	</problem>
+	<problem id="elliptic.5" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^5">
+		<function class="functions.continuous.unconstrained.Elliptic" />
+	</problem>
+	<problem id="elliptic.10" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^10">
+		<function class="functions.continuous.unconstrained.Elliptic" />
+	</problem>
+	<problem id="elliptic.25" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^25">
+		<function class="functions.continuous.unconstrained.Elliptic" />
+	</problem>
+	<problem id="elliptic.50" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^50">
+		<function class="functions.continuous.unconstrained.Elliptic" />
+	</problem>
+	<problem id="griewank.3" class="problem.FunctionOptimisationProblem" domain="R(-600.0:600.0)^3">
+		<function class="functions.continuous.unconstrained.Griewank" />
+	</problem>
+	<problem id="griewank.5" class="problem.FunctionOptimisationProblem" domain="R(-600.0:600.0)^5">
+		<function class="functions.continuous.unconstrained.Griewank" />
+	</problem>
+	<problem id="griewank.10" class="problem.FunctionOptimisationProblem" domain="R(-600.0:600.0)^10">
+		<function class="functions.continuous.unconstrained.Griewank" />
+	</problem>
+	<problem id="griewank.25" class="problem.FunctionOptimisationProblem" domain="R(-600.0:600.0)^25">
+		<function class="functions.continuous.unconstrained.Griewank" />
+	</problem>
+	<problem id="griewank.50" class="problem.FunctionOptimisationProblem" domain="R(-600.0:600.0)^50">
+		<function class="functions.continuous.unconstrained.Griewank" />
+	</problem>
+	<problem id="levy.3" class="problem.FunctionOptimisationProblem" domain="R(-10.0:10.0)^3">
+		<function class="functions.continuous.unconstrained.Levy" />
+	</problem>
+	<problem id="levy.5" class="problem.FunctionOptimisationProblem" domain="R(-10.0:10.0)^5">
+		<function class="functions.continuous.unconstrained.Levy" />
+	</problem>
+	<problem id="levy.10" class="problem.FunctionOptimisationProblem" domain="R(-10.0:10.0)^10">
+		<function class="functions.continuous.unconstrained.Levy" />
+	</problem>
+	<problem id="levy.25" class="problem.FunctionOptimisationProblem" domain="R(-10.0:10.0)^25">
+		<function class="functions.continuous.unconstrained.Levy" />
+	</problem>
+	<problem id="levy.50" class="problem.FunctionOptimisationProblem" domain="R(-10.0:10.0)^50">
+		<function class="functions.continuous.unconstrained.Levy" />
+	</problem>
+	<problem id="michalewicz.3" class="problem.FunctionOptimisationProblem" domain="R(0.0:3.141592653589793)^3">
+		<function class="functions.continuous.unconstrained.Michalewicz" />
+	</problem>
+	<problem id="michalewicz.5" class="problem.FunctionOptimisationProblem" domain="R(0.0:3.141592653589793)^5">
+		<function class="functions.continuous.unconstrained.Michalewicz" />
+	</problem>
+	<problem id="michalewicz.10" class="problem.FunctionOptimisationProblem" domain="R(0.0:3.141592653589793)^10">
+		<function class="functions.continuous.unconstrained.Michalewicz" />
+	</problem>
+	<problem id="michalewicz.25" class="problem.FunctionOptimisationProblem" domain="R(0.0:3.141592653589793)^25">
+		<function class="functions.continuous.unconstrained.Michalewicz" />
+	</problem>
+	<problem id="michalewicz.50" class="problem.FunctionOptimisationProblem" domain="R(0.0:3.141592653589793)^50">
+		<function class="functions.continuous.unconstrained.Michalewicz" />
+	</problem>
+	<problem id="quadric.3" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^3">
+		<function class="functions.continuous.unconstrained.Quadric" />
+	</problem>
+	<problem id="quadric.5" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^5">
+		<function class="functions.continuous.unconstrained.Quadric" />
+	</problem>
+	<problem id="quadric.10" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^10">
+		<function class="functions.continuous.unconstrained.Quadric" />
+	</problem>
+	<problem id="quadric.25" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^25">
+		<function class="functions.continuous.unconstrained.Quadric" />
+	</problem>
+	<problem id="quadric.50" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^50">
+		<function class="functions.continuous.unconstrained.Quadric" />
+	</problem>
+	<problem id="quartic.3" class="problem.FunctionOptimisationProblem" domain="R(-1.28:1.28)^3">
+		<function class="functions.continuous.unconstrained.Quartic" />
+	</problem>
+	<problem id="quartic.5" class="problem.FunctionOptimisationProblem" domain="R(-1.28:1.28)^5">
+		<function class="functions.continuous.unconstrained.Quartic" />
+	</problem>
+	<problem id="quartic.10" class="problem.FunctionOptimisationProblem" domain="R(-1.28:1.28)^10">
+		<function class="functions.continuous.unconstrained.Quartic" />
+	</problem>
+	<problem id="quartic.25" class="problem.FunctionOptimisationProblem" domain="R(-1.28:1.28)^25">
+		<function class="functions.continuous.unconstrained.Quartic" />
+	</problem>
+	<problem id="quartic.50" class="problem.FunctionOptimisationProblem" domain="R(-1.28:1.28)^50">
+		<function class="functions.continuous.unconstrained.Quartic" />
+	</problem>
+	<problem id="rastrigin.3" class="problem.FunctionOptimisationProblem" domain="R(-5.12:5.12)^3">
+		<function class="functions.continuous.unconstrained.Rastrigin"/>
+	</problem>
+	<problem id="rastrigin.5" class="problem.FunctionOptimisationProblem" domain="R(-5.12:5.12)^5">
+		<function class="functions.continuous.unconstrained.Rastrigin"/>
+	</problem>
+	<problem id="rastrigin.10" class="problem.FunctionOptimisationProblem" domain="R(-5.12:5.12)^10">
+		<function class="functions.continuous.unconstrained.Rastrigin"/>
+	</problem>
+	<problem id="rastrigin.25" class="problem.FunctionOptimisationProblem" domain="R(-5.12:5.12)^25">
+		<function class="functions.continuous.unconstrained.Rastrigin"/>
+	</problem>
+	<problem id="rastrigin.50" class="problem.FunctionOptimisationProblem" domain="R(-5.12:5.12)^50">
+		<function class="functions.continuous.unconstrained.Rastrigin"/>
+	</problem>
+	<problem id="rosenbrock.3" class="problem.FunctionOptimisationProblem" domain="R(-2.048:2.048)^3">
+		<function class="functions.continuous.unconstrained.Rosenbrock"/>
+	</problem>
+	<problem id="rosenbrock.5" class="problem.FunctionOptimisationProblem" domain="R(-2.048:2.048)^5">
+		<function class="functions.continuous.unconstrained.Rosenbrock"/>
+	</problem>
+	<problem id="rosenbrock.10" class="problem.FunctionOptimisationProblem" domain="R(-2.048:2.048)^10">
+		<function class="functions.continuous.unconstrained.Rosenbrock"/>
+	</problem>
+	<problem id="rosenbrock.25" class="problem.FunctionOptimisationProblem" domain="R(-2.048:2.048)^25">
+		<function class="functions.continuous.unconstrained.Rosenbrock"/>
+	</problem>
+	<problem id="rosenbrock.50" class="problem.FunctionOptimisationProblem" domain="R(-2.048:2.048)^50">
+		<function class="functions.continuous.unconstrained.Rosenbrock"/>
+	</problem>
+	<problem id="salomon.3" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^3">
+		<function class="functions.continuous.unconstrained.Salomon"/>
+	</problem>
+	<problem id="salomon.5" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^5">
+		<function class="functions.continuous.unconstrained.Salomon"/>
+	</problem>
+	<problem id="salomon.10" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^10">
+		<function class="functions.continuous.unconstrained.Salomon"/>
+	</problem>
+	<problem id="salomon.25" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^25">
+		<function class="functions.continuous.unconstrained.Salomon"/>
+	</problem>
+	<problem id="salomon.50" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^50">
+		<function class="functions.continuous.unconstrained.Salomon"/>
+	</problem>
+	<problem id="schwefel1_2.3" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^3">
+		<function class="functions.continuous.SchwefelProblem1_2"/>
+	</problem>
+	<problem id="schwefel1_2.5" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^5">
+		<function class="functions.continuous.SchwefelProblem1_2"/>
+	</problem>
+	<problem id="schwefel1_2.10" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^10">
+		<function class="functions.continuous.SchwefelProblem1_2"/>
+	</problem>
+	<problem id="schwefel1_2.25" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^25">
+		<function class="functions.continuous.SchwefelProblem1_2"/>
+	</problem>
+	<problem id="schwefel1_2.50" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^50">
+		<function class="functions.continuous.SchwefelProblem1_2"/>
+	</problem>
+	<problem id="schwefel2_22.3" class="problem.FunctionOptimisationProblem" domain="R(-10.0:10.0)^3">
+		<function class="functions.continuous.unconstrained.SchwefelProblem2_22"/>
+	</problem>
+	<problem id="schwefel2_22.5" class="problem.FunctionOptimisationProblem" domain="R(-10.0:10.0)^5">
+		<function class="functions.continuous.unconstrained.SchwefelProblem2_22"/>
+	</problem>
+	<problem id="schwefel2_22.10" class="problem.FunctionOptimisationProblem" domain="R(-10.0:10.0)^10">
+		<function class="functions.continuous.unconstrained.SchwefelProblem2_22"/>
+	</problem>
+	<problem id="schwefel2_22.25" class="problem.FunctionOptimisationProblem" domain="R(-10.0:10.0)^25">
+		<function class="functions.continuous.unconstrained.SchwefelProblem2_22"/>
+	</problem>
+	<problem id="schwefel2_22.50" class="problem.FunctionOptimisationProblem" domain="R(-10.0:10.0)^50">
+		<function class="functions.continuous.unconstrained.SchwefelProblem2_22"/>
+	</problem>
+	<problem id="schwefel2_26.3" class="problem.FunctionOptimisationProblem" domain="R(-500.0:500.0)^3">
+		<function class="functions.continuous.SchwefelProblem2_26"/>
+	</problem>
+	<problem id="schwefel2_26.5" class="problem.FunctionOptimisationProblem" domain="R(-500.0:500.0)^5">
+		<function class="functions.continuous.SchwefelProblem2_26"/>
+	</problem>
+	<problem id="schwefel2_26.10" class="problem.FunctionOptimisationProblem" domain="R(-500.0:500.0)^10">
+		<function class="functions.continuous.SchwefelProblem2_26"/>
+	</problem>
+	<problem id="schwefel2_26.25" class="problem.FunctionOptimisationProblem" domain="R(-500.0:500.0)^25">
+		<function class="functions.continuous.SchwefelProblem2_26"/>
+	</problem>
+	<problem id="schwefel2_26.50" class="problem.FunctionOptimisationProblem" domain="R(-500.0:500.0)^50">
+		<function class="functions.continuous.SchwefelProblem2_26"/>
+	</problem>
+	<problem id="spherical.3" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^3">
+		<function class="functions.continuous.unconstrained.Spherical"/>
+	</problem>
+	<problem id="spherical.5" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^5">
+		<function class="functions.continuous.unconstrained.Spherical"/>
+	</problem>
+	<problem id="spherical.10" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^10">
+		<function class="functions.continuous.unconstrained.Spherical"/>
+	</problem>
+	<problem id="spherical.25" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^25">
+		<function class="functions.continuous.unconstrained.Spherical"/>
+	</problem>
+	<problem id="spherical.50" class="problem.FunctionOptimisationProblem" domain="R(-100.0:100.0)^50">
+		<function class="functions.continuous.unconstrained.Spherical"/>
+	</problem>
+	<problem id="step.3" class="problem.FunctionOptimisationProblem" domain="R(-25.0:25.0)^3">
+		<function class="functions.continuous.unconstrained.Step"/>
+	</problem>
+	<problem id="step.5" class="problem.FunctionOptimisationProblem" domain="R(-25.0:25.0)^5">
+		<function class="functions.continuous.unconstrained.Step"/>
+	</problem>
+	<problem id="step.10" class="problem.FunctionOptimisationProblem" domain="R(-25.0:25.0)^10">
+		<function class="functions.continuous.unconstrained.Step"/>
+	</problem>
+	<problem id="step.25" class="problem.FunctionOptimisationProblem" domain="R(-25.0:25.0)^25">
+		<function class="functions.continuous.unconstrained.Step"/>
+	</problem>
+	<problem id="step.50" class="problem.FunctionOptimisationProblem" domain="R(-25.0:25.0)^50">
+		<function class="functions.continuous.unconstrained.Step"/>
+	</problem>
+	<problem id="weierstrass.3" class="problem.FunctionOptimisationProblem" domain="R(-0.5:0.5)^3">
+		<function class="functions.continuous.unconstrained.Weierstrass"/>
+	</problem>
+	<problem id="weierstrass.5" class="problem.FunctionOptimisationProblem" domain="R(-0.5:0.5)^5">
+		<function class="functions.continuous.unconstrained.Weierstrass"/>
+	</problem>
+	<problem id="weierstrass.10" class="problem.FunctionOptimisationProblem" domain="R(-0.5:0.5)^10">
+		<function class="functions.continuous.unconstrained.Weierstrass"/>
+	</problem>
+	<problem id="weierstrass.25" class="problem.FunctionOptimisationProblem" domain="R(-0.5:0.5)^25">
+		<function class="functions.continuous.unconstrained.Weierstrass"/>
+	</problem>
+	<problem id="weierstrass.50" class="problem.FunctionOptimisationProblem" domain="R(-0.5:0.5)^50">
+		<function class="functions.continuous.unconstrained.Weierstrass"/>
+	</problem>
+	<problem id="zakharov.3" class="problem.FunctionOptimisationProblem" domain="R(-5.0:10.0)^3">
+		<function class="functions.continuous.unconstrained.Zakharov"/>
+	</problem>
+	<problem id="zakharov.5" class="problem.FunctionOptimisationProblem" domain="R(-5.0:10.0)^5">
+		<function class="functions.continuous.unconstrained.Zakharov"/>
+	</problem>
+	<problem id="zakharov.10" class="problem.FunctionOptimisationProblem" domain="R(-5.0:10.0)^10">
+		<function class="functions.continuous.unconstrained.Zakharov"/>
+	</problem>
+	<problem id="zakharov.25" class="problem.FunctionOptimisationProblem" domain="R(-5.0:10.0)^25">
+		<function class="functions.continuous.unconstrained.Zakharov"/>
+	</problem>
+	<problem id="zakharov.50" class="problem.FunctionOptimisationProblem" domain="R(-5.0:10.0)^50">
+		<function class="functions.continuous.unconstrained.Zakharov"/>
+	</problem>
 </problems>
 
 <measurements id="both" class="simulator.MeasurementSuite" resolution="10">
-<addMeasurement class="measurement.single.Fitness"/>
-<addMeasurement class="measurement.single.diversity.AverageDiversityAroundAllEntities"/>
+	<addMeasurement class="measurement.single.Fitness"/>
+	<addMeasurement class="measurement.single.diversity.AverageDiversityAroundAllEntities"/>
 </measurements>
 
 <simulations>
+	
+
+
+	<!-- simulation #885 -->
 	<simulation samples="30">
-		<algorithm idref="gbest.20"/>
-		<problem idref="ackley.5"/>
+		<algorithm idref="cpso.10"/>
+		<problem idref="levy.50"/>
 		<measurements idref="both"/>
-		<output format="TXT" file="data/gbest.20.ackley.5.txt"/>
+		<output format="TXT" file="data/cpso.10.levy.50.txt"/>
 	</simulation>
 
+	<!-- simulation #886 -->
 	<simulation samples="30">
-		<algorithm idref="gbest.20"/>
-		<problem idref="ackley.25"/>
+		<algorithm idref="cpso.10"/>
+		<problem idref="michalewicz.3"/>
 		<measurements idref="both"/>
-		<output format="TXT" file="data/gbest.20.ackley.25.txt"/>
+		<output format="TXT" file="data/cpso.10.michalewicz.3.txt"/>
 	</simulation>
 
+	<!-- simulation #887 -->
 	<simulation samples="30">
-		<algorithm idref="gbest.20"/>
-		<problem idref="ackley.50"/>
+		<algorithm idref="cpso.10"/>
+		<problem idref="michalewicz.5"/>
 		<measurements idref="both"/>
-		<output format="TXT" file="data/gbest.20.ackley.50.txt"/>
+		<output format="TXT" file="data/cpso.10.michalewicz.5.txt"/>
+	</simulation>
+
+	<!-- simulation #888 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="michalewicz.10"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.michalewicz.10.txt"/>
+	</simulation>
+
+	<!-- simulation #889 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="michalewicz.25"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.michalewicz.25.txt"/>
+	</simulation>
+
+	<!-- simulation #890 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="michalewicz.50"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.michalewicz.50.txt"/>
+	</simulation>
+
+	<!-- simulation #891 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="quadric.3"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.quadric.3.txt"/>
+	</simulation>
+
+	<!-- simulation #892 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="quadric.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.quadric.5.txt"/>
+	</simulation>
+
+	<!-- simulation #893 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="quadric.10"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.quadric.10.txt"/>
+	</simulation>
+
+	<!-- simulation #894 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="quadric.25"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.quadric.25.txt"/>
+	</simulation>
+
+	<!-- simulation #895 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="quadric.50"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.quadric.50.txt"/>
+	</simulation>
+
+	<!-- simulation #896 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="quartic.3"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.quartic.3.txt"/>
+	</simulation>
+
+	<!-- simulation #897 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="quartic.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.quartic.5.txt"/>
+	</simulation>
+
+	<!-- simulation #898 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="quartic.10"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.quartic.10.txt"/>
+	</simulation>
+
+	<!-- simulation #899 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="quartic.25"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.quartic.25.txt"/>
+	</simulation>
+
+	<!-- simulation #900 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="quartic.50"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.quartic.50.txt"/>
+	</simulation>
+
+	<!-- simulation #901 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="rastrigin.3"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.rastrigin.3.txt"/>
+	</simulation>
+
+	<!-- simulation #902 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="rastrigin.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.rastrigin.5.txt"/>
+	</simulation>
+
+	<!-- simulation #903 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="rastrigin.10"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.rastrigin.10.txt"/>
+	</simulation>
+
+	<!-- simulation #904 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="rastrigin.25"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.rastrigin.25.txt"/>
+	</simulation>
+
+	<!-- simulation #905 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="rastrigin.50"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.rastrigin.50.txt"/>
+	</simulation>
+
+	<!-- simulation #906 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="rosenbrock.3"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.rosenbrock.3.txt"/>
+	</simulation>
+
+	<!-- simulation #907 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="rosenbrock.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.rosenbrock.5.txt"/>
+	</simulation>
+
+	<!-- simulation #908 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="rosenbrock.10"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.rosenbrock.10.txt"/>
+	</simulation>
+
+	<!-- simulation #909 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="rosenbrock.25"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.rosenbrock.25.txt"/>
+	</simulation>
+
+	<!-- simulation #910 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="rosenbrock.50"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.rosenbrock.50.txt"/>
+	</simulation>
+
+	<!-- simulation #911 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="salomon.3"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.salomon.3.txt"/>
+	</simulation>
+
+	<!-- simulation #912 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="salomon.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.salomon.5.txt"/>
+	</simulation>
+
+	<!-- simulation #913 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="salomon.10"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.salomon.10.txt"/>
+	</simulation>
+
+	<!-- simulation #914 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="salomon.25"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.salomon.25.txt"/>
+	</simulation>
+
+	<!-- simulation #915 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="salomon.50"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.salomon.50.txt"/>
+	</simulation>
+
+	<!-- simulation #916 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="schwefel1_2.3"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.schwefel1_2.3.txt"/>
+	</simulation>
+
+	<!-- simulation #917 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="schwefel1_2.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.schwefel1_2.5.txt"/>
+	</simulation>
+
+	<!-- simulation #918 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="schwefel1_2.10"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.schwefel1_2.10.txt"/>
+	</simulation>
+
+	<!-- simulation #919 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="schwefel1_2.25"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.schwefel1_2.25.txt"/>
+	</simulation>
+
+	<!-- simulation #920 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="schwefel1_2.50"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.schwefel1_2.50.txt"/>
+	</simulation>
+
+	<!-- simulation #921 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="schwefel2_22.3"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.schwefel2_22.3.txt"/>
+	</simulation>
+
+	<!-- simulation #922 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="schwefel2_22.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.schwefel2_22.5.txt"/>
+	</simulation>
+
+	<!-- simulation #923 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="schwefel2_22.10"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.schwefel2_22.10.txt"/>
+	</simulation>
+
+	<!-- simulation #924 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="schwefel2_22.25"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.schwefel2_22.25.txt"/>
+	</simulation>
+
+	<!-- simulation #925 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="schwefel2_22.50"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.schwefel2_22.50.txt"/>
+	</simulation>
+
+	<!-- simulation #926 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="schwefel2_26.3"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.schwefel2_26.3.txt"/>
+	</simulation>
+
+	<!-- simulation #927 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="schwefel2_26.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.schwefel2_26.5.txt"/>
+	</simulation>
+
+	<!-- simulation #928 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="schwefel2_26.10"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.schwefel2_26.10.txt"/>
+	</simulation>
+
+	<!-- simulation #929 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="schwefel2_26.25"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.schwefel2_26.25.txt"/>
+	</simulation>
+
+	<!-- simulation #930 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="schwefel2_26.50"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.schwefel2_26.50.txt"/>
+	</simulation>
+
+	<!-- simulation #931 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="spherical.3"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.spherical.3.txt"/>
+	</simulation>
+
+	<!-- simulation #932 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="spherical.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.spherical.5.txt"/>
+	</simulation>
+
+	<!-- simulation #933 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="spherical.10"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.spherical.10.txt"/>
+	</simulation>
+
+	<!-- simulation #934 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="spherical.25"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.spherical.25.txt"/>
+	</simulation>
+
+	<!-- simulation #935 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="spherical.50"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.spherical.50.txt"/>
+	</simulation>
+
+	<!-- simulation #936 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="step.3"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.step.3.txt"/>
+	</simulation>
+
+	<!-- simulation #937 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="step.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.step.5.txt"/>
+	</simulation>
+
+	<!-- simulation #938 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="step.10"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.step.10.txt"/>
+	</simulation>
+
+	<!-- simulation #939 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="step.25"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.step.25.txt"/>
+	</simulation>
+
+	<!-- simulation #940 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="step.50"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.step.50.txt"/>
+	</simulation>
+
+	<!-- simulation #941 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="weierstrass.3"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.weierstrass.3.txt"/>
+	</simulation>
+
+	<!-- simulation #942 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="weierstrass.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.weierstrass.5.txt"/>
+	</simulation>
+
+	<!-- simulation #943 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="weierstrass.10"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.weierstrass.10.txt"/>
+	</simulation>
+
+	<!-- simulation #944 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="weierstrass.25"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.weierstrass.25.txt"/>
+	</simulation>
+
+	<!-- simulation #945 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="weierstrass.50"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.weierstrass.50.txt"/>
+	</simulation>
+
+	<!-- simulation #946 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="zakharov.3"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.zakharov.3.txt"/>
+	</simulation>
+
+	<!-- simulation #947 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="zakharov.5"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.zakharov.5.txt"/>
+	</simulation>
+
+	<!-- simulation #948 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="zakharov.10"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.zakharov.10.txt"/>
+	</simulation>
+
+	<!-- simulation #949 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="zakharov.25"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.zakharov.25.txt"/>
+	</simulation>
+
+	<!-- simulation #950 -->
+	<simulation samples="30">
+		<algorithm idref="cpso.10"/>
+		<problem idref="zakharov.50"/>
+		<measurements idref="both"/>
+		<output format="TXT" file="data/cpso.10.zakharov.50.txt"/>
 	</simulation>
 
 </simulations>
