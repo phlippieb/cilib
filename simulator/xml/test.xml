@@ -65,7 +65,7 @@
 		dimensions:
 			25
 -->
-
+<!-- only doing lbest and gbest on levy again for figure. rest commented out.
 <simulation samples="30">
 	<algorithm idref="lbest.25"/>
 	<problem idref="ackley.25"/>
@@ -129,13 +129,14 @@
 	<output format="TXT" file="data/lbest.25.griewank.25.txt"/>
 </simulation>
 
+-->
 <simulation samples="30">
 	<algorithm idref="lbest.25"/>
 	<problem idref="levy.25"/>
 	<measurements idref="both"/>
 	<output format="TXT" file="data/lbest.25.levy.25.txt"/>
 </simulation>
-
+<!--
 <simulation samples="30">
 	<algorithm idref="lbest.25"/>
 	<problem idref="michalewicz.25"/>
@@ -268,14 +269,14 @@
 	<measurements idref="both"/>
 	<output format="TXT" file="data/gbest.25.griewank.25.txt"/>
 </simulation>
-
+-->
 <simulation samples="30">
 	<algorithm idref="gbest.25"/>
 	<problem idref="levy.25"/>
 	<measurements idref="both"/>
 	<output format="TXT" file="data/gbest.25.levy.25.txt"/>
 </simulation>
-
+<!--
 <simulation samples="30">
 	<algorithm idref="gbest.25"/>
 	<problem idref="michalewicz.25"/>
@@ -1325,7 +1326,7 @@
 	<measurements idref="both"/>
 	<output format="TXT" file="data/bbe.25.zakharov.25.txt"/>
 </simulation>
-
+-->
 
     </simulations>
 </simulator>
