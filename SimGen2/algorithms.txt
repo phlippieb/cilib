@@ -1,0 +1,10 @@
+Gbest
+Lbest
+VonNeumann
+GbestGC
+LbestGC
+VonNeumannGC
+BareBones
+BareBonesAlternative
+SocialOnly
+CognitiveOnly
