@@ -1,3 +1,4 @@
+*.zip
 data
 databackup*
 target
@@ -5,8 +6,6 @@ simulator.sh
 simulator.bat
 .ensime*
 private.sbt
-nbproject
-build.xml
 .settings
 .classpath
 .cache
@@ -16,3 +15,5 @@ build.xml
 SimGen2/build
 SimGen2/dist
 rdata
+SimGen2/build
+SimGen2/dist
