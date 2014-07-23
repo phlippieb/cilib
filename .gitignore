@@ -1,3 +1,4 @@
+*.zip
 data
 databackup*
 target
@@ -11,7 +12,8 @@ private.sbt
 .project
 *.sublime-project
 *.sublime-workspace
-SimGen2/build/*
+SimGen2/build
+SimGen2/dist
 rdata
 SimGen2/build
 SimGen2/dist
