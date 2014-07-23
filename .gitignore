@@ -17,3 +17,9 @@ SimGen2/dist
 rdata
 SimGen2/build
 SimGen2/dist
+SimGen2/sims.xml
+SimGen2/algorithms.txt
+SimGen2/populations.txt
+SimGen2/functions.txt
+SimGen2/dimensions.txt
+simulator/xml/*
