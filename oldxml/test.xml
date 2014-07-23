@@ -1,0 +1,438 @@
+<?xml version="1.0"?>
+<!DOCTYPE simulator [
+<!ENTITY algorithms SYSTEM "algorithms.xml">
+<!ENTITY problems SYSTEM "problems.xml">
+<!ATTLIST algorithm id ID #IMPLIED>
+<!ATTLIST problem id ID #IMPLIED>
+<!ATTLIST measurements id ID #IMPLIED>
+]>
+
+<simulator>		
+
+	&algorithms;
+    &problems;
+
+    <measurements id="fitness" class="simulator.MeasurementSuite" resolution="10">
+    	<addMeasurement class="measurement.single.Fitness"/>
+	</measurements>
+
+    <measurements id="diversity" class="simulator.MeasurementSuite" resolution="10">
+        <addMeasurement class="measurement.single.diversity.AverageDiversityAroundAllEntities"/>
+    </measurements>
+
+    <measurements id="both" class="simulator.MeasurementSuite" resolution="10">
+        <addMeasurement class="measurement.single.Fitness"/>
+        <addMeasurement class="measurement.single.diversity.AverageDiversityAroundAllEntities"/>
+    </measurements>
+
+
+
+    <simulations>
+
+<!-- simulations for every combination of these dimensions:
+		algorithms:
+			lbest
+			gbest
+			vn
+			spso
+			gcstar
+			gcring
+			gcvn
+			bb
+			bbe
+		population sizes:
+			25
+		functions:
+			griewank
+		dimensions:
+			3
+			5
+			10
+			20
+			30
+			50
+-->
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="griewank.3"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.griewank.3.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="griewank.5"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.griewank.5.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="griewank.10"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.griewank.10.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="griewank.20"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.griewank.20.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="griewank.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.griewank.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="lbest.25"/>
+	<problem idref="griewank.50"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/lbest.25.griewank.50.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="griewank.3"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.griewank.3.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="griewank.5"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.griewank.5.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="griewank.10"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.griewank.10.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="griewank.20"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.griewank.20.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="griewank.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.griewank.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gbest.25"/>
+	<problem idref="griewank.50"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gbest.25.griewank.50.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="griewank.3"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.griewank.3.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="griewank.5"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.griewank.5.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="griewank.10"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.griewank.10.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="griewank.20"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.griewank.20.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="griewank.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.griewank.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="vn.25"/>
+	<problem idref="griewank.50"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/vn.25.griewank.50.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="griewank.3"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.griewank.3.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="griewank.5"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.griewank.5.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="griewank.10"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.griewank.10.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="griewank.20"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.griewank.20.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="griewank.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.griewank.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="spso.25"/>
+	<problem idref="griewank.50"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/spso.25.griewank.50.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="griewank.3"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.griewank.3.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="griewank.5"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.griewank.5.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="griewank.10"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.griewank.10.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="griewank.20"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.griewank.20.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="griewank.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.griewank.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcstar.25"/>
+	<problem idref="griewank.50"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcstar.25.griewank.50.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="griewank.3"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.griewank.3.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="griewank.5"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.griewank.5.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="griewank.10"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.griewank.10.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="griewank.20"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.griewank.20.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="griewank.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.griewank.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcring.25"/>
+	<problem idref="griewank.50"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcring.25.griewank.50.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="griewank.3"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.griewank.3.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="griewank.5"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.griewank.5.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="griewank.10"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.griewank.10.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="griewank.20"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.griewank.20.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="griewank.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.griewank.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="gcvn.25"/>
+	<problem idref="griewank.50"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/gcvn.25.griewank.50.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="griewank.3"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.griewank.3.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="griewank.5"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.griewank.5.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="griewank.10"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.griewank.10.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="griewank.20"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.griewank.20.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="griewank.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.griewank.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bb.25"/>
+	<problem idref="griewank.50"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bb.25.griewank.50.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bbe.25"/>
+	<problem idref="griewank.3"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bbe.25.griewank.3.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bbe.25"/>
+	<problem idref="griewank.5"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bbe.25.griewank.5.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bbe.25"/>
+	<problem idref="griewank.10"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bbe.25.griewank.10.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bbe.25"/>
+	<problem idref="griewank.20"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bbe.25.griewank.20.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bbe.25"/>
+	<problem idref="griewank.30"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bbe.25.griewank.30.txt"/>
+</simulation>
+
+<simulation samples="30">
+	<algorithm idref="bbe.25"/>
+	<problem idref="griewank.50"/>
+	<measurements idref="both"/>
+	<output format="TXT" file="data/bbe.25.griewank.50.txt"/>
+</simulation>
+
+
+
+
+    </simulations>
+</simulator>
