@@ -1,5 +1,5 @@
 Gbest
-#Lbest
+Lbest
 #VonNeumann
 #GbestGC
 #LbestGC

@@ -229,7 +229,7 @@ public class SimGen {
 	}
 
 	static void writeMeasurementsXML(BufferedWriter w) throws IOException {
-		w.write("<measurements id=\"both\" class=\"simulator.MeasurementSuite\" resolution=\"10\">\n");
+		w.write("<measurements id=\"both\" class=\"simulator.MeasurementSuite\" resolution=\"1\">\n");
         w.write("\t<addMeasurement class=\"measurement.single.Fitness\"/>\n");
         w.write("\t<addMeasurement class=\"measurement.single.diversity.AverageDiversityAroundAllEntities\"/>\n");
     	w.write("</measurements>\n\n");
