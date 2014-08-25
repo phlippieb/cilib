@@ -7,7 +7,7 @@
 <simulator>
 
 <algorithms>
-	<algorithm id="gbest.25" class="pso.PSO">
+	<algorithm id="lbest.25" class="pso.PSO">
 		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
 			<entityNumber value="25"/>
 			<entityType class="pso.particle.StandardParticle"/>
@@ -15,6 +15,7 @@
 		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
 			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
 		</iterationStrategy>
+		<topology class="entity.topologies.LBestTopology"/>
 		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
 	</algorithm>
 </algorithms>
@@ -33,10 +34,10 @@
 <simulations>
 	<!-- simulation #1 -->
 	<simulation samples="30">
-		<algorithm idref="gbest.25"/>
+		<algorithm idref="lbest.25"/>
 		<problem idref="levy.25"/>
 		<measurements idref="both"/>
-		<output format="TXT" file="data/gbest.25.levy.25.txt"/>
+		<output format="TXT" file="data/lbest.25.levy.25.txt"/>
 	</simulation>
 
 </simulations>
