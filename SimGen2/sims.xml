@@ -15,7 +15,113 @@
 		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
 			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
 		</iterationStrategy>
-		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000"/>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2999"/>
+	</algorithm>
+	<algorithm id="lbest.25" class="pso.PSO">
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle"/>
+		</initialisationStrategy>
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
+		</iterationStrategy>
+		<topology class="entity.topologies.LBestTopology"/>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2999"/>
+	</algorithm>
+	<algorithm id="vn.25" class="pso.PSO">
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle"/>
+		</initialisationStrategy>
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
+			</iterationStrategy>
+		<topology class="entity.topologies.VonNeumannTopology"/>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2999"/>
+	</algorithm>
+	<algorithm id="gbestgc.25" class="pso.PSO">
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle">
+			<velocityProvider class="pso.velocityprovider.GCVelocityProvider"/>
+			</entityType>
+		</initialisationStrategy>
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
+		</iterationStrategy>
+		<topology class="entity.topologies.GBestTopology"/>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2999"/>
+	</algorithm>
+	<algorithm id="lbestgc.25" class="pso.PSO">
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle">
+			<velocityProvider class="pso.velocityprovider.GCVelocityProvider"/>
+			</entityType>
+		</initialisationStrategy>
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
+		</iterationStrategy>
+		<topology class="entity.topologies.LBestTopology"/>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2999"/>
+	</algorithm>
+	<algorithm id="vngc.25" class="pso.PSO">
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle">
+			<velocityProvider class="pso.velocityprovider.GCVelocityProvider"/>
+			</entityType>
+		</initialisationStrategy>
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint" />
+		</iterationStrategy>
+		<topology class="entity.topologies.VonNeumannTopology"/>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2999"/>
+	</algorithm>
+	<algorithm id="bb.25" class="pso.PSO">
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint"/>
+		</iterationStrategy>
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle">
+				<positionProvider class="pso.positionprovider.LinearPositionProvider"/>
+				<velocityProvider class="pso.velocityprovider.BareBonesVelocityProvider">
+					<exploitProbability class="controlparameter.ConstantControlParameter" parameter="0"/>
+				</velocityProvider>
+			</entityType>
+		</initialisationStrategy>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2999"/>
+	</algorithm>
+	<algorithm id="bba.25" class="pso.PSO">
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint"/>
+		</iterationStrategy>
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle">
+				<positionProvider class="pso.positionprovider.LinearPositionProvider"/>
+				<velocityProvider class="pso.velocityprovider.BareBonesVelocityProvider">
+					<exploitProbability class="controlparameter.ConstantControlParameter" parameter="0.5"/>
+				</velocityProvider>
+			</entityType>
+		</initialisationStrategy>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2999"/>
+	</algorithm>
+	<algorithm id="spso.25" class="pso.PSO">
+		<initialisationStrategy class="algorithm.initialisation.ClonedPopulationInitialisationStrategy">
+			<entityNumber value="25"/>
+			<entityType class="pso.particle.StandardParticle">
+				<velocityProvider class="pso.velocityprovider.StandardVelocityProvider">
+					<cognitiveAcceleration class="controlparameter.ConstantControlParameter" parameter="0"/>
+				</velocityProvider>
+			</entityType>
+		</initialisationStrategy>
+		<iterationStrategy class="pso.iterationstrategies.SynchronousIterationStrategy">
+			<boundaryConstraint class="problem.boundaryconstraint.RandomBoundaryConstraint"/>
+		</iterationStrategy>
+		<topology class="entity.topologies.GBestTopology"/>
+		<addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2999"/>
 	</algorithm>
 </algorithms>
 

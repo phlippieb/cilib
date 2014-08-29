@@ -18,6 +18,6 @@ public class BareBonesAlternative extends Algorithm {
                         "\t\t\t\t</velocityProvider>\n" +
                         "\t\t\t</entityType>\n" +
                         "\t\t</initialisationStrategy>\n" +
-                        "\t\t<addStoppingCondition class=\"stoppingcondition.MeasuredStoppingCondition\" target=\"1000\"/>\n";
+                        "\t\t<addStoppingCondition class=\"stoppingcondition.MeasuredStoppingCondition\" target=\"" + iterations + "\"/>\n";
 	}
 }
