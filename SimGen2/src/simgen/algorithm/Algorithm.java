@@ -3,6 +3,7 @@ package simgen.algorithm;
 public abstract class Algorithm implements Cloneable {
 
 	int population;
+	int iterations;
 
 	public Algorithm() {
 	}
@@ -12,6 +13,7 @@ public abstract class Algorithm implements Cloneable {
 		try {
 			Algorithm a = (Algorithm)getClass().getDeclaredConstructor().newInstance();
 			a.setPopulation(this.population);
+			a.setIterations(this.iterations);
 			return a;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -47,5 +49,8 @@ public abstract class Algorithm implements Cloneable {
 	public abstract String getDefinition();
 	public void setPopulation(int p) {
 		this.population = p;
+	}
+	public void setIterations(int i) {
+		this.iterations = i;
 	}
 }

@@ -16,6 +16,6 @@ public class LbestGC extends Algorithm {
                         "\t\t\t<boundaryConstraint class=\"problem.boundaryconstraint.RandomBoundaryConstraint\" />\n" +
                         "\t\t</iterationStrategy>\n" +
                         "\t\t<topology class=\"entity.topologies.LBestTopology\"/>\n" +
-                        "\t\t<addStoppingCondition class=\"stoppingcondition.MeasuredStoppingCondition\" target=\"2000\"/>\n";
+                        "\t\t<addStoppingCondition class=\"stoppingcondition.MeasuredStoppingCondition\" target=\"" + iterations + "\"/>\n";
 	}
 }

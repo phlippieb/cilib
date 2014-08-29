@@ -10,6 +10,8 @@ public class Simulation {
 	public ArrayList<Function> functions;
 	public ArrayList<Integer> dimensions;
 	public Integer numberOfSamples;
+	public Integer numberOfIterations;
+	public Integer resolution;
 
 	public Simulation() {
 		algorithms = new ArrayList<Algorithm>();
@@ -38,6 +40,14 @@ public class Simulation {
 		numberOfSamples = i;
 	}
 
+	public void setNumberOfIterations(Integer i) {
+		numberOfIterations = i;
+	}
+
+	public void setResolution(Integer r) {
+		resolution = r;
+	}
+
 	public ArrayList<Algorithm> getAlgorithms() {
 		return algorithms;
 	}
@@ -56,5 +66,13 @@ public class Simulation {
 
 	public Integer getNumberOfSamples() {
 		return numberOfSamples;
+	}
+
+	public Integer getNumberOfIterations() {
+		return numberOfIterations;
+	}
+
+	public Integer getResolution() {
+		return resolution;
 	}
 }

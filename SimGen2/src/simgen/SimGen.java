@@ -51,7 +51,7 @@ public class SimGen {
 		// A: Get simulation details from file
 		//
 		System.out.println("Getting simulation details...");
-		Simulation simulation = getSimulationFromFiles("algorithms.txt", "populations.txt", "functions.txt", "dimensions.txt");
+		Simulation simulation = getSimulationFromFiles("algorithms.txt", "populations.txt", "functions.txt", "dimensions.txt", "samples.txt", "iterations.txt", "resolution.txt");
 
 		//
 		//
@@ -142,7 +142,7 @@ public class SimGen {
 		//
 		System.out.println("- Writing measurements...");
 		try {
-			writeMeasurementsXML(writer);
+			writeMeasurementsXML(writer, simulation);
 		} catch (IOException ioe) {
 			System.out.println("\n[!] Error writing to file!\n");
 			ioe.printStackTrace();
@@ -210,6 +210,7 @@ public class SimGen {
 		for (Algorithm a : s.algorithms) {
 			for (Integer p : s.populations) {
 				a.setPopulation(p);
+				a.setIterations(s.getNumberOfIterations());
 				w.write(a.toString());
 			}
 		}
@@ -228,8 +229,8 @@ public class SimGen {
 		w.write("</problems>\n\n");
 	}
 
-	static void writeMeasurementsXML(BufferedWriter w) throws IOException {
-		w.write("<measurements id=\"both\" class=\"simulator.MeasurementSuite\" resolution=\"10\">\n");
+	static void writeMeasurementsXML(BufferedWriter w, Simulation s) throws IOException {
+		w.write("<measurements id=\"both\" class=\"simulator.MeasurementSuite\" resolution=\"" + s.resolution + "\">\n");
         w.write("\t<addMeasurement class=\"measurement.single.Fitness\"/>\n");
         w.write("\t<addMeasurement class=\"measurement.single.diversity.AverageDiversityAroundAllEntities\"/>\n");
     	w.write("</measurements>\n\n");
@@ -276,7 +277,10 @@ public class SimGen {
 	static Simulation getSimulationFromFiles(	String algorithmsFilesName,
 										String populationsFileName,
 										String functionsFileName,
-										String dimensionsFileName) {
+										String dimensionsFileName,
+										String samplesFilesName,
+										String iterationsFileName,
+										String resolutionFileName) {
 		Simulation simulator = new Simulation();
 
 		BufferedReader reader;
@@ -379,7 +383,7 @@ public class SimGen {
 		}
 
 		// 4: Read dimensions
-		System.out.println("- Getting function dimesnions...");
+		System.out.println("- Getting function dimensions...");
 		try {
 			reader = new BufferedReader(new FileReader(dimensionsFileName));
 			line = reader.readLine();
@@ -410,8 +414,102 @@ public class SimGen {
 			return null;
 		}
 
-		simulator.setNumberOfSamples(30);
+		// 5: Read samples
+		System.out.println("- Getting samples...");
+		try {
+			reader = new BufferedReader(new FileReader(samplesFilesName));
+			line = reader.readLine();
+			while (line != null) {
+				if (line.indexOf("#") != 0 && line.indexOf("//") != 0 && line.trim().length() > 0) {
+					// process this line
+					try {
+						simulator.setNumberOfSamples(Integer.parseInt(line));
+						System.out.println("  - Added "+line);
+						break;
+					} catch (Exception e) {
+						System.out.println("[!] Could not parse samples from string!");
+						System.out.println("[!] Samples: " + line);
+						System.out.println("[!] You should probably abort now!");
+						try {
+							Thread.sleep(1500);
+						} catch (InterruptedException ie) {}
+					}
+				}
+			}
+		} catch (IOException ioe) {
+			System.out.println("[!] Error reading file!");
+			System.out.println("[!] File name: " + dimensionsFileName);
+			System.out.println("[!] You should probably abort now!");
+			try {
+				Thread.sleep(1500);
+			} catch (InterruptedException ie) {}
+			return null;
+		}
+
+		// 6: Read iterations
+		System.out.println("- Getting iterations...");
+		try {
+			reader = new BufferedReader(new FileReader(iterationsFileName));
+			line = reader.readLine();
+			while (line != null) {
+				if (line.indexOf("#") != 0 && line.indexOf("//") != 0 && line.trim().length() > 0) {
+					// process this line
+					try {
+						simulator.setNumberOfIterations(Integer.parseInt(line));
+						System.out.println("  - Added "+line);
+						break;
+					} catch (Exception e) {
+						System.out.println("[!] Could not parse iterations from string!");
+						System.out.println("[!] Iterations: " + line);
+						System.out.println("[!] You should probably abort now!");
+						try {
+							Thread.sleep(1500);
+						} catch (InterruptedException ie) {}
+					}
+				}
+			}
+		} catch (IOException ioe) {
+			System.out.println("[!] Error reading file!");
+			System.out.println("[!] File name: " + dimensionsFileName);
+			System.out.println("[!] You should probably abort now!");
+			try {
+				Thread.sleep(1500);
+			} catch (InterruptedException ie) {}
+			return null;
+		}
+
+		// 6: Read resolution
+		System.out.println("- Getting resolution...");
+		try {
+			reader = new BufferedReader(new FileReader(resolutionFileName));
+			line = reader.readLine();
+			while (line != null) {
+				if (line.indexOf("#") != 0 && line.indexOf("//") != 0 && line.trim().length() > 0) {
+					// process this line
+					try {
+						simulator.setResolution(Integer.parseInt(line));
+						System.out.println("  - Added "+line);
+						break;
+					} catch (Exception e) {
+						System.out.println("[!] Could not parse resolution from string!");
+						System.out.println("[!] Resolution: " + line);
+						System.out.println("[!] You should probably abort now!");
+						try {
+							Thread.sleep(1500);
+						} catch (InterruptedException ie) {}
+					}
+				}
+			}
+		} catch (IOException ioe) {
+			System.out.println("[!] Error reading file!");
+			System.out.println("[!] File name: " + dimensionsFileName);
+			System.out.println("[!] You should probably abort now!");
+			try {
+				Thread.sleep(1500);
+			} catch (InterruptedException ie) {}
+			return null;
+		}
+
 		return simulator;
 	}
-
 }
