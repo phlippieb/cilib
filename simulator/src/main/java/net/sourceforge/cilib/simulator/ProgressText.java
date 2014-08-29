@@ -53,8 +53,11 @@ final class ProgressText implements ProgressListener {
             // } // this backspaces each character from the back of the line until it reaches the front, at which point it can't go back.
             // which would also leave the caret at the start of the line already. Nifty!
             // Then we could print done, without the \n, so that each complete simulation has that. For inner peace.
-        }
-            sb.append(" done.\n");
+        
+            for (int i=0; i<80; i++) {
+                sb.append("\b \b");
+            }
+            sb.append("Done. ");
         }
 
         System.out.print(sb.toString());
