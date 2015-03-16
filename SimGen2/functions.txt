@@ -15,7 +15,7 @@ Salomon
 SchwefelProblem1_2
 SchwefelProblem2_22
 SchwefelProblem2_26
-#SixHumpCamelBack
+SixHumpCamelBack
 Spherical
 Step
 Weierstrass
