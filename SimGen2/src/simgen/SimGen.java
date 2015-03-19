@@ -230,10 +230,16 @@ public class SimGen {
 	}
 
 	static void writeMeasurementsXML(BufferedWriter w, Simulation s) throws IOException {
-		w.write("<measurements id=\"both\" class=\"simulator.MeasurementSuite\" resolution=\"" + s.resolution + "\">\n");
-        w.write("\t<addMeasurement class=\"measurement.single.Fitness\"/>\n");
-        w.write("\t<addMeasurement class=\"measurement.single.diversity.AverageDiversityAroundAllEntities\"/>\n");
-    	w.write("</measurements>\n\n");
+		for (Integer r : s.resolutions) {
+			w.write("<measurements id=\"meas-" + r + "\" " + 
+				"class=\"simulator.MeasurementSuite\" " +
+				"resolution=\"" + r + "\">\n");
+        	//w.write("\t<addMeasurement " + 
+        	//	"class=\"measurement.single.Fitness\"/>\n");
+        	w.write("\t<addMeasurement " +
+        		"class=\"measurement.single.diversity.AverageDiversityAroundAllEntities\"/>\n");
+    		w.write("</measurements>\n\n");
+        }
 	}
 
 	static void writeSimulationsXML(BufferedWriter w, Simulation s) throws IOException {
@@ -243,16 +249,19 @@ public class SimGen {
 			for (Integer p : s.populations) {
 				for (Function f : s.functions) {
 					for (Integer d : s.dimensions) {
-						w.write("\t<!-- simulation #" + simulationNumber++ + " -->\n");
-						a.setPopulation(p);
-						f.setDimensions(d);
-						w.write("\t<simulation samples=\"" + s.getNumberOfSamples() + "\">\n");
-						w.write("\t\t<algorithm idref=\"" + a.getId() + "\"/>\n");
-						w.write("\t\t<problem idref=\"" + f.getId() + "\"/>\n");
-						w.write("\t\t<measurements idref=\"both\"/>\n");
-						w.write("\t\t<output format=\"TXT\" file=\"data/");
-						w.write(a.getId() + "." + f.getId() + ".txt\"/>\n");
-						w.write("\t</simulation>\n\n");
+						for (Integer r : s.resolutions) {
+							w.write("\t<!-- simulation #" + simulationNumber++ + " -->\n");
+							a.setPopulation(p);
+							f.setDimensions(d);
+							w.write("\t<simulation samples=\"" + s.getNumberOfSamples() + "\">\n");
+							w.write("\t\t<algorithm idref=\"" + a.getId() + "\"/>\n");
+							w.write("\t\t<problem idref=\"" + f.getId() + "\"/>\n");
+							w.write("\t\t<measurements idref=\"meas-" + r + "\"/>\n");
+							w.write("\t\t<output format=\"TXT\" file=\"data/");
+							//w.write(a.getId() + "." + f.getId() + ".txt\"/>\n");
+							w.write(a.getId() + "." + f.getId() + "." + r + ".txt\"/>\n");
+							w.write("\t</simulation>\n\n");
+						}
 					}
 				}
 			}
@@ -478,8 +487,8 @@ public class SimGen {
 			return null;
 		}
 
-		// 6: Read resolution
-		System.out.println("- Getting resolution...");
+		// 6: Read resolutions
+		System.out.println("- Getting resolutions...");
 		try {
 			reader = new BufferedReader(new FileReader(resolutionFileName));
 			line = reader.readLine();
@@ -487,18 +496,19 @@ public class SimGen {
 				if (line.indexOf("#") != 0 && line.indexOf("//") != 0 && line.trim().length() > 0) {
 					// process this line
 					try {
-						simulator.setResolution(Integer.parseInt(line));
+						simulator.addResolution(Integer.parseInt(line));
 						System.out.println("  - Added "+line);
-						break;
 					} catch (Exception e) {
 						System.out.println("[!] Could not parse resolution from string!");
 						System.out.println("[!] Resolution: " + line);
+						System.out.println("[!] Exception: " + e.getMessage());
 						System.out.println("[!] You should probably abort now!");
 						try {
 							Thread.sleep(1500);
 						} catch (InterruptedException ie) {}
 					}
 				}
+				line = reader.readLine();
 			}
 		} catch (IOException ioe) {
 			System.out.println("[!] Error reading file!");
