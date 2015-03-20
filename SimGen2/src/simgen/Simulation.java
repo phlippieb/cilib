@@ -76,4 +76,13 @@ public class Simulation {
 	public ArrayList<Integer> getResolutions() {
 		return resolutions;
 	}
+
+	public int getTotalNumberOfSimulations() {
+		return
+			algorithms.size() *
+			populations.size() *
+			functions.size() *
+			dimensions.size() *
+			resolutions.size();
+	}
 }
