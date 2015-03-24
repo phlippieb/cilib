@@ -54,7 +54,7 @@ final class ProgressText implements ProgressListener {
             // which would also leave the caret at the start of the line already. Nifty!
             // Then we could print done, without the \n, so that each complete simulation has that. For inner peace.
         
-            for (int i=0; i<80; i++) {
+            for (int i=0; i<69; i++) {
                 sb.append("\b \b");
             }
             sb.append("Done. ");
