@@ -5,6 +5,7 @@ Alpine
 EggHolder
 Elliptic
 Griewank
+GoldsteinPrice
 Levy
 Michalewicz
 Quadric
