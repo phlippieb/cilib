@@ -11,14 +11,13 @@ public class Simulation {
 	public ArrayList<Integer> dimensions;
 	public Integer numberOfSamples;
 	public Integer numberOfIterations;
-	public ArrayList<Integer> resolutions;
+	Integer resolution;
 
 	public Simulation() {
 		algorithms = new ArrayList<Algorithm>();
 		populations = new ArrayList<Integer>();
 		functions = new ArrayList<Function>();
 		dimensions = new ArrayList<Integer>();
-		resolutions = new ArrayList<Integer>();
 	}
 
 	public void addAlgorithm(Algorithm a) {
@@ -45,8 +44,8 @@ public class Simulation {
 		numberOfIterations = i;
 	}
 
-	public void addResolution(Integer r) {
-		resolutions.add(r);
+	public void setResolution(Integer r) {
+		resolution = r;
 	}
 
 	public ArrayList<Algorithm> getAlgorithms() {
@@ -73,8 +72,8 @@ public class Simulation {
 		return numberOfIterations;
 	}
 
-	public ArrayList<Integer> getResolutions() {
-		return resolutions;
+	public ArrayList<Integer> getResolution() {
+		return resolution;
 	}
 
 	public int getTotalNumberOfSimulations() {
@@ -82,7 +81,6 @@ public class Simulation {
 			algorithms.size() *
 			populations.size() *
 			functions.size() *
-			dimensions.size() *
-			resolutions.size();
+			dimensions.size();
 	}
 }
