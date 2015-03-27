@@ -6,6 +6,6 @@ then
 	if [ $? == 0 ]
 	then 
 		echo "Copying file to cilib directory"
-		cp sims-*.xml ../simulator/xml/
+		cp sims.xml ../simulator/xml/
 	fi
 fi

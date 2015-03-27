@@ -72,7 +72,7 @@ public class Simulation {
 		return numberOfIterations;
 	}
 
-	public ArrayList<Integer> getResolution() {
+	public Integer getResolution() {
 		return resolution;
 	}
 
