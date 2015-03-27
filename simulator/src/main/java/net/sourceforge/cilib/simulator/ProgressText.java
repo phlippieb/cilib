@@ -36,11 +36,16 @@ final class ProgressText implements ProgressListener {
 
         double percentage = (int) (1000 * event.getPercentage()) / 10.0;
         int nequals = (int) (50 * event.getPercentage());
-        String spaces = Strings.repeat(" ", percentage < 10 ? 2 : percentage < 100 ? 1 : 0);
-        StringBuilder sb = new StringBuilder(String.format("\rProgress (%3.1f) %s|", percentage, spaces));
-        sb.append(Strings.repeat("=", nequals));
-        sb.append(Strings.repeat(" ", 50 - nequals));
-        sb.append("|");
+        //String spaces = Strings.repeat(" ", percentage < 10 ? 2 : percentage < 100 ? 1 : 0);
+        //StringBuilder sb = new StringBuilder(String.format("\rProgress (%3.1f) %s|", percentage, spaces));
+        StringBuilder sb = new StringBuilder(String.format("[%3.1f%%]", percentage));
+        int stringLen = sb.toString().length();
+        for (int i = 0; i < stringLen; i++) {
+            sb.insert(0,"\b \b");
+        }
+        //sb.append(Strings.repeat("=", nequals));
+        //sb.append(Strings.repeat(" ", 50 - nequals));
+        //sb.append("|");
 
         if (nequals == 50) {
             printedDone = true;
@@ -54,17 +59,19 @@ final class ProgressText implements ProgressListener {
             // which would also leave the caret at the start of the line already. Nifty!
             // Then we could print done, without the \n, so that each complete simulation has that. For inner peace.
         
-            for (int i=0; i<69; i++) {
-                sb.append("\b \b");
-            }
-            sb.append("Done. ");
+        //    for (int i=0; i<69; i++) {
+        //        sb.append("\b \b");
+        //    }
+        //    sb.append("Done. ");
         }
 
         System.out.print(sb.toString());
     }
 
     public void setSimulation(int simulation) {
-        System.out.println("Starting simulation " + (simulation + 1) + " of " + simulations + ".");
+        //System.out.println("Starting simulation " + (simulation + 1) + " of " + simulations + ".");
+        System.out.print("\r                                ");
+        System.out.print("\rSimulation " + (simulation + 1) + "/" + simulations + "        ");
         printedDone = false;
     }
 }
