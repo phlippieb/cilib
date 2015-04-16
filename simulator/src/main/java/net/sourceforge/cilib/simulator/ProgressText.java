@@ -41,7 +41,8 @@ final class ProgressText implements ProgressListener {
         StringBuilder sb = new StringBuilder(String.format("[%3.1f%%]", percentage));
         int stringLen = sb.toString().length();
         for (int i = 0; i < stringLen; i++) {
-            sb.insert(0,"\b \b");
+            //sb.insert(0,"\b \b");
+            sb.insert(0,"\b");
         }
         //sb.append(Strings.repeat("=", nequals));
         //sb.append(Strings.repeat(" ", 50 - nequals));
